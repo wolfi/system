@@ -1,0 +1,19 @@
+- hosts: localhost
+  vars:
+    key_src: "./keys/id_ed25519"
+    key_dst: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    personal: "{{ lookup('env', 'HOME') }}/personal"
+    work: "{{ lookup('env', 'HOME') }}/work"
+  pre_tasks:
+    - name: Update and upgrade packages
+      become: true
+      community.general.xbps:
+        update_cache: true
+        upgrade: true
+      tags:
+        - setup
+        - core
+  tasks:
+    - include: tasks/ssh.yml
+    - include: tasks/git.yml
+    - include: tasks/core.yml

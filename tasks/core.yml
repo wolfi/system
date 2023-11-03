@@ -1,0 +1,41 @@
+- name: Install System Packages 1 (build-essential, cmake, pkg-config, pthread)
+  become: true
+  community.general.xbps:
+    name:
+      - base-devel
+      - wget
+      - pkg-config
+    state: present
+  tags:
+    - setup
+    - core
+
+- name: CLI Tools
+  become: true
+  community.general.xbps:
+    name: 
+      - bc
+      - ibus
+      - xautolock
+      - i3lock-color
+    state: present
+  tags:
+    - setup
+    - core
+
+- name: Desktop Environment
+  become: true
+  community.general.xbps:
+    name: 
+      - xorg
+      - ibus
+      - xautolock
+      - i3lock-color
+      - xclip
+    state: present
+
+- name: Virtualization
+  become: true
+  community.general.xbps:
+    name:
+      - qemu
