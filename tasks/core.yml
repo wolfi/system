@@ -60,7 +60,7 @@
     - i3lock-color
     - main
     - xclip
-    - thunar
+    - Thunar
     - gsettings-desktop-schemas
     - direnv
     - xsel
