@@ -121,7 +121,6 @@
     - swayidle
     - swaylock
     - Waybar
-    - python3-pywlroots
     - python3-psutil
     - python3-dbus
     - xdg-desktop-portal-wlr
