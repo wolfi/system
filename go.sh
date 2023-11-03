@@ -1,4 +1,4 @@
-#!/usr/bin bash
+#!/usr/sh
 
 # Install Ansible first
 xbps-install ansible
