@@ -1,6 +1,6 @@
 #!/bin/sh
 
 # Install Ansible first
-xbps-install ansible
+xbps-install -Su ansible
 
 # Run playbook
