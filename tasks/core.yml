@@ -1,41 +1,163 @@
-- name: Install System Packages 1 (build-essential, cmake, pkg-config, pthread)
+- name: Install system packages
   become: true
   community.general.xbps:
     name:
-      - base-devel
-      - wget
-      - pkg-config
+    - base-devel
+    - pkg-config
+    - acpi
+    - polkit
     state: present
   tags:
-    - setup
-    - core
+  - setup
+  - core
 
-- name: CLI Tools
+- name: CLI tools
   become: true
   community.general.xbps:
     name: 
-      - bc
-      - ibus
-      - xautolock
-      - i3lock-color
+    - bc
+    - tree
+    - tldr
+    - stow
+    - pulsemixer
+    - fzf
+    - fd
+    - tmux
+    - exa
+    - nano
+    - bat
+    - htop
+    - ripgrep
+    - unzip
+    - wget
+    - zsh
+    - fish
     state: present
   tags:
-    - setup
-    - core
+  - setup
+  - core
 
-- name: Desktop Environment
+- name: Neovim
   become: true
   community.general.xbps:
     name: 
-      - xorg
-      - ibus
-      - xautolock
-      - i3lock-color
-      - xclip
+    - python3-neovim
+    - neovim
+    - tree-sitter
     state: present
+  tags:
+  - setup
+  - core
+  - neovim
+
+- name: Desktop environment
+  become: true
+  community.general.xbps:
+    name: 
+    - xorg
+    - ibus
+    - kimtoy
+    - xautolock
+    - i3lock-color
+    - main
+    - xclip
+    - thunar
+    - gsettings-desktop-schemas
+    - direnv
+    - xsel
+    - cups
+    - pipewire
+    - wireplumber
+    - alsa-utils
+    - bluez
+    - bluez-alsa
+    - bluez-cups
+    - lxappearance
+    - lxsession
+    - network-manager-applet
+    - playerctl
+    - picom
+    - starship
+    - rofi
+    - xdg-user-dirs
+    - xf86-input-evdev
+    - xf86-input-libinput
+    - xf86-input-synaptics
+    - xf86-input-vmmouse
+    - xf86-input-wacom
+    - xf86-video-amdgpu
+    - xf86-video-intel
+    - xf86-video-nouveau
+    - xf86-video-openchrome
+    - xf86-video-qxl
+    - xf86-video-vmware
+    - zathura
+    - zathura-pdf-poppler
+    - firefox
+    - alacritty
+    - xterm
+    - ly
+    - qtile
+    - awesome
+    - polybar
+    - gtk-theme-config
+    - paper-gtk-theme
+    - adwaita-icon-theme
+    - arc-icon-theme
+    - paper-icon-theme
+    - papirus-icon-theme
+    state: present
+
+- name: Desktop environment (Wayland)
+  become: true
+  community.general.xbps:
+    name: 
+    - wl-clipboard
+    - wayland-protocols
+    - arandr
+    - mako
+    - foot
+    - qtile-wayland
+    - sway
+    - swaybg
+    - swayidle
+    - swaylock
+    - Waybar
+    - python3-pywlroots
+    - python3-psutil
+    - python3-dbus
+    - xdg-desktop-portal-wlr
+    state: present
+
 
 - name: Virtualization
   become: true
   community.general.xbps:
     name:
-      - qemu
+    - qemu
+    state: present
+
+- name: Development
+  become: true
+  community.general.xbps:
+    name: 
+    - go
+    state: present
+
+- name: Multimedia
+  become: true
+  community.general.xbps:
+    name: 
+    - mpv
+    state: present
+
+- name: Fonts
+  become: true
+  community.general.xbps:
+    name: 
+    - nerd-fonts
+    - font-awesome
+    
+
+    state: present
+
