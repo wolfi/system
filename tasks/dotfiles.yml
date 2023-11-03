@@ -1,0 +1,27 @@
+- name: Install stow
+  become: true
+  community.general.xbps:
+    name: 
+    - stow
+    state: present
+  tags:
+    - setup
+    - dotfiles
+
+- name: Clone dotfiles
+  ansible.builtin.git:
+    repo: "git@github.com:Wolfi/dotfiles.git"
+    dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
+    recursive: yes
+    update: yes
+    accept_hostkey: yes
+    version: master
+  tags:
+    - setup
+    - dotfiles
+
+- name: Stow dotfiles
+  shell: cd $HOME/.dotfiles && ./stow.sh
+  tags:
+    - setup
+    - dotfiles
