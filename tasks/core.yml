@@ -95,7 +95,6 @@
     - firefox
     - alacritty
     - xterm
-    - ly
     - qtile
     - awesome
     - polybar
@@ -128,7 +127,6 @@
     - xdg-desktop-portal-wlr
     state: present
 
-
 - name: Virtualization
   become: true
   community.general.xbps:
@@ -156,7 +154,5 @@
     name: 
     - nerd-fonts
     - font-awesome
-    
-
     state: present
 
