@@ -1,6 +1,6 @@
 - hosts: localhost
   vars:
-    key_src: "./keys/id_ed25519"
+    key_src: "keys/id_ed25519"
     key_dst: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
     personal: "{{ lookup('env', 'HOME') }}/personal"
     work: "{{ lookup('env', 'HOME') }}/work"
@@ -14,6 +14,6 @@
         - setup
         - core
   tasks:
-    - include: tasks/ssh.yml
-    - include: tasks/git.yml
-    - include: tasks/core.yml
+    - include_tasks: tasks/ssh.yml
+    - include_tasks: tasks/git.yml
+    - include_tasks: tasks/core.yml
