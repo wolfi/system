@@ -1,7 +1,10 @@
 #!/bin/sh
 
-# Install Ansible first
-xbps-install -Su python3 python3-pip
-python3 -m pip install --user ansible
+# Install Python first
+sudo xbps-install -Su python3 python3-pipx
+
+# Install Ansible
+pipx ensurepath
+pipx install --include-deps ansible
 
 # Run playbook
