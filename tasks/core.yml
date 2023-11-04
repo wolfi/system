@@ -6,6 +6,7 @@
     - pkg-config
     - acpi
     - polkit
+    - acl
     state: present
   tags:
   - setup

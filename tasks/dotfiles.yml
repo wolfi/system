@@ -8,6 +8,16 @@
     - setup
     - dotfiles
 
+- name: Make sure acl exists
+  become: true
+  community.general.xbps:
+    name: 
+    - acl
+    state: present
+  tags:
+    - setup
+    - dotfiles
+
 - name: Add key
   shell: "ssh-add -K ~/.ssh/id_ed25519"
 
@@ -18,6 +28,7 @@
     update: yes
     accept_newhostkey: yes
     version: master
+    key_file: "{{ key_dst }}" 
   tags:
     - setup
     - dotfiles
