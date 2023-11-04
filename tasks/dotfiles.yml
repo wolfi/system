@@ -18,8 +18,8 @@
     - setup
     - dotfiles
 
-- name: Add key
-  shell: "ssh-add -K ~/.ssh/id_ed25519"
+# - name: Add key
+  #  shell: "ssh-add -K ~/.ssh/id_ed25519"
 
 - name: Clone dotfiles
   ansible.builtin.git:
