@@ -123,6 +123,7 @@
     - python3-psutil
     - python3-dbus
     - xdg-desktop-portal-wlr
+    - xdg-desktop-portal-gtk
     state: present
 
 - name: Virtualization
