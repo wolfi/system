@@ -108,17 +108,45 @@
     - tuigreet
     state: present
 
-- name: Enable runit services 
+- name: Enable dbus service
   become: true
   community.general.runit:
-    name:
-    - dbus
-    - greetd
-    - bluetoothd
-    - alsa
-    - bluez-alsa
-    - cupsd
-    - greetd
+    name: dbus
+    enabled: true
+    state: started
+
+- name: Enable greetd service
+  become: true
+  community.general.runit:
+    name: greetd
+    enabled: true
+    state: started
+
+- name: Enable bluetoothd service
+  become: true
+  community.general.runit:
+    name: bluetoothd
+    enabled: true
+    state: started
+
+- name: Enable alsa service
+  become: true
+  community.general.runit:
+    name: alsa
+    enabled: true
+    state: started
+
+- name: Enable bluez-alsa service
+  become: true
+  community.general.runit:
+    name: bluez-alsa
+    enabled: true
+    state: started
+
+- name: Enable cupsd service
+  become: true
+  community.general.runit:
+    name: cupsd
     enabled: true
     state: started
 
