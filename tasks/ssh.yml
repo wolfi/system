@@ -21,7 +21,7 @@
 - name: Install personal public key
   copy:
     src: "{{ key_personal_src }}.pub"
-    dest: "{{ key_personal_src }}.pub"
+    dest: "{{ key_personal_dst }}.pub"
     mode: 0644
   tags:
     - dotfiles
@@ -31,7 +31,7 @@
 - name: Install setup private key
   copy:
     src: "{{ key_setup_src }}"
-    dest: "{{ key_setup_src }}"
+    dest: "{{ key_setup_dst }}"
     mode: 0600
   tags:
     - setup
@@ -39,7 +39,7 @@
 - name: Install setup public key
   copy:
     src: "{{ key_setup_src }}.pub"
-    dest: "{{ key_setup_src }}.pub"
+    dest: "{{ key_setup_dst }}.pub"
     mode: 0644
   tags:
     - setup
