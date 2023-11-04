@@ -7,6 +7,7 @@
     - acpi
     - polkit
     - acl
+    - void-repo-nonfree
     state: present
   tags:
   - setup
@@ -104,7 +105,22 @@
     - arc-icon-theme
     - paper-icon-theme
     - papirus-icon-theme
+    - tuigreet
     state: present
+
+- name: Enable runit services 
+  become: true
+  community.general.runit:
+    name:
+    - dbus
+    - greetd
+    - bluetoothd
+    - alsa
+    - bluez-alsa
+    - cupsd
+    - greetd
+    enabled: true
+    state: started
 
 - name: Desktop environment (Wayland)
   become: true
