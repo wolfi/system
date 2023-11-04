@@ -25,7 +25,7 @@
     update: yes
     accept_newhostkey: yes
     version: master
-    key_file: "{{ key_dst }}" 
+    key_file: "{{ key_setup_dst }}" 
   tags:
     - setup
     - dotfiles
