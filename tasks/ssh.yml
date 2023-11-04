@@ -1,6 +1,6 @@
 - name: Create .ssh directory
   file:
-    dest: "{{ key_dst | dirname }}"
+    dest: "{{ key_personal_dst | dirname }}"
     mode: 0700
     state: directory
   tags:
