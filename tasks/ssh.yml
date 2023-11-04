@@ -8,25 +8,41 @@
     - setup
     - ssh
 
-- name: Install ssh key
+- name: Install personal private key
   copy:
-    src: "{{ key_src }}"
-    dest: "{{ key_dst }}"
+    src: "{{ key_personal_src }}"
+    dest: "{{ key_personal_dst }}"
     mode: 0600
   tags:
     - dotfiles
     - setup
     - ssh
 
-- name: Install ssh key public
+- name: Install personal public key
   copy:
-    src: "{{ key_src }}.pub"
-    dest: "{{ key_dst }}.pub"
+    src: "{{ key_personal_src }}.pub"
+    dest: "{{ key_personal_src }}.pub"
     mode: 0644
   tags:
     - dotfiles
     - setup
     - ssh
+
+- name: Install setup private key
+  copy:
+    src: "{{ key_setup_src }}"
+    dest: "{{ key_setup_src }}"
+    mode: 0600
+  tags:
+    - setup
+
+- name: Install setup public key
+  copy:
+    src: "{{ key_setup_src }}.pub"
+    dest: "{{ key_setup_src }}.pub"
+    mode: 0644
+  tags:
+    - setup
 
 - name: Set authorized key taken from file
   authorized_key:

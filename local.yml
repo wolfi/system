@@ -1,7 +1,9 @@
 - hosts: localhost
   vars:
-    key_src: "keys/id_ed25519"
-    key_dst: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    key_personal_src: "keys/id_ed25519"
+    key_personal_dst: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519"
+    key_setup_src: "keys/id_ed25519_ansible"
+    key_setup_dst: "{{ lookup('env', 'HOME') }}/.ssh/id_ed25519_ansible"
     personal: "{{ lookup('env', 'HOME') }}/personal"
     work: "{{ lookup('env', 'HOME') }}/work"
   pre_tasks:
