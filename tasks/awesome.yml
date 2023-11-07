@@ -12,8 +12,9 @@
     - libxkbcommon-x11
     - LuaJIT
     - LuaJIT-devel
-    - lua54
-    - lua54-devel
+    - lua53
+    - lua53-devel
+    - lgi
     - pango
     - startup-notification-devel
     - xcb-util-devel
