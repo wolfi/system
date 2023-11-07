@@ -5,6 +5,7 @@
     - fontconfig-devel
     - libX11-devel
     - libXft-devel
+    - harfbuzz-devel
     state: present
 
 - name: ST checkout
