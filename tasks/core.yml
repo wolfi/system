@@ -108,6 +108,7 @@
     - papirus-icon-theme
     - tuigreet
     - elogind
+    - luarocks
     state: present
 
 
