@@ -109,6 +109,13 @@
     - elogind
     state: present
 
+
+- name: Checkout Awesome Bling
+  become: true
+  ansible.builtin.git:
+    repo: 'https://github.com/BlingCorp/bling.git'
+    dest: "{{ lookup('env', 'HOME') }}/.config/awesome/bling"
+
 - name: Enable dbus service
   become: true
   community.general.runit:
@@ -133,11 +140,11 @@
     name: bluetoothd
     enabled: true
 
-- name: Enable alsa service
-  become: true
-  community.general.runit:
-    name: alsa
-    enabled: true
+# - name: Enable alsa service
+#   become: true
+#   community.general.runit:
+#     name: alsa
+#     enabled: true
 
 - name: Enable bluez-alsa service
   become: true
