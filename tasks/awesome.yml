@@ -14,7 +14,7 @@
     - LuaJIT-devel
     - lua
     - lua-devel
-    - lua-lgi
+    - lgi
     - luarocks
     - pango
     - startup-notification-devel
