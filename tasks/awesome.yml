@@ -9,6 +9,7 @@
     - libXfixes
     - libxkbcommon-x11
     - LuaJIT
+    - LuaJIT-devel
     - pango
     - startup-notification
     - xcb-util-cursor 
