@@ -15,10 +15,8 @@
     - libxkbcommon-x11
     - LuaJIT
     - LuaJIT-devel
-    - lua
-    - lua-devel
-    - lgi
-    - luarocks
+    - lua51-lgi
+    - luarocks-lua51
     - startup-notification-devel
     - libxcb-devel
     - xcb-util-devel
@@ -46,7 +44,7 @@
     dest: "/tmp/awesome"
 
 - name: Make AwesomeWM
-  shell: 'CMAKE_ARGS="-DLUA_EXECUTABLE=/usr/bin/lua5.3 -DLUA_LIBRARY=/usr/lib/liblua.so.5.3 -DLUA_INCLUDE_DIR=/usr/include/lua5.3" make'
+  shell: 'CMAKE_ARGS="-DLUA_LIBRARY=/usr/lib/libluajit-5.1.so -DLUA_INCLUDE_DIR=/usr/include/luajit-2.1" make'
   args:
     chdir: "/tmp/awesome"
 
