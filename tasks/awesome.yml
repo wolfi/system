@@ -3,11 +3,14 @@
   community.general.xbps:
     name: 
     - cairo
-    - dbus
+    - pkg-config
+    - dbus-devel
+    - dbus-x11
+    - pango
+    - pango-devel
     - gdk-pixbuf-devel
     - libxdg-basedir-devel
     - libXfixes
-    - libxkbcommon
     - libxkbcommon-devel
     - libxkbcommon-x11
     - LuaJIT
@@ -16,14 +19,16 @@
     - lua-devel
     - lgi
     - luarocks
-    - pango
     - startup-notification-devel
+    - libxcb-devel
     - xcb-util-devel
     - xcb-util-cursor-devel
+    - xcb-util-image-devel
     - xcb-util-keysyms-devel
     - xcb-util-wm-devel
     - xcb-util-xrm-devel
-    - asciidoc
+    - xcb-util-errors
+    - ruby-asciidoctor
     - cmake
     - docbook-xsl
     - git
@@ -32,7 +37,7 @@
     - dex
     - librsvg
     - rlwrap
-    - xcb-util-errors
+
     state: present
 
 - name: AwesomeWM checkout
