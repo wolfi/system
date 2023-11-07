@@ -32,9 +32,13 @@
     repo: https://github.com/awesomeWM/awesome.git
     dest: "/tmp/awesome"
 
-- name: Run make and install as root
-  community.general.make:
+- name: Make AwesomeWM
+  shell: "make"
+  args:
     chdir: "/tmp/awesome"
-    targets:
-    - install
+
+- name: Install AwesomeWM
   become: true
+  shell: "make install"
+  args:
+    chdir: "/tmp/awesome"
