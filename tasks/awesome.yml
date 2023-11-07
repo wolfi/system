@@ -1,0 +1,40 @@
+- name: Install AwesomeWM dependencies
+  become: true
+  community.general.xbps:
+    name: 
+    - cairo
+    - dbus
+    - gdk-pixbuf
+    - libxdg-basedir
+    - libXfixes
+    - libxkbcommon-x11
+    - LuaJIT
+    - pango
+    - startup-notification
+    - xcb-util-cursor 
+    - xcb-util-keysyms
+    - xcb-util-wm
+    - xcb-util-xrm
+    - asciidoc
+    - cmake
+    - docbook-xsl
+    - git
+    - ImageMagick
+    - xmlto
+    - dex
+    - librsvg
+    - rlwrap
+    - xcb-util-errors
+    state: present
+
+- name: AwesomeWM checkout
+  git:
+    repo: https://github.com/awesomeWM/awesome.git
+    dest: "/tmp/awesome"
+
+- name: Run make and install as root
+  community.general.make:
+    chdir: "/tmp/awesome"
+    targets:
+    - install
+  become: true
