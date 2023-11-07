@@ -3,6 +3,7 @@
   community.general.xbps:
     name:
     - base-devel
+    - cmake
     - pkg-config
     - acpi
     - polkit
