@@ -1,0 +1,12 @@
+- name: ST checkout
+  git:
+    repo: git@github.com:LukeSmithxyz/st.git
+    dest: "{{ lookup('env', 'HOME') }}/personal/lukesmith-st"
+
+- name: Run make and install as root
+  community.general.make:
+    chdir: "{{ lookup('env', 'HOME') }}/personal/lukesmith-st"
+    targets:
+    - clean
+    - install
+  become: true
