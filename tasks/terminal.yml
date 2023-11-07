@@ -1,6 +1,6 @@
 - name: ST checkout
   git:
-    repo: git@github.com:LukeSmithxyz/st.git
+    repo: https://github.com/LukeSmithxyz/st.git
     dest: "{{ lookup('env', 'HOME') }}/personal/lukesmith-st"
 
 - name: Run make and install as root
