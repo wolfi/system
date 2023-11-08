@@ -100,7 +100,8 @@
     - alacritty
     - xterm
     - qtile
-    - awesome
+    # - awesome
+    - leftwm
     - polybar
     - gtk-theme-config
     - paper-gtk-theme
@@ -208,6 +209,6 @@
   community.general.xbps:
     name: 
     - nerd-fonts
-    - font-awesome
+    - font-awesome6
     state: present
 
