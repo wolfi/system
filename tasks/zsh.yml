@@ -12,7 +12,7 @@
     depth: 1
 
 - name: Install zsh plugins
-  shell: $HOME/.antidote/antidote bundle <$HOME/.dotfiles/zsh/.zsh_plugins.txt >~/.zsh_plugins.sh
+  shell: zsh $HOME/.antidote/antidote bundle <$HOME/.dotfiles/zsh/.zsh_plugins.txt >~/.zsh_plugins.sh
 
 - name: Change shell to zsh
   shell: chsh -s $(which zsh)
