@@ -201,9 +201,12 @@
     force: true
 
 - name: Make n
-  shell: PREFIX=$HOME/.local/bin make install
+  shell: PREFIX=$HOME/.local make install
   args:
     chdir: /tmp/n
+
+- name: Install node LTS
+  shell: n lts
 
 - name: Multimedia
   become: true
