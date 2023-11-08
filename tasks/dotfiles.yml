@@ -37,7 +37,9 @@
     - dotfiles
 
 - name: Copy images
-  shell: cp -r $HOME/.dotfiles/images/* $HOME/Pictures
+  shell: | 
+    mkdir $HOME/Pictures/wallpaper
+    cp -r $HOME/.dotfiles/images/* $HOME/Pictures/wallpaper
   tags:
     - setup
     - dotfiles
