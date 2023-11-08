@@ -39,6 +39,9 @@
   - setup
   - core
 
+- name: Change shell to zsh
+  shell: chsh -s $(which zsh)
+
 - name: Neovim
   become: true
   community.general.xbps:
