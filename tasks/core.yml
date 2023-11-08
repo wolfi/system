@@ -100,7 +100,7 @@
     - alacritty
     - xterm
     - qtile
-    # - awesome
+    - awesome
     - leftwm
     - polybar
     - gtk-theme-config
