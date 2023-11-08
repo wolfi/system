@@ -48,12 +48,12 @@
     dest: "/tmp/awesome"
 
 - name: Change used lua binary (LuaJIT Only)
-  shell: vsed -e "s|COMMAND lua\b|COMMAND luajit|" -i awesomeConfig.cmake -i tests/examples/CMakeLists.txt
+  shell: sed -e "s|COMMAND lua\b|COMMAND luajit|" -i awesomeConfig.cmake -i tests/examples/CMakeLists.txt
   args:
     chdir: "/tmp/awesome"
 
 - name: Change used lua binary (LuaJIT Only)
-  shell: vsed -e "s|LUA_COV_RUNNER lua\b|LUA_COV_RUNNER luajit|" -i tests/examples/CMakeLists.txt
+  shell: sed -e "s|LUA_COV_RUNNER lua\b|LUA_COV_RUNNER luajit|" -i tests/examples/CMakeLists.txt
   args:
     chdir: "/tmp/awesome"
 
