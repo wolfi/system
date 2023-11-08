@@ -113,11 +113,8 @@
     - elogind
     state: present
 
-
-- name: Checkout Awesome Bling
-  git:
-    repo: 'https://github.com/BlingCorp/bling.git'
-    dest: "{{ lookup('env', 'HOME') }}/.config/awesome/bling"
+- name: Create user dirs
+  shell: xdg-user-dirs-update
 
 - name: Enable dbus service
   become: true

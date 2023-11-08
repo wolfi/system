@@ -35,3 +35,9 @@
   tags:
     - setup
     - dotfiles
+
+- name: Copy images
+  shell: cp -r $HOME/.dotfiles/images/* $HOME/Pictures
+  tags:
+    - setup
+    - dotfiles

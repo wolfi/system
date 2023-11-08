@@ -26,7 +26,7 @@
     - xcb-util-keysyms-devel
     - xcb-util-wm-devel
     - xcb-util-xrm-devel
-    - xcb-util-errors
+    - xcb-util-errors-devel
     - ruby-asciidoctor
     - cmake
     - docbook-xsl
@@ -65,3 +65,8 @@
   shell: "make install"
   args:
     chdir: /tmp/awesome
+
+- name: Checkout Awesome Bling
+  git:
+    repo: 'https://github.com/BlingCorp/bling.git'
+    dest: "{{ lookup('env', 'HOME') }}/.config/awesome/bling"
