@@ -31,7 +31,9 @@
     - dotfiles
 
 - name: Stow dotfiles
-  shell: cd $HOME/.dotfiles && ./stow.sh
+  shell: ./stow.sh
+  args:
+    chdir: $HOME/.dotfiles
   tags:
     - setup
     - dotfiles

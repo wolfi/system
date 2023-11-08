@@ -32,15 +32,11 @@
     - ripgrep
     - unzip
     - wget
-    - zsh
     - fish-shell
     state: present
   tags:
   - setup
   - core
-
-- name: Change shell to zsh
-  shell: chsh -s $(which zsh)
 
 - name: Neovim
   become: true
@@ -196,6 +192,18 @@
     name: 
     - go
     state: present
+
+
+- name: n checkout
+  git:
+    repo: https://github.com/tj/n.git
+    dest: /tmp/n
+    force: true
+
+- name: Make n
+  shell: PREFIX=$HOME/.local/bin make install
+  args:
+    chdir: /tmp/n
 
 - name: Multimedia
   become: true
