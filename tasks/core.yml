@@ -193,7 +193,6 @@
     - go
     state: present
 
-
 - name: n checkout
   git:
     repo: https://github.com/tj/n.git
@@ -205,8 +204,8 @@
   args:
     chdir: /tmp/n
 
-# - name: Install node LTS
-#   shell: $HOME/.local/n/bin/n lts
+- name: Install node LTS
+  shell: n lts
 
 - name: Multimedia
   become: true
