@@ -112,8 +112,7 @@
 
 
 - name: Checkout Awesome Bling
-  become: true
-  ansible.builtin.git:
+  git:
     repo: 'https://github.com/BlingCorp/bling.git'
     dest: "{{ lookup('env', 'HOME') }}/.config/awesome/bling"
 
