@@ -2,7 +2,6 @@
   become: true
   community.general.xbps:
     name: 
-    - cairo
     - pkg-config
     - dbus-devel
     - dbus-x11
@@ -10,7 +9,7 @@
     - pango-devel
     - gdk-pixbuf-devel
     - libxdg-basedir-devel
-    - libXfixes
+    - libXfixes-devel
     - libxkbcommon-devel
     - libxkbcommon-x11
     - LuaJIT
@@ -31,11 +30,16 @@
     - docbook-xsl
     - git
     - ImageMagick
+    state: present
+
+- name: Install AwesomeWM optional dependencies
+  become: true
+  community.general.xbps:
+    name: 
     - xmlto
     - dex
     - librsvg
     - rlwrap
-
     state: present
 
 - name: AwesomeWM checkout
@@ -43,8 +47,18 @@
     repo: https://github.com/awesomeWM/awesome.git
     dest: "/tmp/awesome"
 
+- name: Change used lua binary (LuaJIT Only)
+  shell: vsed -e "s|COMMAND lua\b|COMMAND luajit|" -i awesomeConfig.cmake -i tests/examples/CMakeLists.txt
+  args:
+    chdir: "/tmp/awesome"
+
+- name: Change used lua binary (LuaJIT Only)
+  shell: vsed -e "s|LUA_COV_RUNNER lua\b|LUA_COV_RUNNER luajit|" -i tests/examples/CMakeLists.txt
+  args:
+    chdir: "/tmp/awesome"
+
 - name: Make AwesomeWM
-  shell: 'CMAKE_ARGS="-DLUA_LIBRARY=/usr/lib/libluajit-5.1.so -DLUA_INCLUDE_DIR=/usr/include/luajit-2.1" make'
+  shell: 'CMAKE_ARGS="-DLUA_EXECUTABLE=/usr/bin/luajit -DLUA_LIBRARY=/usr/lib/liblua.so.5.3 -DLUA_INCLUDE_DIR=/usr/include/lua5.3" make'
   args:
     chdir: "/tmp/awesome"
 
