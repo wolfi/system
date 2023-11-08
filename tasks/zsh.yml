@@ -1,17 +1,17 @@
-- name: Zsh
+- name: Install zsh
   become: true
   community.general.xbps:
     name: 
     - zsh
 
-- name: Antidote checkout
+- name: Checkout antidote
   git:
     repo: https://github.com/mattmc3/antidote.git
     dest: $HOME/.antidote
     force: true
     depth: 1
 
-- name: Run antidote
+- name: Install zsh plugins
   shell: $HOME/.antidote/antidote bundle <$HOME/.dotfiles/zsh/.zsh_plugins.txt >~/.zsh_plugins.sh
 
 - name: Change shell to zsh
