@@ -45,25 +45,30 @@
 - name: AwesomeWM checkout
   git:
     repo: https://github.com/awesomeWM/awesome.git
-    dest: "/tmp/awesome"
+    dest: /tmp/awesome
+
+- name: Remove build directory if it exists
+  ansible.builtin.file:
+    path: /tmp/awesome/build
+    state: absent
 
 - name: Change used lua binary (LuaJIT Only)
   shell: sed -e "s|COMMAND lua\b|COMMAND luajit|" -i awesomeConfig.cmake -i tests/examples/CMakeLists.txt
   args:
-    chdir: "/tmp/awesome"
+    chdir: /tmp/awesome
 
 - name: Change used lua binary (LuaJIT Only)
   shell: sed -e "s|LUA_COV_RUNNER lua\b|LUA_COV_RUNNER luajit|" -i tests/examples/CMakeLists.txt
   args:
-    chdir: "/tmp/awesome"
+    chdir: /tmp/awesome
 
 - name: Make AwesomeWM
   shell: 'CMAKE_ARGS="-DLUA_EXECUTABLE=/usr/bin/luajit -DLUA_LIBRARY=/usr/lib/liblua.so.5.3 -DLUA_INCLUDE_DIR=/usr/include/lua5.3" make'
   args:
-    chdir: "/tmp/awesome"
+    chdir: /tmp/awesome
 
 - name: Install AwesomeWM
   become: true
   shell: "make install"
   args:
-    chdir: "/tmp/awesome"
+    chdir: /tmp/awesome
