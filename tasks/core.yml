@@ -44,8 +44,10 @@
   community.general.xbps:
     name: 
     - python3-neovim
+    - python3-pip
     - neovim
     - tree-sitter
+    - luarocks
     state: present
   tags:
   - setup
@@ -186,6 +188,7 @@
     - qemu
     state: present
 
+# n (node), rustup
 - name: Development
   become: true
   community.general.xbps:
