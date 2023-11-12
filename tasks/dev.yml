@@ -57,4 +57,4 @@
   - neovim
 
 - name: Install neovim npm package
-  shell: $HOME/.local/n/bin/npm install -g neovim
+  shell: PATH="$HOME/.local/n/bin:$PATH" npm install -g neovim
