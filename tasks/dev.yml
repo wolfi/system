@@ -18,7 +18,7 @@
     chdir: /tmp/n
 
 - name: Install node LTS
-  shell: n lts
+  shell: $HOME/.local/n/bin/n lts
 
 - name: check if cargo is installed
   shell: command -v cargo
