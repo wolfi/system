@@ -125,6 +125,11 @@
 - name: Create user dirs
   shell: xdg-user-dirs-update --force
 
+- name: Checkout Awesome Bling
+  git:
+    repo: 'https://github.com/BlingCorp/bling.git'
+    dest: "{{ lookup('env', 'HOME') }}/.config/awesome/bling"
+
 - name: Enable dbus service
   become: true
   community.general.runit:
