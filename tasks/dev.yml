@@ -40,3 +40,21 @@
   shell: /tmp/sh.rustup.rs -y
   tags:
     - rust
+
+- name: Neovim
+  become: true
+  community.general.xbps:
+    name: 
+    - python3-neovim
+    - python3-pip
+    - neovim
+    - tree-sitter
+    - luarocks
+    state: present
+  tags:
+  - setup
+  - core
+  - neovim
+
+- name: Install neovim npm package
+  shell: $HOME/.local/n/bin/npm install -g neovim

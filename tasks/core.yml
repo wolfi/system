@@ -48,21 +48,6 @@
   - setup
   - core
 
-- name: Neovim
-  become: true
-  community.general.xbps:
-    name: 
-    - python3-neovim
-    - python3-pip
-    - neovim
-    - tree-sitter
-    - luarocks
-    state: present
-  tags:
-  - setup
-  - core
-  - neovim
-
 - name: Desktop environment
   become: true
   community.general.xbps:
@@ -140,11 +125,11 @@
     name: dbus
     enabled: true
 
-# - name: Enable greetd service
-  #   become: true
-  # community.general.runit:
-    #   name: greetd
-    # enabled: true
+- name: Enable greetd service
+  become: true
+  community.general.runit:
+    name: greetd
+    enabled: true
 
 - name: Enable elogind service
   become: true
