@@ -123,7 +123,7 @@
     state: present
 
 - name: Create user dirs
-  shell: xdg-user-dirs-update
+  shell: xdg-user-dirs-update --force
 
 - name: Enable dbus service
   become: true
@@ -195,7 +195,6 @@
     - qemu
     state: present
 
-
 - name: Multimedia
   become: true
   community.general.xbps:
@@ -210,4 +209,4 @@
     - nerd-fonts
     - font-awesome6
     state: present
-
+ -
