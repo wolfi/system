@@ -14,6 +14,16 @@
   - setup
   - core
 
+- name: Add nonfree repository
+  become: true
+  community.general.xbps:
+    name:
+    - void-repo-nonfree
+    state: present
+  tags:
+  - setup
+  - core
+
 - name: CLI tools
   become: true
   community.general.xbps:
