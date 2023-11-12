@@ -121,7 +121,7 @@
     - tuigreet
     - elogind
     - vicious # awesome
-    - dev     # awesome
+    - dex     # awesome
     - rlwrap  # awesome 
     - imlib2  # awesome
     state: present
