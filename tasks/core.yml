@@ -120,6 +120,10 @@
     - papirus-icon-theme
     - tuigreet
     - elogind
+    - vicious # awesome
+    - dev     # awesome
+    - rlwrap  # awesome 
+    - imlib2  # awesome
     state: present
 
 - name: Create user dirs
