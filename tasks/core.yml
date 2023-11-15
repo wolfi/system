@@ -87,10 +87,9 @@
     - polybar
     - adapta-gtk-theme
     - arc-gtk-theme
-    - paper-gtk-theme
+    - materia-gtk-theme
     - adwaita-icon-theme
     - arc-icon-theme
-    - paper-icon-theme
     - papirus-icon-theme
     - tuigreet
     - dex
