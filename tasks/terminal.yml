@@ -1,11 +1,11 @@
 - name: Install ST dependencies
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - fontconfig-devel
-    - libX11-devel
-    - libXft-devel
-    - harfbuzz-devel
+    - libx11
+    - libxft
+    - harfbuzz
     state: present
 
 - name: ST checkout

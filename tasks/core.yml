@@ -1,24 +1,14 @@
 - name: Install system packages
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name:
     - base-devel
     - cmake
-    - pkg-config
+    - pkgconf
     - acpi
     - polkit
     - acl
-    - void-repo-nonfree
-    state: present
-  tags:
-  - setup
-  - core
-
-- name: Add nonfree repository
-  become: true
-  community.general.xbps:
-    name:
-    - void-repo-nonfree
+    - mkcert
     state: present
   tags:
   - setup
@@ -26,7 +16,7 @@
 
 - name: CLI tools
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - bc
     - tree
@@ -35,14 +25,15 @@
     - fzf
     - fd
     - tmux
-    - exa
     - nano
     - bat
     - htop
     - ripgrep
     - unzip
     - wget
-    - fish-shell
+    - curl
+    - fish
+    - yay
     state: present
   tags:
   - setup
@@ -50,15 +41,14 @@
 
 - name: Desktop environment
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - xorg
     - ibus
     - xautolock
-    - i3lock-color
     - maim
     - xclip
-    - Thunar
+    - thunar
     - gsettings-desktop-schemas
     - direnv
     - xsel
@@ -67,7 +57,6 @@
     - wireplumber
     - alsa-utils
     - bluez
-    - bluez-alsa
     - bluez-cups
     - lxappearance
     - lxsession
@@ -90,26 +79,26 @@
     - xf86-video-vmware
     - zathura
     - zathura-pdf-poppler
-    - firefox
-    - alacritty
+    - firefox-developer-edition
+    - chromium
     - xterm
     - qtile
     - awesome
-    - leftwm
     - polybar
     - gtk-theme-config
+    - adapta-gtk-theme
+    - arc-gtk-theme
     - paper-gtk-theme
     - adwaita-icon-theme
     - arc-icon-theme
     - paper-icon-theme
     - papirus-icon-theme
     - tuigreet
-    - elogind
-    - vicious # awesome
-    - dex     # awesome
-    - rlwrap  # awesome 
-    - imlib2  # awesome
+    - dex
     state: present
+
+- name: Install more desktop software from the AUR
+  shell: yay --noconfirm aur/i3lock-color
 
 - name: Create user dirs
   shell: xdg-user-dirs-update --force
@@ -119,88 +108,68 @@
     repo: 'https://github.com/BlingCorp/bling.git'
     dest: "{{ lookup('env', 'HOME') }}/.config/awesome/bling"
 
-- name: Enable dbus service
-  become: true
-  community.general.runit:
-    name: dbus
-    enabled: true
 
 # - name: Enable greetd service
 #   become: true
-#   community.general.runit:
+#   systemd:
 #     name: greetd
 #     enabled: true
 
-- name: Enable elogind service
-  become: true
-  community.general.runit:
-    name: elogind
-    enabled: true
-
-- name: Enable bluetoothd service
-  become: true
-  community.general.runit:
-    name: bluetoothd
-    enabled: true
-
-# - name: Enable alsa service
-#   become: true
-#   community.general.runit:
-#     name: alsa
-#     enabled: true
-
-- name: Enable bluez-alsa service
-  become: true
-  community.general.runit:
-    name: bluez-alsa
-    enabled: true
-
-- name: Enable cupsd service
-  become: true
-  community.general.runit:
-    name: cupsd
-    enabled: true
-
 - name: Desktop environment (Wayland)
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - wl-clipboard
     - wayland-protocols
     - arandr
     - mako
     - foot
-    - qtile-wayland
     - sway
     - swaybg
     - swayidle
     - swaylock
-    - Waybar
-    - python3-psutil
-    - python3-dbus
+    - swayimg
+    - waybar
+    - python-psutil
+    - dbus-python
     - xdg-desktop-portal-wlr
     - xdg-desktop-portal-gtk
     state: present
 
 - name: Virtualization
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name:
-    - qemu
+    - qemu-full
     state: present
 
 - name: Multimedia
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - mpv
     state: present
 
 - name: Fonts
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
-    - nerd-fonts
-    - font-awesome6
+    - otf-firamono-nerd
+    - otf-droid-nerd
+    - ttf-3270-nerd
+    - ttf-cascadia-code-nerd
+    - ttf-fantasque-nerd
+    - ttf-firacode-nerd
+    - ttf-hack-nerd
+    - ttf-iosevkaterm-nerd
+    - ttf-jetbrains-mono-nerd
+    - ttf-nerd-fonts-symbols
+    - ttf-nerd-fonts-symbols-common
+    - ttf-nerd-fonts-symbols-mono
+    - ttf-noto-nerd
+    - ttf-roboto-mono-nerd
+    - ttf-roboto
+    - ttf-font-awesome
+    - ttf-joypixels
     state: present
  

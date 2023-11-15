@@ -9,7 +9,7 @@
   pre_tasks:
     - name: Update and upgrade packages
       become: true
-      community.general.xbps:
+      community.general.pacman:
         update_cache: true
         upgrade: true
       tags:

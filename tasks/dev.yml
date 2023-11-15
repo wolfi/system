@@ -1,7 +1,7 @@
 # n (node), rustup
 - name: Development
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - go
     - docker
@@ -44,12 +44,13 @@
 
 - name: Neovim
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
-    - python3-neovim
-    - python3-pip
+    - python-pynvim
+    - python-pip
     - neovim
     - tree-sitter
+    - tree-sitter-cli
     - luarocks
     state: present
   tags:
