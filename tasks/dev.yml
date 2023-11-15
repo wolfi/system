@@ -4,6 +4,7 @@
   community.general.xbps:
     name: 
     - go
+    - docker
     state: present
 
 - name: n checkout
