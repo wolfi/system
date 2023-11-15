@@ -42,7 +42,6 @@
     - ripgrep
     - unzip
     - wget
-    - mkcert
     - fish-shell
     state: present
   tags:
