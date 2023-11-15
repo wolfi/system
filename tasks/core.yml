@@ -85,7 +85,6 @@
     - qtile
     - awesome
     - polybar
-    - gtk-theme-config
     - adapta-gtk-theme
     - arc-gtk-theme
     - paper-gtk-theme
