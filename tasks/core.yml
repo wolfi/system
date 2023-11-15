@@ -91,7 +91,7 @@
     - adwaita-icon-theme
     - arc-icon-theme
     - papirus-icon-theme
-    - tuigreet
+    - greetd-tuigreet
     - dex
     state: present
 
