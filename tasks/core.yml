@@ -94,6 +94,7 @@
     - greetd-tuigreet
     - dex
     state: present
+    extra_args: --noconfirm
 
 - name: Install more desktop software from the AUR
   shell: yay --noconfirm aur/i3lock-color
