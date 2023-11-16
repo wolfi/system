@@ -8,17 +8,17 @@
     - acpi
     - polkit
     - acl
-    - void-repo-nonfree
     state: present
   tags:
   - setup
   - core
 
-- name: Add nonfree repository
+- name: Add nonfree and multilib repository
   become: true
   community.general.xbps:
     name:
     - void-repo-nonfree
+    - void-repo-multilib
     state: present
   tags:
   - setup
