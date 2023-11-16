@@ -193,6 +193,8 @@
   community.general.xbps:
     name: 
     - mpv
+    - ffmpeg
+    - libavcodec 
     state: present
 
 - name: Fonts
