@@ -1,0 +1,16 @@
+- name: Check if void-packages is already present
+  stat: 
+    path: $HOME/void-packages
+  register: void_packages
+
+- name: Checkout void-packages
+  when: not void_packages.stat.exists
+  git:
+    repo: https://github.com/void-linux/void-packages.git
+    dest: $HOME/void-packages
+
+- name: Bootstrap void-packages
+  when: not void_packages.stat.exists
+  shell: ./xbps-src binary-bootstrap
+  args:
+    chdir: $HOME/void-packages
