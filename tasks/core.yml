@@ -42,7 +42,6 @@
     - ripgrep
     - unzip
     - wget
-    - fish-shell
     state: present
   tags:
   - setup
@@ -91,6 +90,7 @@
     - zathura
     - zathura-pdf-poppler
     - firefox
+    - chromium
     - alacritty
     - xterm
     - qtile
