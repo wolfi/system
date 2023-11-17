@@ -2,6 +2,7 @@
   become: true
   community.general.xbps:
     name: 
+    - dmenu
     - libX11-devel
     - libXft-devel
     - libXinerama-devel
