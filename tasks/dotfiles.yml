@@ -30,7 +30,8 @@
     - setup
     - dotfiles
 
-- name: Check if void-packages is already present
+- name: Check if tuigreet cache dir is already present
+  become: true
   stat: 
     path: /var/cache/tuigreet
     register: tuigreet_cache_dir
