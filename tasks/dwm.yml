@@ -22,6 +22,7 @@
   become: true
 
 - name: Creating a file with content
+  become: true
   copy:
     dest: "/usr/share/xsessions/dwm.desktop"
     content: |
