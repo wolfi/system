@@ -21,3 +21,13 @@
     - install
   become: true
 
+- name: Creating a file with content
+  copy:
+    dest: "/usr/share/xsessions/dwm.desktop"
+    content: |
+      [Desktop Entry]
+      Name=dwm
+      Comment=Highly configurable framework window manager
+      TryExec=dwm
+      Exec=dwm
+      Type=Application
