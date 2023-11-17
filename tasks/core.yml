@@ -135,11 +135,11 @@
     name: greetd
     enabled: true
 
-- name: Enable elogind service
-  become: true
-  community.general.runit:
-    name: elogind
-    enabled: true
+# - name: Enable elogind service
+#   become: true
+#   community.general.runit:
+#     name: elogind
+#     enabled: true
 
 - name: Enable bluetoothd service
   become: true
