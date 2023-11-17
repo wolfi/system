@@ -31,6 +31,7 @@
     - bc
     - tree
     - tldr
+    - ImageMagick
     - pulsemixer
     - fzf
     - fd
@@ -42,6 +43,7 @@
     - ripgrep
     - unzip
     - wget
+    - curl
     state: present
   tags:
   - setup
@@ -56,11 +58,14 @@
     - xautolock
     - i3lock-color
     - maim
+    - unclutter
+    - dunst
+    - feh
     - xclip
+    - xsel
     - Thunar
     - gsettings-desktop-schemas
     - direnv
-    - xsel
     - cups
     - pipewire
     - wireplumber
