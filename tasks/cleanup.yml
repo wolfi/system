@@ -1,0 +1,4 @@
+- name: Delete setup key
+  ansible.builtin.file:
+    path: "{{ key_setup_dst }}"
+    state: absent

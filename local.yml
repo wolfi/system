@@ -25,3 +25,4 @@
     # - include_tasks: tasks/awesome.yml
     - include_tasks: tasks/terminal.yml
     - include_tasks: tasks/dev.yml
+    - include_tasks: tasks/cleanup.yml
