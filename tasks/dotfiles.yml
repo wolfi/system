@@ -30,6 +30,15 @@
     - setup
     - dotfiles
 
+- name: Create greetd cache dir
+  shell: | 
+    mkdir /var/cache/tuigreet
+    chown _greeter:_greeter /var/cache/tuigreet
+    chmod 0755 /var/cache/tuigreet
+  tags:
+    - setup
+    - dotfiles
+
 - name: Copy greetd config
   become: true
   copy:
