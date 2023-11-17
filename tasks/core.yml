@@ -115,6 +115,7 @@
     - imlib2  # awesome
     state: present
 
+
 - name: Create user dirs
   shell: xdg-user-dirs-update --force
 
