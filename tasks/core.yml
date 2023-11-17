@@ -113,9 +113,6 @@
     - dex     # awesome
     - rlwrap  # awesome 
     - imlib2  # awesome
-    - libX11-devel # dwm
-    - libXft-devel # dwm
-    - libXinerama-devel # dwm
     state: present
 
 - name: Create user dirs
