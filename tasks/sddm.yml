@@ -11,14 +11,14 @@
 - name: Check if sddm theme is already present
   become: true
   stat: 
-    path: /usr/share/sddm/themes/sddm-theme
+    path: /usr/share/sddm/themes/rose-pine-theme
   register: sddm_theme_dir
 
 - name: Copy theme
   when: not sddm_theme_dir.stat.exists
   become: true
   copy:
-    src: "sddm-theme"
+    src: "sddm/rose-pine-theme"
     dest: "/usr/share/sddm/themes/"
 
 - name: Create sddm config dir if not exists
@@ -33,7 +33,7 @@
     dest: /etc/sddm.conf.d/theme.conf
     content: |
       [Theme]
-      Current=sddm-theme
+      Current=rose-pine-theme
 
 - name: Enable sddm service
   become: true
