@@ -35,3 +35,8 @@
       [Theme]
       Current=sddm-theme
 
+- name: Enable sddm service
+  become: true
+  community.general.runit:
+    name: sddm
+    enabled: true
