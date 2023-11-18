@@ -19,7 +19,7 @@
   become: true
   copy:
     src: "sddm-theme"
-    dest: "/usr/share/sddm/themes/sddm-theme"
+    dest: "/usr/share/sddm/themes/"
 
 - name: Create sddm config dir if not exists
   become: true
