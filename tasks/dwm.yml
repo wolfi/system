@@ -21,7 +21,7 @@
     - install
   become: true
 
-- name: Creating a file with content
+- name: Create dwm xsession file
   become: true
   copy:
     dest: "/usr/share/xsessions/dwm.desktop"
