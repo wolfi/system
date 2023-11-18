@@ -34,7 +34,7 @@
   become: true
   stat: 
     path: /var/cache/tuigreet
-    register: tuigreet_cache_dir
+  register: tuigreet_cache_dir
 
 - name: Create greetd cache dir
   when: not tuigreet_cache_dir.stat.exists
