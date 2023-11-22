@@ -81,6 +81,7 @@
     - starship
     - rofi
     - xdg-user-dirs
+    - xdg-desktop-portal-gtk
     - xf86-input-evdev
     - xf86-input-libinput
     - xf86-input-synaptics
@@ -184,26 +185,25 @@
     name: cupsd
     enabled: true
 
-- name: Desktop environment (Wayland)
-  become: true
-  community.general.xbps:
-    name: 
-    - wl-clipboard
-    - wayland-protocols
-    - arandr
-    - mako
-    - foot
-    - qtile-wayland
-    - sway
-    - swaybg
-    - swayidle
-    - swaylock
-    - Waybar
-    - python3-psutil
-    - python3-dbus
-    - xdg-desktop-portal-wlr
-    - xdg-desktop-portal-gtk
-    state: present
+# - name: Desktop environment (Wayland)
+#   become: true
+#   community.general.xbps:
+#     name: 
+#     - wl-clipboard
+#     - wayland-protocols
+#     - arandr
+#     - mako
+#     - foot
+#     - qtile-wayland
+#     - sway
+#     - swaybg
+#     - swayidle
+#     - swaylock
+#     - Waybar
+#     - python3-psutil
+#     - python3-dbus
+#     - xdg-desktop-portal-wlr
+#     state: present
 
 - name: Virtualization
   become: true
