@@ -18,7 +18,7 @@
   tasks:
     - include_tasks: tasks/ssh.yml
     - include_tasks: tasks/git.yml
-    - include_tasks: tasks/void-packages.yml
+    # - include_tasks: tasks/void-packages.yml
     - include_tasks: tasks/core.yml
     - include_tasks: tasks/dwm.yml
     - include_tasks: tasks/sddm.yml
