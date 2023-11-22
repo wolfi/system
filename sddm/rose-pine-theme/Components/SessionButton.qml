@@ -26,7 +26,8 @@ Item {
     height: root.font.pointSize
     width: parent.width / 2
     anchors.horizontalCenter: parent.horizontalCenter
-    visible: selectSession.model.lastIndex > 0 ? true : false
+    // visible: selectSession.model.lastIndex > 0 ? true : false
+    visible: true
 
     property var selectedSession: selectSession.currentIndex
     property string textConstantSession
