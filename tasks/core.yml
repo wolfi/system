@@ -8,6 +8,8 @@
     - acpi
     - polkit
     - acl
+    - python3
+    - python3-pipx
     state: present
   tags:
   - setup
@@ -48,6 +50,9 @@
   tags:
   - setup
   - core
+
+- name: Install calcure
+  shell: pipx install --include-deps calcure
 
 - name: Desktop environment
   become: true
