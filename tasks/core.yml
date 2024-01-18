@@ -46,6 +46,7 @@
     - unzip
     - wget
     - curl
+    - fwupd
     state: present
   tags:
   - setup
