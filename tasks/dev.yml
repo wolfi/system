@@ -7,6 +7,18 @@
     - docker
     state: present
 
+- name: Create dev dir personal
+  ansible.builtin.file:
+    path: /home/steven/personal
+    state: directory
+    mode: '0755'
+
+- name: Create dev dir work
+  ansible.builtin.file:
+    path: /home/steven/work
+    state: directory
+    mode: '0755'
+
 - name: n checkout
   git:
     repo: https://github.com/tj/n.git
