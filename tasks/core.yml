@@ -7,6 +7,7 @@
     - acl
     - python
     - python-pipx
+    - mkcert
     state: present
   tags:
   - setup
@@ -24,7 +25,6 @@
     - fzf
     - fd
     - tmux
-    - exa
     - nano
     - bat
     - htop
@@ -81,9 +81,10 @@
     - xf86-video-vmware
     - zathura
     - zathura-pdf-poppler
-    - firefox
+    - firefox-developer-edition
     - chromium
     - alacritty
+    - chromium
     - xterm
     - qtile
     - awesome
@@ -98,6 +99,10 @@
     - rlwrap  # awesome 
     - imlib2  # awesome
     state: present
+    extra_args: --noconfirm
+
+- name: Install more desktop software from the AUR
+  shell: yay --noconfirm aur/i3lock-color
 
 # - name: Create X11 conf dir if not exists
   # become: true
@@ -130,7 +135,7 @@
   become: true
   community.general.pacman:
     name:
-    - qemu
+    - qemu-full
     state: present
 
 - name: Multimedia
@@ -145,13 +150,23 @@
   become: true
   community.general.pacman:
     name: 
+    - otf-firamono-nerd
+    - otf-droid-nerd
+    - ttf-3270-nerd
+    - ttf-cascadia-code-nerd
     - ttf-fantasque-nerd
+    - ttf-firacode-nerd
     - ttf-hack-nerd
     - ttf-iosevkaterm-nerd
+    - ttf-jetbrains-mono-nerd
+    - ttf-nerd-fonts-symbols
+    - ttf-nerd-fonts-symbols-common
+    - ttf-nerd-fonts-symbols-mono
     - ttf-noto-nerd
     - ttf-roboto-mono-nerd
+    - ttf-roboto
     - ttf-font-awesome
-    - awesome-terminal-fonts
+    - ttf-joypixels
     state: present
  
 - name: Checkout Qogir Theme

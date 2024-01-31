@@ -58,7 +58,7 @@
   become: true
   community.general.pacman:
     name: 
-    - python-neovim
+    - python-pynvim
     - python-pip
     - neovim
     - tree-sitter
