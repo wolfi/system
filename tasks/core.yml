@@ -99,11 +99,11 @@
     - imlib2  # awesome
     state: present
 
-- name: Create X11 conf dir if not exists
-  become: true
-  ansible.builtin.file:
-    path: /etc/X11/xorg.conf.d
-    state: directory
+# - name: Create X11 conf dir if not exists
+  # become: true
+  # ansible.builtin.file:
+    # path: /etc/X11/xorg.conf.d
+    # state: directory
 
 # - name: Set keyboard layout
   # become: true
