@@ -56,6 +56,13 @@
     - dotfiles
     - setup
 
+
+- name: Remove existing .Xresources
+  shell: rm $HOME/.Xresources
+  tags:
+    - setup
+    - dotfiles
+
 - name: Stow dotfiles
   shell: ./stow.sh
   args:
