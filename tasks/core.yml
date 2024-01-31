@@ -92,8 +92,7 @@
     - adapta-gtk-theme
     - arc-icon-theme
     - papirus-icon-theme
-    - tuigreet
-    - elogind
+    - greetd-tuigreet
     - vicious # awesome
     - dex     # awesome
     - rlwrap  # awesome 
