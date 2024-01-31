@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Install Python first
-sudo pacman -Su python3 python3-pipx
+sudo pacman -Su python python-pipx
 
 # Install Ansible
 export PATH="$HOME/.local/bin:$PATH"

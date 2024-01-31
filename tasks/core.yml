@@ -5,8 +5,8 @@
     - base-devel
     - cmake
     - acl
-    - python3
-    - python3-pipx
+    - python
+    - python-pipx
     state: present
   tags:
   - setup

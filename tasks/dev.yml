@@ -58,8 +58,8 @@
   become: true
   community.general.pacman:
     name: 
-    - python3-neovim
-    - python3-pip
+    - python-neovim
+    - python-pip
     - neovim
     - tree-sitter
     - luarocks
