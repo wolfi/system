@@ -61,7 +61,7 @@
     - thunar-volman
     - gsettings-desktop-schemas
     - direnv
-    - lxappearance
+    - lxappearance-gtk3
     - lxsession
     - picom
     - starship
