@@ -35,8 +35,3 @@
       [Theme]
       Current=rose-pine-theme
 
-- name: Enable sddm service
-  become: true
-  community.general.runit:
-    name: sddm
-    enabled: true
