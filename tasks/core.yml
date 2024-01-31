@@ -139,7 +139,6 @@
     name: 
     - mpv
     - ffmpeg
-    - libavcodec 
     state: present
 
 - name: Fonts
