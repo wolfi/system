@@ -149,7 +149,7 @@
     - ttf-hack-nerd
     - ttf-iosevkaterm-nerd
     - ttf-noto-nerd
-    - ttf-roboto-nerd
+    - ttf-roboto-mono-nerd
     - ttf-font-awesome
     - awesome-terminal-fonts
     state: present
