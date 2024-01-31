@@ -40,3 +40,4 @@
   ansible.builtin.systemd_service:
     name: sddm
     enabled: true
+    force: true
