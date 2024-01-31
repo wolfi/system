@@ -1,6 +1,6 @@
 - name: Install stow
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - stow
     state: present
@@ -10,7 +10,7 @@
 
 - name: Make sure acl exists
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - acl
     state: present

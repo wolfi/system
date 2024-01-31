@@ -1,6 +1,6 @@
 - name: Install sddm and dependencies
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name:
     - sddm
     - qt5-quickcontrols2

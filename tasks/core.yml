@@ -1,12 +1,9 @@
 - name: Install system packages
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name:
     - base-devel
     - cmake
-    - pkg-config
-    - acpi
-    - polkit
     - acl
     - python3
     - python3-pipx
@@ -15,25 +12,14 @@
   - setup
   - core
 
-- name: Add nonfree and multilib repository
-  become: true
-  community.general.xbps:
-    name:
-    - void-repo-nonfree
-    - void-repo-multilib
-    state: present
-  tags:
-  - setup
-  - core
-
 - name: CLI tools
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - bc
     - tree
     - tldr
-    - ImageMagick
+    - imagemagick
     - pulsemixer
     - fzf
     - fd
@@ -47,6 +33,7 @@
     - wget
     - curl
     - fwupd
+    - yay
     state: present
   tags:
   - setup
@@ -57,7 +44,7 @@
 
 - name: Desktop environment
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - xorg
     - ibus
@@ -69,20 +56,13 @@
     - feh
     - xclip
     - xsel
-    - Thunar
+    - thunar
+    - thunar-archive-plugin
+    - thunar-volman
     - gsettings-desktop-schemas
     - direnv
-    - cups
-    - pipewire
-    - wireplumber
-    - alsa-utils
-    - bluez
-    - bluez-alsa
-    - bluez-cups
     - lxappearance
     - lxsession
-    - network-manager-applet
-    - playerctl
     - picom
     - starship
     - rofi
@@ -108,11 +88,9 @@
     - qtile
     - awesome
     - polybar
-    - gtk-theme-config
-    - paper-gtk-theme
-    - adwaita-icon-theme
+    - arc-gtk-theme
+    - adapta-gtk-theme
     - arc-icon-theme
-    - paper-icon-theme
     - papirus-icon-theme
     - tuigreet
     - elogind
@@ -149,78 +127,16 @@
     repo: 'https://github.com/BlingCorp/bling.git'
     dest: "{{ lookup('env', 'HOME') }}/.config/awesome/bling"
 
-- name: Enable dbus service
-  become: true
-  community.general.runit:
-    name: dbus
-    enabled: true
-
-# - name: Enable greetd service
-#   become: true
-#   community.general.runit:
-#     name: greetd
-#     enabled: true
-
-# - name: Enable elogind service
-#   become: true
-#   community.general.runit:
-#     name: elogind
-#     enabled: true
-
-- name: Enable bluetoothd service
-  become: true
-  community.general.runit:
-    name: bluetoothd
-    enabled: true
-
-# - name: Enable alsa service
-#   become: true
-#   community.general.runit:
-#     name: alsa
-#     enabled: true
-
-- name: Enable bluez-alsa service
-  become: true
-  community.general.runit:
-    name: bluez-alsa
-    enabled: true
-
-- name: Enable cupsd service
-  become: true
-  community.general.runit:
-    name: cupsd
-    enabled: true
-
-# - name: Desktop environment (Wayland)
-#   become: true
-#   community.general.xbps:
-#     name: 
-#     - wl-clipboard
-#     - wayland-protocols
-#     - arandr
-#     - mako
-#     - foot
-#     - qtile-wayland
-#     - sway
-#     - swaybg
-#     - swayidle
-#     - swaylock
-#     - Waybar
-#     - python3-psutil
-#     - python3-dbus
-#     - xdg-desktop-portal-wlr
-#     state: present
-
 - name: Virtualization
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name:
     - qemu
     state: present
 
 - name: Multimedia
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - mpv
     - ffmpeg
@@ -229,10 +145,15 @@
 
 - name: Fonts
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
-    - nerd-fonts
-    - font-awesome6
+    - ttf-fantasque-nerd
+    - ttf-hack-nerd
+    - ttf-iosevkaterm-nerd
+    - ttf-noto-nerd
+    - ttf-roboto-nerd
+    - ttf-font-awesome
+    - awesome-terminal-fonts
     state: present
  
 - name: Checkout Qogir Theme

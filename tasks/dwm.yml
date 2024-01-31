@@ -1,11 +1,11 @@
 - name: Install dwm dependencies
   become: true
-  community.general.xbps:
+  community.general.pacman:
     name: 
     - dmenu
-    - libX11-devel
-    - libXft-devel
-    - libXinerama-devel
+    - libx11
+    - libxft
+    - libxinerama
     state: present
 
 - name: dwm checkout
