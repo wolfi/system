@@ -62,6 +62,7 @@
     - python-pip
     - neovim
     - tree-sitter
+    - tree-sitter-cli
     - luarocks
     state: present
   tags:
@@ -71,9 +72,6 @@
 
 - name: Install neovim npm package
   shell: PATH="$HOME/.local/n/bin:$PATH" npm install -g neovim
-
-- name: Install tree-sitter binary
-  shell: cargo install tree-sitter-cli
 
 - name: Install neovim lazy plugins
   shell: nvim --headless "+Lazy! sync" +qa
