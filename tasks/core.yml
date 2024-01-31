@@ -4,10 +4,9 @@
     name:
     - base-devel
     - cmake
-    - pkgconf
-    - acpi
-    - polkit
     - acl
+    - python
+    - python-pipx
     - mkcert
     state: present
   tags:
@@ -21,6 +20,7 @@
     - bc
     - tree
     - tldr
+    - imagemagick
     - pulsemixer
     - fzf
     - fd
@@ -32,12 +32,15 @@
     - unzip
     - wget
     - curl
-    - fish
+    - fwupd
     - yay
     state: present
   tags:
   - setup
   - core
+
+- name: Install calcure
+  shell: pipx install --include-deps calcure
 
 - name: Desktop environment
   become: true
@@ -46,26 +49,25 @@
     - xorg
     - ibus
     - xautolock
+    # - i3lock-color
     - maim
+    - unclutter
+    - dunst
+    - feh
     - xclip
+    - xsel
     - thunar
+    - thunar-archive-plugin
+    - thunar-volman
     - gsettings-desktop-schemas
     - direnv
-    - xsel
-    - cups
-    - pipewire
-    - wireplumber
-    - alsa-utils
-    - bluez
-    - bluez-cups
-    - lxappearance
+    - lxappearance-gtk3
     - lxsession
-    - network-manager-applet
-    - playerctl
     - picom
     - starship
     - rofi
     - xdg-user-dirs
+    - xdg-desktop-portal-gtk
     - xf86-input-evdev
     - xf86-input-libinput
     - xf86-input-synaptics
@@ -81,23 +83,45 @@
     - zathura-pdf-poppler
     - firefox-developer-edition
     - chromium
+    - alacritty
+    - chromium
     - xterm
     - qtile
     - awesome
     - polybar
+    - arc-gtk-theme-eos
     - adapta-gtk-theme
-    - arc-gtk-theme
-    - materia-gtk-theme
-    - adwaita-icon-theme
     - arc-icon-theme
     - papirus-icon-theme
     - greetd-tuigreet
-    - dex
+    - vicious # awesome
+    - dex     # awesome
+    - rlwrap  # awesome 
+    - imlib2  # awesome
     state: present
     extra_args: --noconfirm
 
 - name: Install more desktop software from the AUR
   shell: yay --noconfirm aur/i3lock-color
+
+# - name: Create X11 conf dir if not exists
+  # become: true
+  # ansible.builtin.file:
+    # path: /etc/X11/xorg.conf.d
+    # state: directory
+
+# - name: Set keyboard layout
+  # become: true
+  # copy:
+    # dest: /etc/X11/xorg.conf.d/00-keyboard.conf
+    # content: |
+# Section "InputClass"
+# Identifier "system-keyboard"
+# MatchIsKeyboard "on"
+# Option "XkbLayout" "ch"
+# Option "XkbModel" "pc104"
+# Option "XkbVariant" "de"
+# EndSection
 
 - name: Create user dirs
   shell: xdg-user-dirs-update --force
@@ -106,34 +130,6 @@
   git:
     repo: 'https://github.com/BlingCorp/bling.git'
     dest: "{{ lookup('env', 'HOME') }}/.config/awesome/bling"
-
-
-# - name: Enable greetd service
-#   become: true
-#   systemd:
-#     name: greetd
-#     enabled: true
-
-- name: Desktop environment (Wayland)
-  become: true
-  community.general.pacman:
-    name: 
-    - wl-clipboard
-    - wayland-protocols
-    - arandr
-    - mako
-    - foot
-    - sway
-    - swaybg
-    - swayidle
-    - swaylock
-    - swayimg
-    - waybar
-    - python-psutil
-    - dbus-python
-    - xdg-desktop-portal-wlr
-    - xdg-desktop-portal-gtk
-    state: present
 
 - name: Virtualization
   become: true
@@ -147,6 +143,7 @@
   community.general.pacman:
     name: 
     - mpv
+    - ffmpeg
     state: present
 
 - name: Fonts
@@ -172,3 +169,13 @@
     - ttf-joypixels
     state: present
  
+- name: Checkout Qogir Theme
+  git:
+    repo: https://github.com/vinceliuice/Qogir-theme
+    dest: /tmp/qogir
+
+- name: Install Qogir Theme
+  shell: bash install.sh
+  args:
+    chdir: /tmp/qogir
+

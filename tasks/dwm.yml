@@ -1,0 +1,34 @@
+- name: Install dwm dependencies
+  become: true
+  community.general.pacman:
+    name: 
+    - dmenu
+    - libx11
+    - libxft
+    - libxinerama
+    state: present
+
+- name: dwm checkout
+  git:
+    repo: https://github.com/Wolfi/dwm.git
+    dest: "{{ lookup('env', 'HOME') }}/personal/dwm"
+
+- name: Run make and install as root
+  community.general.make:
+    chdir: "{{ lookup('env', 'HOME') }}/personal/dwm"
+    targets:
+    - clean
+    - install
+  become: true
+
+- name: Create dwm xsession file
+  become: true
+  copy:
+    dest: "/usr/share/xsessions/dwm.desktop"
+    content: |
+      [Desktop Entry]
+      Name=dwm
+      Comment=Highly configurable framework window manager
+      TryExec=dwm
+      Exec=dwm
+      Type=Application

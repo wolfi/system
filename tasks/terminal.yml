@@ -2,7 +2,7 @@
   become: true
   community.general.pacman:
     name: 
-    - fontconfig-devel
+    - fontconfig
     - libx11
     - libxft
     - harfbuzz
