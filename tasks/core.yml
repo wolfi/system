@@ -105,18 +105,18 @@
     path: /etc/X11/xorg.conf.d
     state: directory
 
-- name: Set keyboard layout
-  become: true
-  copy:
-    dest: /etc/X11/xorg.conf.d/00-keyboard.conf
-    content: |
-      Section "InputClass"
-        Identifier "system-keyboard"
-        MatchIsKeyboard "on"
-        Option "XkbLayout" "ch"
-        Option "XkbModel" "pc104"
-        Option "XkbVariant" "de"
-      EndSection
+# - name: Set keyboard layout
+  # become: true
+  # copy:
+    # dest: /etc/X11/xorg.conf.d/00-keyboard.conf
+    # content: |
+# Section "InputClass"
+# Identifier "system-keyboard"
+# MatchIsKeyboard "on"
+# Option "XkbLayout" "ch"
+# Option "XkbModel" "pc104"
+# Option "XkbVariant" "de"
+# EndSection
 
 - name: Create user dirs
   shell: xdg-user-dirs-update --force
