@@ -81,6 +81,7 @@
     - dex     # awesome
     - rlwrap  # awesome 
     - imlib2  # awesome
+    - xdg-desktop-portal
     state: present
     extra_args: --noconfirm
 
