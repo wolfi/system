@@ -10,7 +10,7 @@
 
 - name: ST checkout
   git:
-    repo: https://github.com/LukeSmithxyz/st.git
+    repo: https://github.com/Wolfi/lukesmithxyz-st
     dest: "{{ lookup('env', 'HOME') }}/personal/lukesmith-st"
 
 - name: Run make and install as root
