@@ -18,6 +18,7 @@
 - name: Install signal and slack using yay
   kewlfft.aur.aur:
     use: yay
+    state: present
     name:
       - slack-desktop
       - signal-desktop
