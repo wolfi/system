@@ -62,6 +62,7 @@
     - starship
     - rofi
     - xf86-input-wacom
+    - flameshot
     - zathura
     - zathura-pdf-poppler
     - firefox-developer-edition
