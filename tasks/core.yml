@@ -69,6 +69,8 @@
     - chromium
     - alacritty
     - chromium
+    - gimp
+    - blender
     - xterm
     - qtile
     - awesome
