@@ -32,3 +32,16 @@
       TryExec=dwm
       Exec=dwm
       Type=Application
+
+- name: dwmblocks checkout
+  git:
+    repo: https://github.com/torrinfail/dwmblocks
+    dest: "{{ lookup('env', 'HOME') }}/personal/dwmblocks"
+
+- name: Run make and install as root
+  community.general.make:
+    chdir: "{{ lookup('env', 'HOME') }}/personal/dwmblocks"
+    targets:
+    - clean
+    - install
+  become: true
