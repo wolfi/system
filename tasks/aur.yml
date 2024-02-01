@@ -15,10 +15,17 @@
     validate: 'visudo -cf %s'
 
 
-- name: Install signal and slack using yay
+- name: (AUR) Install signal and slack
   kewlfft.aur.aur:
     use: yay
     state: present
     name:
       - slack-desktop
       - signal-desktop
+
+- name: (AUR) Install i3lock-color
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - i3lock-color

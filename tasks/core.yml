@@ -46,7 +46,6 @@
   community.general.pacman:
     name: 
     - xautolock
-    # - i3lock-color
     - maim
     - unclutter
     - dunst
@@ -88,9 +87,6 @@
     - xdg-desktop-portal
     state: present
     extra_args: --noconfirm
-
-- name: Install more desktop software from the AUR
-  shell: yay --noconfirm aur/i3lock-color
 
 # - name: Create X11 conf dir if not exists
   # become: true
