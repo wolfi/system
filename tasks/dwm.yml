@@ -10,8 +10,11 @@
 
 - name: dwm checkout
   git:
-    repo: https://github.com/Wolfi/dwm.git
+    repo: git@github.com:Wolfi/dwm.git
     dest: "{{ lookup('env', 'HOME') }}/personal/dwm"
+    update: yes
+    accept_newhostkey: yes
+    key_file: "{{ key_setup_dst }}" 
 
 - name: Run make and install as root
   community.general.make:

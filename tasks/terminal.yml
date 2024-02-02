@@ -10,8 +10,11 @@
 
 - name: ST checkout
   git:
-    repo: https://github.com/Wolfi/lukesmithxyz-st
+    repo: git@github.com:Wolfi/lukesmithxyz-st.git
     dest: "{{ lookup('env', 'HOME') }}/personal/lukesmith-st"
+    update: yes
+    accept_newhostkey: yes
+    key_file: "{{ key_setup_dst }}" 
 
 - name: Run make and install as root
   community.general.make:

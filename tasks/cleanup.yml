@@ -1,3 +1,8 @@
+- name: Fix remote url for system repository
+  shell: git remote set-url origin git@github.com:Wolfi/system.git
+  args:
+    chdir: $HOME/personal/system
+
 - name: Delete setup key
   ansible.builtin.file:
     path: "{{ key_setup_dst }}"
