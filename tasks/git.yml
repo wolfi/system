@@ -14,3 +14,10 @@
   tags:
     - git
 
+- name: Git setup default branch
+  git_config:
+    name: init.defaultBranch
+    scope: global
+    value: main
+  tags:
+    - git
