@@ -14,7 +14,6 @@
     mode: 0644
     validate: 'visudo -cf %s'
 
-
 - name: (AUR) Install signal and slack
   kewlfft.aur.aur:
     use: yay
@@ -22,6 +21,13 @@
     name:
       - slack-desktop
       - signal-desktop
+
+- name: (AUR) Install spotify
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - spotify
 
 - name: (AUR) Install i3lock-color
   kewlfft.aur.aur:
