@@ -12,4 +12,4 @@
     use: yay
     state: present
     name:
-      - logseq-desktop
+      - logseq-desktop-bin
