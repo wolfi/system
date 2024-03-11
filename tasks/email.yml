@@ -1,0 +1,32 @@
+# https://bence.ferdinandy.com/2023/07/20/email-in-the-terminal-a-complete-guide-to-the-unix-way-of-email/
+# https://linuxhint.com/gpg-command-ubuntu/
+
+- name: Install GnuPG
+  become: true
+  community.general.pacman:
+    state: present
+    name: 
+    - gnupg
+  tags:
+  - gpg
+
+- name: (AUR) Install mailctl
+  become: true
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - mailctl-bin
+
+- name: Install aerc
+  become: true
+  community.general.pacman:
+    state: present
+    name: 
+    - aerc
+  tags:
+  - email
+
+
+
+
