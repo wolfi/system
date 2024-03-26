@@ -33,6 +33,9 @@
     - curl
     - fwupd
     - yay
+    - pandoc-cli
+    - texlive
+    - texlive-binextra
     state: present
   tags:
   - setup
