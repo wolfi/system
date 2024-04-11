@@ -21,3 +21,11 @@
     value: main
   tags:
     - git
+
+- name: Git setup default branch
+  git_config:
+    name: push.autoSetupRemote
+    scope: global
+    value: true
+  tags:
+    - git
