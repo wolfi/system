@@ -22,6 +22,14 @@
   tags:
     - git
 
+- name: Git setup rebase
+  git_config:
+    name: pull.rebase
+    scope: global
+    value: true
+  tags:
+    - git
+
 - name: Git setup default branch
   git_config:
     name: push.autoSetupRemote
