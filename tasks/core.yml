@@ -157,6 +157,11 @@
     - ttf-joypixels
     state: present
  
+- name: Install Tmux Plugin Manager TPM
+  git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "{{ lookup('env', 'HOME') }}/.tmux/plugins/tpm"
+
 - name: Checkout Qogir Theme
   git:
     repo: https://github.com/vinceliuice/Qogir-theme
