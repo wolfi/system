@@ -58,6 +58,7 @@
 
 - name: Remove existing .Xresources
   shell: rm $HOME/.Xresources
+  ignore_errors: true
   tags:
     - setup
     - dotfiles
