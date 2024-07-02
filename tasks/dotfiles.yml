@@ -1,8 +1,8 @@
 - name: Install stow
   become: true
   community.general.pacman:
-    name: 
-    - stow
+    name:
+      - stow
     state: present
   tags:
     - setup
@@ -11,8 +11,8 @@
 - name: Make sure acl exists
   become: true
   community.general.pacman:
-    name: 
-    - acl
+    name:
+      - acl
     state: present
   tags:
     - setup
@@ -24,22 +24,22 @@
     dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
     update: yes
     accept_newhostkey: yes
-    version: master
-    key_file: "{{ key_setup_dst }}" 
+    version: main
+    key_file: "{{ key_setup_dst }}"
   tags:
     - setup
     - dotfiles
 
 - name: Check if tuigreet cache dir is already present
   become: true
-  stat: 
+  stat:
     path: /var/cache/tuigreet
   register: tuigreet_cache_dir
 
 - name: Create greetd cache dir
   when: not tuigreet_cache_dir.stat.exists
   become: true
-  shell: | 
+  shell: |
     mkdir /var/cache/tuigreet
     chown _greeter:_greeter /var/cache/tuigreet
     chmod 0755 /var/cache/tuigreet
@@ -56,7 +56,6 @@
     - dotfiles
     - setup
 
-
 - name: Remove existing .Xresources
   shell: rm $HOME/.Xresources
   tags:
@@ -72,7 +71,7 @@
     - dotfiles
 
 - name: Copy images
-  shell: | 
+  shell: |
     mkdir $HOME/Pictures/wallpaper
     cp -r $HOME/.dotfiles/images/* $HOME/Pictures/wallpaper
   tags:
