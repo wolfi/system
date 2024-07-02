@@ -30,7 +30,7 @@
   tags:
     - git
 
-- name: Git setup default branch
+- name: Git setup auto setup remote
   git_config:
     name: push.autoSetupRemote
     scope: global
