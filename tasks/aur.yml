@@ -49,3 +49,10 @@
     state: present
     name:
       - displaylink
+
+- name: Enable displaylink service
+  become: true
+  ansible.builtin.systemd_service:
+    name: displaylink
+    enabled: true
+    force: true
