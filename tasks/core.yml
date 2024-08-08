@@ -92,11 +92,23 @@
     state: present
     extra_args: --noconfirm
 
-# - name: Create X11 conf dir if not exists
-  # become: true
-  # ansible.builtin.file:
-    # path: /etc/X11/xorg.conf.d
-    # state: directory
+- name: Create X11 conf dir if not exists
+  become: true
+  ansible.builtin.file:
+    path: /etc/X11/xorg.conf.d
+    state: directory
+
+- name: Create X11 conf for evdi to support displaylink screens
+  become: true
+  copy:
+    dest: /etc/X11/xorg.conf.d/20-evdi.conf
+    content: |
+Section "OutputClass"
+Identifier "DisplayLink"
+MatchDriver "evdi"
+Driver "modesetting"
+Option "AccelMethod" "none"
+EndSection
 
 # - name: Set keyboard layout
   # become: true

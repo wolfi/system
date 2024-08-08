@@ -43,6 +43,13 @@
     name:
       - evdi
 
+- name: (AUR) Install autorandr (TUXEDO Laptop DP via USB-C)
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - autorandr
+
 - name: (AUR) Install displaylink (TUXEDO Laptop DP via USB-C)
   kewlfft.aur.aur:
     use: yay
