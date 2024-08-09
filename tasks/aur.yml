@@ -29,12 +29,12 @@
     name:
       - spotify
 
-- name: (AUR) Install i3lock-color
-  kewlfft.aur.aur:
-    use: yay
-    state: present
-    name:
-      - i3lock-color
+# - name: (AUR) Install i3lock-color
+#   kewlfft.aur.aur:
+#     use: yay
+#     state: present
+#     name:
+#       - i3lock-color
 
 - name: (AUR) Install evdi (TUXEDO Laptop DP via USB-C)
   kewlfft.aur.aur:
