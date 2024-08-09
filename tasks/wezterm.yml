@@ -1,0 +1,17 @@
+- name: Wezterm checkout
+  git:
+    repo: https://github.com/wez/wezterm.git
+    dest: "{{ lookup('env', 'HOME') }}/personal/wezterm"
+    recursive: yes
+    depth: 1
+    update: yes
+    accept_newhostkey: yes
+
+- name: Build wezterm
+  shell: |
+    git submodule update --init --recursive
+    ./get-deps
+    cargo build --release
+    cargo run --release --bin wezterm -- start
+  args:
+    chdir: "{{ lookup('env', 'HOME') }}/personal/wezterm"

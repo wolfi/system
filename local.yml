@@ -23,8 +23,8 @@
     - include_tasks: tasks/sddm.yml
     - include_tasks: tasks/dotfiles.yml
     - include_tasks: tasks/zsh.yml
-    - include_tasks: tasks/terminal.yml
     - include_tasks: tasks/dev.yml
+    - include_tasks: tasks/terminal.yml
     - include_tasks: tasks/aur.yml
     - include_tasks: tasks/pkms.yml
     - include_tasks: tasks/cleanup.yml

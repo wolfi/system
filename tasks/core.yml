@@ -2,44 +2,44 @@
   become: true
   community.general.pacman:
     name:
-    - base-devel
-    - cmake
-    - python
-    - python-pipx
-    - mkcert
+      - base-devel
+      - cmake
+      - python
+      - python-pipx
+      - mkcert
     state: present
   tags:
-  - setup
-  - core
+    - setup
+    - core
 
 - name: CLI tools
   become: true
   community.general.pacman:
-    name: 
-    - bc
-    - tree
-    - tldr
-    - imagemagick
-    - pulsemixer
-    - fzf
-    - fd
-    - tmux
-    - nano
-    - bat
-    - htop
-    - ripgrep
-    - unzip
-    - wget
-    - curl
-    - fwupd
-    - yay
-    - pandoc-cli
-    - texlive
-    - texlive-binextra
+    name:
+      - bc
+      - tree
+      - tldr
+      - imagemagick
+      - pulsemixer
+      - fzf
+      - fd
+      - tmux
+      - nano
+      - bat
+      - htop
+      - ripgrep
+      - unzip
+      - wget
+      - curl
+      - fwupd
+      - yay
+      - pandoc-cli
+      - texlive
+      - texlive-binextra
     state: present
   tags:
-  - setup
-  - core
+    - setup
+    - core
 
 - name: Install calcure
   shell: pipx install --include-deps calcure
@@ -47,48 +47,49 @@
 - name: Desktop environment
   become: true
   community.general.pacman:
-    name: 
-    - xautolock
-    - maim
-    - unclutter
-    - dunst
-    - feh
-    - xclip
-    - xsel
-    - thunar
-    - thunar-archive-plugin
-    - thunar-volman
-    - lxappearance-gtk3
-    - lxsession
-    - picom
-    - starship
-    - rofi
-    - xf86-input-wacom
-    - flameshot
-    - zathura
-    - zathura-pdf-poppler
-    - firefox-developer-edition
-    - torbrowser-launcher
-    - chromium
-    - alacritty
-    - chromium
-    - gimp
-    - blender
-    - inkscape
-    - xterm
-    - qtile
-    - awesome
-    - polybar
-    - arc-gtk-theme-eos
-    - adapta-gtk-theme
-    - arc-icon-theme
-    - papirus-icon-theme
-    - greetd-tuigreet
-    - vicious # awesome
-    - dex     # awesome
-    - rlwrap  # awesome 
-    - imlib2  # awesome
-    - xdg-desktop-portal
+    name:
+      - xautolock
+      - maim
+      - unclutter
+      - dunst
+      - feh
+      - xclip
+      - xsel
+      - wezterm
+      - thunar
+      - thunar-archive-plugin
+      - thunar-volman
+      - lxappearance-gtk3
+      - lxsession
+      - picom
+      - starship
+      - rofi
+      - xf86-input-wacom
+      - flameshot
+      - zathura
+      - zathura-pdf-poppler
+      - firefox
+      - torbrowser-launcher
+      - chromium
+      - alacritty
+      - chromium
+      - gimp
+      - blender
+      - inkscape
+      - xterm
+      - qtile
+      - awesome
+      - polybar
+      - arc-gtk-theme-eos
+      - adapta-gtk-theme
+      - arc-icon-theme
+      - papirus-icon-theme
+      - greetd-tuigreet
+      - vicious # awesome
+      - dex # awesome
+      - rlwrap # awesome
+      - imlib2 # awesome
+      - xdg-desktop-portal
     state: present
     extra_args: --noconfirm
 
@@ -111,10 +112,10 @@
 # EndSection
 
 # - name: Set keyboard layout
-  # become: true
-  # copy:
-    # dest: /etc/X11/xorg.conf.d/00-keyboard.conf
-    # content: |
+# become: true
+# copy:
+# dest: /etc/X11/xorg.conf.d/00-keyboard.conf
+# content: |
 # Section "InputClass"
 # Identifier "system-keyboard"
 # MatchIsKeyboard "on"
@@ -128,47 +129,47 @@
 
 - name: Checkout Awesome Bling
   git:
-    repo: 'https://github.com/BlingCorp/bling.git'
+    repo: "https://github.com/BlingCorp/bling.git"
     dest: "{{ lookup('env', 'HOME') }}/.config/awesome/bling"
 
 - name: Virtualization
   become: true
   community.general.pacman:
     name:
-    - qemu-full
+      - qemu-full
     state: present
 
 - name: Multimedia
   become: true
   community.general.pacman:
-    name: 
-    - mpv
-    - ffmpeg
+    name:
+      - mpv
+      - ffmpeg
     state: present
 
 - name: Fonts
   become: true
   community.general.pacman:
-    name: 
-    - otf-firamono-nerd
-    - otf-droid-nerd
-    - ttf-3270-nerd
-    - ttf-cascadia-code-nerd
-    - ttf-fantasque-nerd
-    - ttf-firacode-nerd
-    - ttf-hack-nerd
-    - ttf-iosevkaterm-nerd
-    - ttf-jetbrains-mono-nerd
-    - ttf-nerd-fonts-symbols
-    - ttf-nerd-fonts-symbols-common
-    - ttf-nerd-fonts-symbols-mono
-    - ttf-noto-nerd
-    - ttf-roboto-mono-nerd
-    - ttf-roboto
-    - ttf-font-awesome
-    - ttf-joypixels
+    name:
+      - otf-firamono-nerd
+      - otf-droid-nerd
+      - ttf-3270-nerd
+      - ttf-cascadia-code-nerd
+      - ttf-fantasque-nerd
+      - ttf-firacode-nerd
+      - ttf-hack-nerd
+      - ttf-iosevkaterm-nerd
+      - ttf-jetbrains-mono-nerd
+      - ttf-nerd-fonts-symbols
+      - ttf-nerd-fonts-symbols-common
+      - ttf-nerd-fonts-symbols-mono
+      - ttf-noto-nerd
+      - ttf-roboto-mono-nerd
+      - ttf-roboto
+      - ttf-font-awesome
+      - ttf-joypixels
     state: present
- 
+
 - name: Install Tmux Plugin Manager TPM
   git:
     repo: https://github.com/tmux-plugins/tpm
@@ -183,4 +184,3 @@
   shell: bash install.sh
   args:
     chdir: /tmp/qogir
-

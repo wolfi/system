@@ -6,7 +6,6 @@
       - libx11
       - libxft
       - harfbuzz
-      - wezterm
     state: present
 
 - name: ST checkout
