@@ -2,23 +2,36 @@
   become: true
   community.general.pacman:
     name:
-    - sddm
-    - qt5-quickcontrols2
-    - qt5-svg
-    - qt5-graphicaleffects
+      - sddm
+      - qt5-quickcontrols2
+      - qt5-svg
+      - qt5-graphicaleffects
     state: present
 
-- name: Check if sddm theme is already present
+- name: Check if sddm rose pine theme is already present
   become: true
-  stat: 
+  stat:
     path: /usr/share/sddm/themes/rose-pine-theme
   register: sddm_theme_dir
 
-- name: Copy theme
+- name: Copy rose pine theme
   when: not sddm_theme_dir.stat.exists
   become: true
   copy:
     src: "sddm/rose-pine-theme"
+    dest: "/usr/share/sddm/themes/"
+
+- name: Check if sddm gruvbox-material theme is already present
+  become: true
+  stat:
+    path: /usr/share/sddm/themes/gruvbox-material-theme
+  register: sddm_theme_dir
+
+- name: Copy gruvbox-material theme
+  when: not sddm_theme_dir.stat.exists
+  become: true
+  copy:
+    src: "sddm/gruvbox-material-theme"
     dest: "/usr/share/sddm/themes/"
 
 - name: Create sddm config dir if not exists
@@ -33,7 +46,7 @@
     dest: /etc/sddm.conf.d/theme.conf
     content: |
       [Theme]
-      Current=rose-pine-theme
+      Current=gruvbox-material-theme
 
 - name: Enable sddm service
   become: true
