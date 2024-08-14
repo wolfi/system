@@ -57,6 +57,7 @@
       - xsel
       - wezterm
       - scrot
+      - numlockx
       - thunar
       - thunar-archive-plugin
       - thunar-volman
