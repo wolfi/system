@@ -94,6 +94,17 @@
     state: present
     extra_args: --noconfirm
 
+- name: Clone i3lock-color
+  git:
+    repo: https://github.com/Raymo111/i3lock-color.git
+    dest: /tmp/i3lock-color
+    force: true
+
+- name: Install i3lock-color
+  shell: bash install-i3lock-color.sh
+  args:
+    chdir: /tmp/i3lock-color
+
 # - name: Create X11 conf dir if not exists
 #   become: true
 #   ansible.builtin.file:
