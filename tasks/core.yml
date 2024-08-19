@@ -84,6 +84,7 @@
       - polybar
       - arc-gtk-theme-eos
       - adapta-gtk-theme
+      - matcha-gtk-theme
       - arc-icon-theme
       - papirus-icon-theme
       - greetd-tuigreet
