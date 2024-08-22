@@ -17,6 +17,7 @@
   community.general.pacman:
     name:
       - bc
+      - bind
       - tree
       - tldr
       - imagemagick
