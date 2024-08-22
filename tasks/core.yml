@@ -18,6 +18,8 @@
     name:
       - bc
       - bind
+      - whois
+      - traceroute
       - tree
       - tldr
       - imagemagick
