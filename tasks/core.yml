@@ -74,6 +74,7 @@
       - zathura
       - zathura-pdf-poppler
       - firefox
+      - newsboat
       - torbrowser-launcher
       - chromium
       - alacritty
