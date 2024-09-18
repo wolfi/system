@@ -202,3 +202,10 @@
   shell: bash install.sh
   args:
     chdir: /tmp/qogir
+# Removed, DisplayLink won't start anymored, can't boot into system this way
+# - name: Enable nvidia kernel model setting for sway support
+#   become: true
+#   copy:
+#     dest: "/etc/modprobe.d/nvidia-drm.conf"
+#     content: |
+#       options nvidia_drm modeset=1 fbdev=1

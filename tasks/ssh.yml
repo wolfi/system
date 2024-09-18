@@ -51,3 +51,10 @@
     key: "{{ lookup('file', item) }}"
   with_fileglob:
     - "{{ lookup('env', 'HOME') }}/.ssh/*.pub"
+
+- name: Create SSH config file
+  become: true
+  copy:
+    dest: "{{ lookup('env', 'HOME') }}/.ssh/config"
+    content: |
+      AddKeysToAgent yes
