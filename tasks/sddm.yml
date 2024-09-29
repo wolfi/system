@@ -52,5 +52,5 @@
   become: true
   ansible.builtin.systemd_service:
     name: sddm
-    enabled: true
+    enabled: false
     force: true
