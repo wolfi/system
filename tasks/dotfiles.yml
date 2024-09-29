@@ -30,32 +30,6 @@
     - setup
     - dotfiles
 
-- name: Check if tuigreet cache dir is already present
-  become: true
-  stat:
-    path: /var/cache/tuigreet
-  register: tuigreet_cache_dir
-
-- name: Create greetd cache dir
-  when: not tuigreet_cache_dir.stat.exists
-  become: true
-  shell: |
-    mkdir /var/cache/tuigreet
-    chown _greeter:_greeter /var/cache/tuigreet
-    chmod 0755 /var/cache/tuigreet
-  tags:
-    - setup
-    - dotfiles
-
-- name: Copy greetd config
-  become: true
-  copy:
-    src: "{{ lookup('env', 'HOME') }}/.dotfiles/greetd/config.toml"
-    dest: "/etc/greetd/config.toml"
-  tags:
-    - dotfiles
-    - setup
-
 - name: Remove existing .Xresources
   shell: rm $HOME/.Xresources
   ignore_errors: true
