@@ -64,7 +64,6 @@
       - thunar
       - thunar-archive-plugin
       - thunar-volman
-      - lxappearance-gtk3
       - lxsession
       - picom
       - starship
@@ -86,6 +85,7 @@
       - qtile
       - awesome
       - polybar
+      - lxappearance-gtk3
       - arc-gtk-theme-eos
       - adapta-gtk-theme
       - matcha-gtk-theme

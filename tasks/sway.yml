@@ -2,10 +2,37 @@
   become: true
   community.general.pacman:
     name:
+      - acpi
+      - autotiling
+      - azote
+      - brightnessctl
+      - cliphist
+      - egl-wayland
+      - file-roller
+      - fuzzel
+      - greetd
+      - greetd-regreet
+      - grim
+      - htop
+      - btop
+      - jq
+      - mako
+      - network-manager-applet
+      - nwg-drawer
+      - nwg-look
+      - pamixer
+      - polkit-gnome
+      - slurp
+      - swappy
       - sway
+      - sway-contrib
       - swaylock
       - swayidle
       - swaybg
+      - sysstat
+      - thunar
+      - thunar-archive-plugin
+      - thunar-volman
       - foot
       - foot-terminfo
       - mako
@@ -13,7 +40,10 @@
       - i3status
       - polkit
       - waybar
+      - wayland-protocols
+      - wl-clipboard
       - wmenu
+      - xed
       - xorg-xwayland
       - xdg-desktop-portal-gtk
       - xdg-desktop-portal-wlr
@@ -21,3 +51,54 @@
   tags:
     - setup
     - wayland
+
+- name: Install GTK themes
+  become: true
+  community.general.pacman:
+    name:
+      - lxappearance-gtk3
+      - arc-gtk-theme-eos
+      - adapta-gtk-theme
+      - arc-icon-theme
+      - papirus-icon-theme
+      - gtk-engine-murrine
+      - gtk-layer-shell
+    state: present
+  tags:
+    - setup
+    - gtk
+
+- name: Checkout Qogir Theme
+  git:
+    repo: https://github.com/vinceliuice/Qogir-theme
+    dest: /tmp/qogir
+
+- name: Install Qogir Theme
+  shell: bash install.sh
+  args:
+    chdir: /tmp/qogir
+
+- name: Fonts
+  become: true
+  community.general.pacman:
+    name:
+      - awesome-terminal-fonts
+      - otf-firamono-nerd
+      - otf-droid-nerd
+      - ttf-3270-nerd
+      - ttf-cascadia-code-nerd
+      - ttf-fantasque-nerd
+      - ttf-firacode-nerd
+      - ttf-hack-nerd
+      - ttf-iosevkaterm-nerd
+      - ttf-jetbrains-mono-nerd
+      - ttf-nerd-fonts-symbols
+      - ttf-nerd-fonts-symbols-common
+      - ttf-nerd-fonts-symbols-mono
+      - ttf-ubuntu-font-family
+      - ttf-noto-nerd
+      - ttf-roboto-mono-nerd
+      - ttf-roboto
+      - ttf-font-awesome
+      - ttf-joypixels
+    state: present
