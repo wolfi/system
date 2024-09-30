@@ -47,56 +47,23 @@
 - name: Install calcure
   shell: pipx install --include-deps calcure
 
-- name: Desktop environment
+- name: Tools
   become: true
   community.general.pacman:
     name:
-      - xautolock
-      - maim
-      - unclutter
-      - dunst
-      - feh
-      - xclip
-      - xsel
-      - wezterm
-      - scrot
-      - numlockx
-      - thunar
-      - thunar-archive-plugin
-      - thunar-volman
-      - lxsession
-      - picom
-      - starship
-      - rofi
       - xf86-input-wacom
-      - flameshot
       - zathura
       - zathura-pdf-poppler
       - firefox
       - newsboat
       - torbrowser-launcher
       - chromium
-      - alacritty
-      - chromium
       - gimp
       - blender
       - inkscape
-      - xterm
-      - qtile
-      - awesome
-      - polybar
-      - lxappearance-gtk3
-      - arc-gtk-theme-eos
-      - adapta-gtk-theme
-      - matcha-gtk-theme
-      - arc-icon-theme
-      - papirus-icon-theme
-      - greetd-tuigreet
-      - vicious # awesome
-      - dex # awesome
-      - rlwrap # awesome
-      - imlib2 # awesome
-      - xdg-desktop-portal
+      - qemu-full
+      - mpv
+      - ffmpeg
     state: present
     extra_args: --noconfirm
 
@@ -111,6 +78,8 @@
   args:
     chdir: /tmp/i3lock-color
 
+- name: Create user dirs
+  shell: xdg-user-dirs-update --force
 # - name: Create X11 conf dir if not exists
 #   become: true
 #   ansible.builtin.file:
@@ -141,71 +110,3 @@
 # Option "XkbModel" "pc104"
 # Option "XkbVariant" "de"
 # EndSection
-
-- name: Create user dirs
-  shell: xdg-user-dirs-update --force
-
-- name: Checkout Awesome Bling
-  git:
-    repo: "https://github.com/BlingCorp/bling.git"
-    dest: "{{ lookup('env', 'HOME') }}/.config/awesome/bling"
-
-- name: Virtualization
-  become: true
-  community.general.pacman:
-    name:
-      - qemu-full
-    state: present
-
-- name: Multimedia
-  become: true
-  community.general.pacman:
-    name:
-      - mpv
-      - ffmpeg
-    state: present
-
-- name: Fonts
-  become: true
-  community.general.pacman:
-    name:
-      - otf-firamono-nerd
-      - otf-droid-nerd
-      - ttf-3270-nerd
-      - ttf-cascadia-code-nerd
-      - ttf-fantasque-nerd
-      - ttf-firacode-nerd
-      - ttf-hack-nerd
-      - ttf-iosevkaterm-nerd
-      - ttf-jetbrains-mono-nerd
-      - ttf-nerd-fonts-symbols
-      - ttf-nerd-fonts-symbols-common
-      - ttf-nerd-fonts-symbols-mono
-      - ttf-noto-nerd
-      - ttf-roboto-mono-nerd
-      - ttf-roboto
-      - ttf-font-awesome
-      - ttf-joypixels
-    state: present
-
-- name: Install Tmux Plugin Manager TPM
-  git:
-    repo: https://github.com/tmux-plugins/tpm
-    dest: "{{ lookup('env', 'HOME') }}/.tmux/plugins/tpm"
-
-- name: Checkout Qogir Theme
-  git:
-    repo: https://github.com/vinceliuice/Qogir-theme
-    dest: /tmp/qogir
-
-- name: Install Qogir Theme
-  shell: bash install.sh
-  args:
-    chdir: /tmp/qogir
-# Removed, DisplayLink won't start anymored, can't boot into system this way
-# - name: Enable nvidia kernel model setting for sway support
-#   become: true
-#   copy:
-#     dest: "/etc/modprobe.d/nvidia-drm.conf"
-#     content: |
-#       options nvidia_drm modeset=1 fbdev=1

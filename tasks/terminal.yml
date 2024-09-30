@@ -2,24 +2,10 @@
   become: true
   community.general.pacman:
     name:
-      - fontconfig
-      - libx11
-      - libxft
-      - harfbuzz
+      - tmux
     state: present
 
-- name: ST checkout
+- name: Install Tmux Plugin Manager TPM
   git:
-    repo: git@github.com:Wolfi/lukesmithxyz-st.git
-    dest: "{{ lookup('env', 'HOME') }}/personal/lukesmith-st"
-    update: yes
-    accept_newhostkey: yes
-    key_file: "{{ key_setup_dst }}"
-
-- name: Run make and install as root
-  community.general.make:
-    chdir: "{{ lookup('env', 'HOME') }}/personal/lukesmith-st"
-    targets:
-      - clean
-      - install
-  become: true
+    repo: https://github.com/tmux-plugins/tpm
+    dest: "{{ lookup('env', 'HOME') }}/.tmux/plugins/tpm"

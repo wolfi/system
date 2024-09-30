@@ -35,6 +35,7 @@
       - thunar-volman
       - foot
       - foot-terminfo
+      - wezterm
       - mako
       - dmenu
       - i3status
@@ -45,6 +46,7 @@
       - wmenu
       - xed
       - xorg-xwayland
+      - xdg-desktop-portal
       - xdg-desktop-portal-gtk
       - xdg-desktop-portal-wlr
     state: present
