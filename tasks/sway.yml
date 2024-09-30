@@ -74,7 +74,7 @@
       [Desktop Entry]
       Name=Sway
       Comment=An i3-compatible Wayland compositor
-      Exec=/usr/local/bin/sway-start.sh=
+      Exec=/usr/local/bin/sway-start.sh
       Type=Application
 
 - name: Install GTK themes
