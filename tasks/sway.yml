@@ -66,6 +66,17 @@
     src: "greetd/regreet.toml"
     dest: "/etc/greetd/regreet.toml"
 
+- name: Create dwm xsession file
+  become: true
+  copy:
+    dest: "/usr/share/wayland-sessions/sway.desktop"
+    content: |
+      [Desktop Entry]
+      Name=Sway
+      Comment=An i3-compatible Wayland compositor
+      Exec=/usr/local/bin/sway-start.sh=
+      Type=Application
+
 - name: Install GTK themes
   become: true
   community.general.pacman:
