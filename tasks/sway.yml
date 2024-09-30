@@ -54,6 +54,12 @@
     - setup
     - wayland
 
+- name: Copy regreet.toml
+  become: true
+  copy:
+    src: "greetd/regreet.toml"
+    dest: "/etc/greetd/regreet.toml"
+
 - name: Install GTK themes
   become: true
   community.general.pacman:
