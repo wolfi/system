@@ -44,6 +44,7 @@
       - wayland-protocols
       - wl-clipboard
       - wmenu
+      - yay
       - xed
       - xorg-xwayland
       - xdg-desktop-portal
