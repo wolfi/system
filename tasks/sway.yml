@@ -85,6 +85,8 @@
       - lxappearance-gtk3
       - arc-gtk-theme
       - adapta-gtk-theme
+      - qogir-gtk-theme
+      - qogir-icon-theme
       - arc-icon-theme
       - papirus-icon-theme
       - gtk-engine-murrine
@@ -93,16 +95,6 @@
   tags:
     - setup
     - gtk
-
-- name: Checkout Qogir Theme
-  git:
-    repo: https://github.com/vinceliuice/Qogir-theme
-    dest: /tmp/qogir
-
-- name: Install Qogir Theme
-  shell: bash install.sh
-  args:
-    chdir: /tmp/qogir
 
 - name: Fonts
   become: true
