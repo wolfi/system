@@ -21,7 +21,6 @@
       - nwg-drawer
       - nwg-look
       - pamixer
-      - pulsemixer
       - polkit-gnome
       - slurp
       - swappy
