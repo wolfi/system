@@ -71,12 +71,23 @@
 - name: Create dwm xsession file
   become: true
   copy:
+    dest: "/usr/share/wayland-sessions/sway-script.desktop"
+    content: |
+      [Desktop Entry]
+      Name=Sway Script
+      Comment=An i3-compatible Wayland compositor
+      Exec=/usr/local/bin/sway-start.sh
+      Type=Application
+
+- name: Create dwm xsession file
+  become: true
+  copy:
     dest: "/usr/share/wayland-sessions/sway.desktop"
     content: |
       [Desktop Entry]
       Name=Sway
       Comment=An i3-compatible Wayland compositor
-      Exec=/usr/local/bin/sway-start.sh
+      Exec=sway --unsupported-gpu
       Type=Application
 
 - name: Install GTK themes
