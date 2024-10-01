@@ -37,6 +37,24 @@
     - setup
     - dotfiles
 
+- name: Remove existing GTK theme files
+  shell: |
+    rm $HOME/.gtkrc-2.0
+    rm $HOME/.config/gtk-3.0/settings.ini
+    rm $HOME/.config/xsettingsd/xsettingsd.conf
+  ignore_errors: true
+  tags:
+    - setup
+    - dotfiles
+
+- name: Remove existing .zshrc
+  shell: |
+    rm $HOME/.zshrc
+  ignore_errors: true
+  tags:
+    - setup
+    - dotfiles
+
 - name: Stow dotfiles
   shell: ./stow.sh
   args:
