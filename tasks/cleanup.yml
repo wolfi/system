@@ -8,9 +8,9 @@
     path: "{{ key_setup_dst }}"
     state: absent
 
-- name: Create the `aur_builder` user TODO remove
+- name: Remove the `aur_builder` user 
   become: yes
   ansible.builtin.user:
     name: aur_builder
-    create_home: yes
-    group: wheel
+    state: absent
+    remove: yes
