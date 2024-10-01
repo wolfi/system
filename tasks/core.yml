@@ -21,7 +21,7 @@
       - whois
       - traceroute
       - tree
-      - tldr
+      - tealdeer
       - imagemagick
       - pulsemixer
       - fzf
