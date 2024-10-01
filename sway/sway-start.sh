@@ -1,13 +1,17 @@
-# Set desktop and session type
-export XDG_SESSION_TYPE wayland
-export XDG_CURRENT_DESKTOP sway
-export XDG_SESSION_DESKTOP sway
+#!/bin/sh
 
-# Specify Wayland backends for various applications
-export MOZ_ENABLE_WAYLAND 1
-export OZONE_PLATFORM wayland
-export GDK_BACKEND wayland
-export QT_QPA_PLATFORM wayland
+# Session
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=sway
+export XDG_CURRENT_DESKTOP=sway
+
+# Wayland stuff
+export MOZ_ENABLE_WAYLAND=1
+export OZONE_PLATFORM=wayland
+export GDK_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland
+export SDL_VIDEODRIVER=wayland
+export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Prevent using hardware cursors in Wayland, forcing software-rendered cursors.
 # Uncomment if you experience issues with your cursor
@@ -17,4 +21,11 @@ export QT_QPA_PLATFORM wayland
 # Uncomment if you are running in a virtual machine or have an underpowered GPU
 export WLR_RENDERER_ALLOW_SOFTWARE 1
 
-sway --unsupported-gpu
+exec sway --unsupported-gpu "$@"
+
+#
+# If you use systemd and want sway output to go to the journal, use this
+# instead of the `exec sway "$@"` above:
+#
+#    exec systemd-cat --identifier=sway sway "$@"
+#
