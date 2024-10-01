@@ -23,7 +23,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Allow the Wayland renderer to fall back to software rendering if necessary.
 # Uncomment if you are running in a virtual machine or have an underpowered GPU
-export WLR_RENDERER_ALLOW_SOFTWARE 1
+# export WLR_RENDERER_ALLOW_SOFTWARE=1
 
 exec sway --unsupported-gpu "$@"
 
