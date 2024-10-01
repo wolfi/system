@@ -10,7 +10,11 @@ export MOZ_ENABLE_WAYLAND=1
 export OZONE_PLATFORM=wayland
 export GDK_BACKEND=wayland
 export QT_QPA_PLATFORM=wayland
+export QT_ENABLE_HIGHDPI_SCALING=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_WAYLAND_RECONNECT=1
 export SDL_VIDEODRIVER=wayland
+export WLR_RENDERER=gles2
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Prevent using hardware cursors in Wayland, forcing software-rendered cursors.
