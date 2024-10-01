@@ -60,6 +60,7 @@
   copy:
     src: "sway/sway-start.sh"
     dest: "/usr/local/bin/sway-start.sh"
+    mode: "u+rwx"
 
 - name: Copy regreet.toml
   become: true
