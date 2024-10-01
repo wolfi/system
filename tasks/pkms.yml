@@ -1,6 +1,6 @@
 - name: Clone pkms data
   ansible.builtin.git:
-    repo: "git@github.com:Wolfi/pkms-logseq.git"
+    repo: "git@github.com:wolfi/pkms-logseq.git"
     dest: "{{ lookup('env', 'HOME') }}/personal/pkms-logseq"
     update: yes
     accept_newhostkey: yes

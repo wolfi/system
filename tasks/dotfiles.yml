@@ -20,7 +20,7 @@
 
 - name: Clone dotfiles
   ansible.builtin.git:
-    repo: "git@github.com:Wolfi/dotfiles.git"
+    repo: "git@github.com:wolfi/dotfiles.git"
     dest: "{{ lookup('env', 'HOME') }}/.dotfiles"
     update: yes
     accept_newhostkey: yes

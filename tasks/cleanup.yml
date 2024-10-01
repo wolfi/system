@@ -1,5 +1,5 @@
 - name: Fix remote url for system repository
-  shell: git remote set-url origin git@github.com:Wolfi/system.git
+  shell: git remote set-url origin git@github.com:wolfi/system.git
   args:
     chdir: $HOME/personal/system
 
@@ -7,3 +7,10 @@
   ansible.builtin.file:
     path: "{{ key_setup_dst }}"
     state: absent
+
+- name: Create the `aur_builder` user TODO remove
+  become: yes
+  ansible.builtin.user:
+    name: aur_builder
+    create_home: yes
+    group: wheel
