@@ -30,6 +30,13 @@
       - slack-desktop
       - signal-desktop
 
+- name: (AUR) Install steam
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - steam
+
 - name: (AUR) Install spotify
   kewlfft.aur.aur:
     use: yay
