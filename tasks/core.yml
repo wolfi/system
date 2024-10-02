@@ -36,6 +36,7 @@
       - curl
       - fwupd
       - yay
+      - p7zip
       - pandoc-cli
       - texlive
       - texlive-binextra
