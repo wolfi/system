@@ -5,10 +5,10 @@
   become: true
   community.general.pacman:
     state: present
-    name: 
-    - gnupg
+    name:
+      - gnupg
   tags:
-  - gpg
+    - gpg
 
 - name: (AUR) Install mailctl
   become: true
@@ -22,11 +22,7 @@
   become: true
   community.general.pacman:
     state: present
-    name: 
-    - aerc
+    name:
+      - aerc
   tags:
-  - email
-
-
-
-
+    - email
