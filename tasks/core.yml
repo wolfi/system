@@ -21,7 +21,7 @@
       - whois
       - traceroute
       - tree
-      - tldr
+      - tealdeer
       - imagemagick
       - pulsemixer
       - fzf
@@ -86,7 +86,6 @@
       - qtile
       - awesome
       - polybar
-      - arc-gtk-theme-eos
       - adapta-gtk-theme
       - matcha-gtk-theme
       - arc-icon-theme

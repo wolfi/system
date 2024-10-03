@@ -20,7 +20,6 @@
     - include_tasks: tasks/git.yml
     - include_tasks: tasks/core.yml
     - include_tasks: tasks/dwm.yml
-    - include_tasks: tasks/sddm.yml
     - include_tasks: tasks/dotfiles.yml
     - include_tasks: tasks/zsh.yml
     - include_tasks: tasks/dev.yml
