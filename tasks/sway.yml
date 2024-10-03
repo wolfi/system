@@ -57,12 +57,19 @@
     - setup
     - wayland
 
+- name: Copy wayland start env script
+  become: true
+  copy:
+    src: "wayland/env.sh"
+    dest: "/usr/local/bin/env.sh"
+    mode: "777"
+
 - name: Copy sway start script
   become: true
   copy:
-    src: "sway/sway-start.sh"
+    src: "wayland/sway-start.sh"
     dest: "/usr/local/bin/sway-start.sh"
-    mode: "u+rwx"
+    mode: "777"
 
 - name: Copy regreet.toml
   become: true

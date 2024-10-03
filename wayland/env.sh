@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # Session
 export XDG_SESSION_TYPE=wayland
 export XDG_SESSION_DESKTOP=sway
@@ -24,12 +22,3 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Allow the Wayland renderer to fall back to software rendering if necessary.
 # Uncomment if you are running in a virtual machine or have an underpowered GPU
 # export WLR_RENDERER_ALLOW_SOFTWARE=1
-
-exec sway --unsupported-gpu "$@"
-
-#
-# If you use systemd and want sway output to go to the journal, use this
-# instead of the `exec sway "$@"` above:
-#
-#    exec systemd-cat --identifier=sway sway "$@"
-#
