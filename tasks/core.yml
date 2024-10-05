@@ -65,6 +65,7 @@
       - qemu-full
       - mpv
       - ffmpeg
+      - pngquant
     state: present
     extra_args: --noconfirm
 
