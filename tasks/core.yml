@@ -53,6 +53,7 @@
     name:
       - xautolock
       - maim
+      - pngquant
       - unclutter
       - dunst
       - feh
