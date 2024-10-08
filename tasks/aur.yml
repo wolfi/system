@@ -21,6 +21,7 @@
     name:
       - slack-desktop
       - signal-desktop
+      - teams
 
 - name: (AUR) Install spotify
   kewlfft.aur.aur:
