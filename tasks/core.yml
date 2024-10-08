@@ -53,6 +53,7 @@
   community.general.pacman:
     name:
       - xf86-input-wacom
+      - xf86-video-nouveau
       - zathura
       - zathura-pdf-poppler
       - firefox
