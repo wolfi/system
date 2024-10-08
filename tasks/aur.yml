@@ -29,6 +29,7 @@
     name:
       - slack-desktop
       - signal-desktop
+      - icaclient
 
 - name: (AUR) Install steam
   kewlfft.aur.aur:
