@@ -99,6 +99,7 @@
       - rlwrap # awesome
       - imlib2 # awesome
       - xdg-desktop-portal
+      - xf86-video-nouveau
     state: present
     extra_args: --noconfirm
 
