@@ -66,6 +66,8 @@
       - mpv
       - ffmpeg
       - pngquant
+      - calibre
+      - poppler
     state: present
     extra_args: --noconfirm
 
