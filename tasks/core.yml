@@ -68,6 +68,8 @@
       - lxappearance-gtk3
       - lxsession
       - picom
+      - calibre
+      - poppler
       - starship
       - rofi
       - xf86-input-wacom
