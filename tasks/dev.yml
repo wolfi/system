@@ -2,22 +2,22 @@
 - name: Development
   become: true
   community.general.pacman:
-    name: 
-    - go
-    - docker
+    name:
+      - go
+      - docker
     state: present
 
 - name: Create dev dir personal
   ansible.builtin.file:
     path: /home/steven/personal
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: Create dev dir work
   ansible.builtin.file:
     path: /home/steven/work
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: n checkout
   git:
@@ -33,6 +33,9 @@
 - name: Install node LTS
   shell: N_PREFIX=$HOME/.local/n $HOME/.local/n/bin/n lts
 
+- name: Enable pnpm via corepack
+  shell: corepack enable pnpm
+
 - name: check if cargo is installed
   shell: command -v cargo
   register: cargo_exists
@@ -43,8 +46,8 @@
   get_url:
     url: https://sh.rustup.rs
     dest: /tmp/sh.rustup.rs
-    mode: '0755'
-    force: 'yes'
+    mode: "0755"
+    force: "yes"
   tags:
     - rust
 
@@ -57,19 +60,19 @@
 - name: Neovim
   become: true
   community.general.pacman:
-    name: 
-    - python-pynvim
-    - python-pip
-    - neovim
-    - tree-sitter
-    - tree-sitter-cli
-    - luarocks
-    - wl-clipboard
+    name:
+      - python-pynvim
+      - python-pip
+      - neovim
+      - tree-sitter
+      - tree-sitter-cli
+      - luarocks
+      - wl-clipboard
     state: present
   tags:
-  - setup
-  - core
-  - neovim
+    - setup
+    - core
+    - neovim
 
 - name: Install neovim npm package
   shell: PATH="$HOME/.local/n/bin:$PATH" npm install -g neovim
