@@ -91,6 +91,21 @@
 #     path: /etc/X11/xorg.conf.d
 #     state: directory
 
+- name: Install bluetooth modules and tools
+  become: true
+  community.general.pacman:
+    name:
+      - bluez
+      - bluez-utils
+    state: present
+    extra_args: --noconfirm
+
+- name: Enable bluetooth service
+  become: true
+  ansible.builtin.systemd_service:
+    name: bluetooth
+    enabled: true
+    force: true
 # - name: Create X11 conf for evdi to support displaylink screens
 #   become: true
 #   copy:
