@@ -205,6 +205,22 @@
   shell: bash install.sh
   args:
     chdir: /tmp/qogir
+
+- name: Install bluetooth modules and tools
+  become: true
+  community.general.pacman:
+    name:
+      - bluez
+      - bluez-utils
+    state: present
+    extra_args: --noconfirm
+
+- name: Enable bluetooth service
+  become: true
+  ansible.builtin.systemd_service:
+    name: bluetooth
+    enabled: true
+    force: true
 # Removed, DisplayLink won't start anymored, can't boot into system this way
 # - name: Enable nvidia kernel model setting for sway support
 #   become: true
