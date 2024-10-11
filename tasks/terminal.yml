@@ -10,7 +10,7 @@
 
 - name: ST checkout
   git:
-    repo: git@github.com:Wolfi/lukesmithxyz-st.git
+    repo: git@github.com:wolfi/lukesmithxyz-st.git
     dest: "{{ lookup('env', 'HOME') }}/personal/lukesmith-st"
     update: yes
     accept_newhostkey: yes
