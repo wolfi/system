@@ -22,7 +22,7 @@
       - matcha-gtk-theme
       - qogir-gtk-theme
 
-- name: (AUR) Install signal and slack
+- name: (AUR) Install communication apps
   kewlfft.aur.aur:
     use: yay
     state: present
@@ -44,6 +44,13 @@
     state: present
     name:
       - spotify
+
+- name: (AUR) Install Brave browser
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - brave-bin
 
 # - name: (AUR) Install i3lock-color
 #   kewlfft.aur.aur:
