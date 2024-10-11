@@ -196,16 +196,6 @@
     repo: https://github.com/tmux-plugins/tpm
     dest: "{{ lookup('env', 'HOME') }}/.tmux/plugins/tpm"
 
-- name: Checkout Qogir Theme
-  git:
-    repo: https://github.com/vinceliuice/Qogir-theme
-    dest: /tmp/qogir
-
-- name: Install Qogir Theme
-  shell: bash install.sh
-  args:
-    chdir: /tmp/qogir
-
 - name: Install bluetooth modules and tools
   become: true
   community.general.pacman:
