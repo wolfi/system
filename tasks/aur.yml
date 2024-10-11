@@ -14,6 +14,14 @@
     mode: 0644
     validate: "visudo -cf %s"
 
+- name: (AUR) Install more GTK themes
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - matcha-gtk-theme
+      - qogir-gtk-theme
+
 - name: (AUR) Install signal and slack
   kewlfft.aur.aur:
     use: yay
