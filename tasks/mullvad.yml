@@ -1,10 +1,17 @@
+- name: (AUR) Install mullvad VPN
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - mullvad-vpn
+
 - name: Download mullvad browser
   when: cargo_exists is failed
   get_url:
     url: https://mullvad.net/en/download/browser/linux-x86_64/latest
     dest: /tmp/mullvad-browser.tar.xz
-    mode: '0755'
-    force: 'yes'
+    mode: "0755"
+    force: "yes"
   tags:
     - mullvad
     - internet
@@ -16,4 +23,3 @@
   tags:
     - mullvad
     - internet
-
