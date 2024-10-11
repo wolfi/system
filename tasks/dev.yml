@@ -34,7 +34,7 @@
   shell: N_PREFIX=$HOME/.local/n $HOME/.local/n/bin/n lts
 
 - name: Enable pnpm via corepack
-  shell: corepack enable pnpm
+  shell: $HOME/.local/n/bin/corepack enable pnpm
 
 - name: check if cargo is installed
   shell: command -v cargo
