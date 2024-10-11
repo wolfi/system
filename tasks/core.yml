@@ -106,6 +106,7 @@
       - inkscape
       - xterm
       - qtile
+      - steam
       - awesome
       - polybar
       - adapta-gtk-theme
