@@ -21,7 +21,6 @@
       - whois
       - traceroute
       - tree
-      - tealdeer
       - imagemagick
       - pulsemixer
       - fzf
@@ -46,6 +45,26 @@
 
 - name: Install calcure
   shell: pipx install --include-deps calcure
+
+- name: Remove tldr
+  become: true
+  community.general.pacman:
+    name:
+      - tldr
+    state: absent
+  tags:
+    - setup
+    - core
+
+- name: Install tealdeer
+  become: true
+  community.general.pacman:
+    name:
+      - tealdeer
+    state: present
+  tags:
+    - setup
+    - core
 
 - name: Desktop environment
   become: true
@@ -124,12 +143,12 @@
   copy:
     dest: /etc/X11/xorg.conf.d/20-evdi.conf
     content: |
-Section "OutputClass"
-Identifier "DisplayLink"
-MatchDriver "evdi"
-Driver "modesetting"
-Option "AccelMethod" "none"
-EndSection
+      Section "OutputClass"
+      Identifier "DisplayLink"
+      MatchDriver "evdi"
+      Driver "modesetting"
+      Option "AccelMethod" "none"
+      EndSection
 
 # - name: Set keyboard layout
 # become: true
