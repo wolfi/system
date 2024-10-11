@@ -1,5 +1,5 @@
 - name: Fix remote url for system repository
-  shell: git remote set-url origin git@github.com:Wolfi/system.git
+  shell: git remote set-url origin git@github.com:wolfi/system.git
   args:
     chdir: $HOME/personal/system
 
