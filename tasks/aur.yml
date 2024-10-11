@@ -31,6 +31,13 @@
       - signal-desktop
       - teams-for-linux
 
+- name: (AUR) Install Citrix Workspace App
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - icaclient
+
 - name: (AUR) Install spotify
   kewlfft.aur.aur:
     use: yay
