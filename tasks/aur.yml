@@ -29,7 +29,7 @@
     name:
       - slack-desktop
       - signal-desktop
-      - teams
+      - teams-for-linux
 
 - name: (AUR) Install spotify
   kewlfft.aur.aur:
