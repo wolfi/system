@@ -71,6 +71,7 @@
   community.general.pacman:
     name:
       - xautolock
+      - nvidia-utils
       - maim
       - pngquant
       - unclutter
