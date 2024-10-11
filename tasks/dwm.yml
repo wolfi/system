@@ -10,7 +10,7 @@
 
 - name: dwm checkout
   git:
-    repo: git@github.com:Wolfi/dwm.git
+    repo: git@github.com:wolfi/dwm.git
     dest: "{{ lookup('env', 'HOME') }}/personal/dwm"
     update: yes
     accept_newhostkey: yes
