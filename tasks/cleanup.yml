@@ -7,3 +7,10 @@
   ansible.builtin.file:
     path: "{{ key_setup_dst }}"
     state: absent
+
+- name: Remove the `aur_builder` user 
+  become: yes
+  ansible.builtin.user:
+    name: aur_builder
+    state: absent
+    remove: yes
