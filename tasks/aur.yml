@@ -14,7 +14,7 @@
     mode: 0644
     validate: "visudo -cf %s"
 
-- name: (AUR) Install matcha GTK theme
+- name: (AUR) Install more GTK themes
   kewlfft.aur.aur:
     use: yay
     state: present
