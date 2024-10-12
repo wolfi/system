@@ -223,7 +223,6 @@
   become: true
   community.general.pacman:
     name:
-      - nvidia-utils
       - xf86-video-nouveau
       - vulkan-mesa-layers
       - lib32-vulkan-mesa-layers
