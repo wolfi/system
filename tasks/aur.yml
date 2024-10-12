@@ -51,6 +51,7 @@
     state: present
     name:
       - brave-bin
+      - tor-browser-bin
 
 # - name: (AUR) Install i3lock-color
 #   kewlfft.aur.aur:

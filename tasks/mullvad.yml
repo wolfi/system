@@ -4,22 +4,4 @@
     state: present
     name:
       - mullvad-vpn
-
-- name: Download mullvad browser
-  when: cargo_exists is failed
-  get_url:
-    url: https://mullvad.net/en/download/browser/linux-x86_64/latest
-    dest: /tmp/mullvad-browser.tar.xz
-    mode: "0755"
-    force: "yes"
-  tags:
-    - mullvad
-    - internet
-
-- name: Extract archive
-  ansible.builtin.unarchive:
-    srv: /tmp/mullvad-browser.tar.xz
-    dest: /tmp/mullvar-browser
-  tags:
-    - mullvad
-    - internet
+      - mullvad-browser-bin
