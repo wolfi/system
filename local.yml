@@ -24,6 +24,7 @@
     - include_tasks: tasks/zsh.yml
     - include_tasks: tasks/dev.yml
     - include_tasks: tasks/aur.yml
+    - include_tasks: tasks/docker.yml
     - include_tasks: tasks/mullvad.yml
     - include_tasks: tasks/pkms.yml
     - include_tasks: tasks/cleanup.yml
