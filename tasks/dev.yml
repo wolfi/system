@@ -4,7 +4,6 @@
   community.general.pacman:
     name:
       - go
-      - docker
     state: present
 
 - name: Create dev dir personal
