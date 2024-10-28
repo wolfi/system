@@ -51,7 +51,7 @@
     state: present
     name:
       - brave-bin
-      - tor-browser-bin
+#      - tor-browser-bin
 
 # - name: (AUR) Install i3lock-color
 #   kewlfft.aur.aur:
@@ -60,12 +60,12 @@
 #     name:
 #       - i3lock-color
 
-- name: (AUR) Install evdi (TUXEDO Laptop DP via USB-C)
-  kewlfft.aur.aur:
-    use: yay
-    state: present
-    name:
-      - evdi
+# - name: (AUR) Install evdi (TUXEDO Laptop DP via USB-C)
+#   kewlfft.aur.aur:
+#     use: yay
+#     state: present
+#     name:
+#       - evdi
 
 - name: (AUR) Install autorandr (TUXEDO Laptop DP via USB-C)
   kewlfft.aur.aur:
@@ -74,16 +74,16 @@
     name:
       - autorandr
 
-- name: (AUR) Install displaylink (TUXEDO Laptop DP via USB-C)
-  kewlfft.aur.aur:
-    use: yay
-    state: present
-    name:
-      - displaylink
-
-- name: Enable displaylink service
-  become: true
-  ansible.builtin.systemd_service:
-    name: displaylink
-    enabled: true
-    force: true
+# - name: (AUR) Install displaylink (TUXEDO Laptop DP via USB-C)
+#   kewlfft.aur.aur:
+#     use: yay
+#     state: present
+#     name:
+#       - displaylink
+ 
+# - name: Enable displaylink service
+#   become: true
+#   ansible.builtin.systemd_service:
+#     name: displaylink
+#     enabled: true
+#     force: true
