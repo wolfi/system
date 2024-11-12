@@ -23,6 +23,7 @@
       - qogir-gtk-theme
       - qogir-icon-theme
       - qogir-cursor-theme
+      - tela-circle-icon-theme-all
 
 - name: (AUR) Install communication apps
   kewlfft.aur.aur:
