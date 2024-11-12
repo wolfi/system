@@ -21,6 +21,8 @@
     name:
       - matcha-gtk-theme
       - qogir-gtk-theme
+      - qogir-icon-theme
+      - qogir-cursor-theme
 
 - name: (AUR) Install communication apps
   kewlfft.aur.aur:
@@ -73,14 +75,13 @@
     state: present
     name:
       - autorandr
-
 # - name: (AUR) Install displaylink (TUXEDO Laptop DP via USB-C)
 #   kewlfft.aur.aur:
 #     use: yay
 #     state: present
 #     name:
 #       - displaylink
- 
+
 # - name: Enable displaylink service
 #   become: true
 #   ansible.builtin.systemd_service:
