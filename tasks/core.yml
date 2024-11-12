@@ -74,6 +74,7 @@
   become: true
   community.general.pacman:
     name:
+      - network-manager-applet
       - xautolock
       - maim
       - pngquant
@@ -141,7 +142,7 @@
 #   ansible.builtin.file:
 #     path: /etc/X11/xorg.conf.d
 #     state: directory
- 
+
 # - name: Create X11 conf for evdi to support displaylink screens
 #   become: true
 #   copy:
@@ -230,7 +231,7 @@
 #       - vulkan-mesa-layers
 #       - lib32-vulkan-mesa-layers
 #     state: present
- 
+
 # - name: Remove nvidia-utils.conf, as it blacklists nouveau
 #   shell: /usr/lib/modprobe.d/nvidia-utils.conf
 #   ignore_errors: true
