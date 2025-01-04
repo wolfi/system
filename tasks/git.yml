@@ -30,6 +30,14 @@
   tags:
     - git
 
+- name: Git enable rerere
+  git_config:
+    name: rerere.enabled
+    scope: global
+    value: true
+  tags:
+    - git
+
 - name: Git setup auto setup remote
   git_config:
     name: push.autoSetupRemote
