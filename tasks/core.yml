@@ -176,6 +176,8 @@
   community.general.pacman:
     name:
       - qemu-full
+      - libvirt
+      - cockpit
     state: present
 
 - name: Multimedia
