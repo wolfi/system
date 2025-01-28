@@ -180,6 +180,13 @@
       - cockpit
     state: present
 
+- name: Enable libvirt service
+  become: true
+  ansible.builtin.systemd_service:
+    name: libvirt
+    enabled: true
+    force: true
+
 - name: Multimedia
   become: true
   community.general.pacman:
