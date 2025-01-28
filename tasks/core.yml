@@ -187,6 +187,13 @@
     enabled: true
     force: true
 
+- name: Add user steven to group libvirt
+  ansible.builtin.user:
+    name: steven
+    shell: /bin/zsh
+    groups: libvirt
+    append: yes
+
 - name: Multimedia
   become: true
   community.general.pacman:
