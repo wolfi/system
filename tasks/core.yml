@@ -42,6 +42,7 @@
       - pandoc-cli
       - texlive
       - texlive-binextra
+      - yazi
     state: present
   tags:
     - setup
