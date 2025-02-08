@@ -44,6 +44,7 @@
       - texlive-binextra
       - yazi
       - zoxide
+      - 7zip
     state: present
   tags:
     - setup
