@@ -43,6 +43,7 @@
       - texlive
       - texlive-binextra
       - yazi
+      - zoxide
     state: present
   tags:
     - setup
