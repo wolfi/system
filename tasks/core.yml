@@ -27,6 +27,7 @@
       - pulsemixer
       - fzf
       - fd
+      - gum
       - tmux
       - zellij
       - redshift
