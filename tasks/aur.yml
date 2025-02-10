@@ -34,6 +34,13 @@
       - signal-desktop
       - teams-for-linux
 
+- name: (AUR) Install sesh
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - sesh-bin
+
 - name: (AUR) Install Citrix Workspace App
   kewlfft.aur.aur:
     use: yay
