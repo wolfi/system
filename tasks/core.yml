@@ -175,28 +175,28 @@
 - name: Create user dirs
   shell: xdg-user-dirs-update --force
 
-- name: Virtualization
-  become: true
-  community.general.pacman:
-    name:
-      - qemu-full
-      - libvirt
-      - cockpit
-    state: present
-
-- name: Enable libvirt service
-  become: true
-  ansible.builtin.systemd_service:
-    name: libvirt
-    enabled: true
-    force: true
-
-- name: Add user steven to group libvirt
-  ansible.builtin.user:
-    name: steven
-    shell: /bin/zsh
-    groups: libvirt
-    append: yes
+# - name: Virtualization
+#   become: true
+#   community.general.pacman:
+#     name:
+#       - qemu-full
+#       - libvirt
+#       - cockpit
+#     state: present
+#
+# - name: Enable libvirt service
+#   become: true
+#   ansible.builtin.systemd_service:
+#     name: libvirt
+#     enabled: true
+#     force: true
+#
+# - name: Add user steven to group libvirt
+#   ansible.builtin.user:
+#     name: steven
+#     shell: /bin/zsh
+#     groups: libvirt
+#     append: yes
 
 - name: Multimedia
   become: true
