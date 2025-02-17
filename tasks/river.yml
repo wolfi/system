@@ -2,16 +2,17 @@
   become: true
   community.general.pacman:
     name:
+      - dunst
+      - feh
+      - grim
+      - gtk-layer-shell
+      - imv
       - river
       - rofi-wayland
-      - waybar
-      - grim
       - slurp
-      - feh
-      - imv
-      - dunst
       - swayidle
       - swaylock
+      - waybar
       - wayland-protocols
       - wl-clipboard
       - xdg-desktop-portal-wlr
