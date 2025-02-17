@@ -109,23 +109,16 @@
       - torbrowser-launcher
       - chromium
       - alacritty
-      - chromium
       - gimp
       - blender
       - inkscape
       - xterm
       - qtile
       - steam
-      - awesome
-      - polybar
       - adapta-gtk-theme
       - arc-icon-theme
       - papirus-icon-theme
       - greetd-tuigreet
-      - vicious # awesome
-      - dex # awesome
-      - rlwrap # awesome
-      - imlib2 # awesome
       - xdg-desktop-portal
     state: present
     extra_args: --noconfirm
