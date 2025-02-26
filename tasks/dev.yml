@@ -4,6 +4,7 @@
   community.general.pacman:
     name:
       - go
+      - gopls
       - pyenv
     state: present
 
