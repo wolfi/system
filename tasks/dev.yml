@@ -4,6 +4,7 @@
   community.general.pacman:
     name:
       - go
+      - gopls
     state: present
 
 - name: Create dev dir personal
