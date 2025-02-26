@@ -5,6 +5,7 @@
     name:
       - go
       - gopls
+      - pyenv
     state: present
 
 - name: Create dev dir personal
