@@ -4,6 +4,7 @@
   community.general.pacman:
     name:
       - go
+      - pyenv
     state: present
 
 - name: Create dev dir personal
