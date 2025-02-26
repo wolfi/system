@@ -96,3 +96,10 @@
 #     name: displaylink
 #     enabled: true
 #     force: true
+
+- name: (AUR) Install go templ
+  kewlfft.aur.aur:
+    use: yay
+    state: present
+    name:
+      - templ
