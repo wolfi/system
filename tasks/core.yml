@@ -4,9 +4,9 @@
     name:
       - base-devel
       - cmake
+      - mkcert
       - python
       - python-pipx
-      - mkcert
     state: present
   tags:
     - setup
@@ -16,36 +16,38 @@
   become: true
   community.general.pacman:
     name:
+      - 7zip
+      - bat
       - bc
       - bind
       - btop
-      - eza
-      - whois
-      - traceroute
-      - tree
-      - imagemagick
-      - pulsemixer
-      - fzf
-      - fd
-      - gum
-      - tmux
-      - zellij
-      - redshift
-      - nano
-      - bat
-      - htop
-      - ripgrep
-      - unzip
-      - wget
       - curl
+      - eza
+      - fd
       - fwupd
-      - yay
+      - fzf
+      - gum
+      - htop
+      - imagemagick
+      - lynx
+      - nano
+      - newsboat
       - pandoc-cli
+      - pulsemixer
+      - redshift
+      - ripgrep
       - texlive
       - texlive-binextra
+      - tmux
+      - traceroute
+      - tree
+      - unzip
+      - wget
+      - whois
+      - yay
       - yazi
+      - zellij
       - zoxide
-      - 7zip
     state: present
   tags:
     - setup
@@ -78,48 +80,47 @@
   become: true
   community.general.pacman:
     name:
-      - network-manager-applet
-      - xautolock
-      - maim
-      - pngquant
-      - unclutter
+      - adapta-gtk-theme
+      - alacritty
+      - arc-icon-theme
+      - blender
+      - calibre
+      - chromium
       - dunst
       - feh
-      - xclip
-      - xsel
-      - wezterm
-      - scrot
+      - firefox
+      - flameshot
+      - gimp
+      - greetd-tuigreet
+      - inkscape
+      - lxappearance-gtk3
+      - lxsession
+      - maim
+      - network-manager-applet
       - numlockx
+      - papirus-icon-theme
+      - picom
+      - pngquant
+      - poppler
+      - qtile
+      - rofi
+      - scrot
+      - starship
+      - steam
       - thunar
       - thunar-archive-plugin
       - thunar-volman
-      - lxappearance-gtk3
-      - lxsession
-      - picom
-      - calibre
-      - poppler
-      - starship
-      - rofi
+      - torbrowser-launcher
+      - unclutter
+      - wezterm
+      - xautolock
+      - xclip
+      - xdg-desktop-portal
       - xf86-input-wacom
-      - flameshot
+      - xsel
+      - xterm
       - zathura
       - zathura-pdf-poppler
-      - firefox
-      - newsboat
-      - torbrowser-launcher
-      - chromium
-      - alacritty
-      - gimp
-      - blender
-      - inkscape
-      - xterm
-      - qtile
-      - steam
-      - adapta-gtk-theme
-      - arc-icon-theme
-      - papirus-icon-theme
-      - greetd-tuigreet
-      - xdg-desktop-portal
     state: present
     extra_args: --noconfirm
 
