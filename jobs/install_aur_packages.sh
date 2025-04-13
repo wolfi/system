@@ -1,4 +1,4 @@
-echo "[Install Packages] Start"
+echo "[AUR Packages] Start"
 
 source aur_packages.conf
 
@@ -7,16 +7,25 @@ install_packages() {
   yes | yay --noconfirm -S "${packages[@]}"
 }
 
-# Install system utilities
-echo -e "\e[32m[INSTALL]\e[0m Installing system utilities..."
-install_packages "${SYSTEM_UTILS[@]}"
+echo -e "\e[32m[INSTALL]\e[0m Installing general tools..."
+install_packages "${GENERAL_TOOLS[@]}"
 
-# Install dev tools
 echo -e "\e[32m[INSTALL]\e[0m Installing development tools..."
-install_packages "${SYSTEM_UTILS[@]}"
+install_packages "${DEV_TOOLS[@]}"
 
-# Install containerization tools
-echo -e "\e[32m[INSTALL]\e[0m Installing containerization tools..."
-install_packages "${SYSTEM_UTILS[@]}"
+echo -e "\e[32m[INSTALL]\e[0m Installing themes..."
+install_packages "${THEMES[@]}"
 
-echo "[Install Packages] All packages installed"
+echo -e "\e[32m[INSTALL]\e[0m Installing communication tools..."
+install_packages "${COMMUNICATION_TOOLS[@]}"
+
+echo -e "\e[32m[INSTALL]\e[0m Installing work tools..."
+install_packages "${WORK_TOOLS[@]}"
+
+echo -e "\e[32m[INSTALL]\e[0m Installing media tools..."
+install_packages "${MEDIA_TOOLS[@]}"
+
+echo -e "\e[32m[INSTALL]\e[0m Installing gaming tools..."
+install_packages "${GAMING[@]}"
+
+echo "[AUR Packages] All packages installed"
