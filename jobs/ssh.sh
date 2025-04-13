@@ -12,13 +12,13 @@ if [ ! -f "$PRIVATE_KEY" ] || [ ! -f "$PUBLIC_KEY" ]; then
   read -s -p "[SSH] Enter passphrase: " pw
   echo
 
-  echo "$pw" | gpg --decrypt -o "$PRIVATE_KEY" "$ENCRYPTED_PRIVATE_KEY"
+  echo "$pw" | gpg --decrypt --batch --passphrase-fd 0 -o "$PRIVATE_KEY" "$ENCRYPTED_PRIVATE_KEY"
   if [ $? -ne 0 ]; then
     echo -e "\e[31m[SSH]\e[0m Failed to decrypt private key"
     exit 1
   fi
 
-  echo "$pw" | gpg --decrypt -o "$PUBLIC_KEY" "$ENCRYPTED_PUBLIC_KEY"
+  echo "$pw" | gpg --decrypt --batch --passphrase-fd 0 -o "$PUBLIC_KEY" "$ENCRYPTED_PUBLIC_KEY"
   if [ $? -ne 0 ]; then
     echo -e "\e[31m[SSH]\e[0m Failed to decrypt public key"
     exit 1
