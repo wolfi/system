@@ -1,1 +1,0 @@
-zypper in -y gpg

@@ -31,4 +31,4 @@ if [ ! -f "$PRIVATE_KEY" ] || [ ! -f "$PUBLIC_KEY" ]; then
   chmod 644 "$SSH_DIR/config"
 fi
 
-echo -e "[SSH] Done"
+echo -e "[SSH] Finished"
