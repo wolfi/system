@@ -6,40 +6,40 @@ DESKTOP=(
   bluez-utils
   ffmpeg
   foot
-  grim
+  grim # Screenshot utility for Wayland
   imagemagick
   lua
   lua-posix
   lxappearance
   ly
-  mako
-  mpd
-  mpv
-  pastel
+  mako   # Notification daemon for Wayland
+  mpd    # Music Player Daemon
+  mpv    # Media player
+  pastel # Color picker for Wayland
   playerctl
-  poppler
-  python-pywal
+  poppler      # PDF rendering library
+  python-pywal # Wallpaper and color utilities
   river
   rofi
-  slurp
+  slurp # Select region utility for Wayland
   swaybg
   swayidle
   swaylock
   thunar
   thunar-archive-plugin
   thunar-volman
-  viewnior
+  viewnior # Fast image viewer
   waybar
   wezterm
-  wf-recorder
+  wf-recorder # Screen recorder for Wayland
   wl-clipboard
-  wlr-randr
+  wlr-randr # Output configuration utility for Wayland
   wlroots
-  wlsunset
+  wlsunset # Day/night gamma adjuster for Wayland
   xdg-desktop-portal-gtk
   xdg-desktop-portal-wlr
   xorg-xwayland
-  yad
+  yad # Display dialogs from shell scripts
 )
 
 install_pacman "${DESKTOP[@]}"
