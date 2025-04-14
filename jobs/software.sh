@@ -23,3 +23,7 @@ AUR_APPS=(
 )
 
 install_aur "${AUR_APPS[@]}"
+
+# ICAClient setup
+mkdir -p $HOME/.ICAClient/cache
+cp /opt/Citrix/ICAClient/config/{All_Regions,Trusted_Region,Unknown_Region,canonicalization,regions}.ini $HOME/.ICAClient/
