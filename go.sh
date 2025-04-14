@@ -1,12 +1,26 @@
 #!/bin/sh
 
-# Install Python first
-sudo pacman -Sy --noconfirm python python-pipx
+# Source utility functions required for the setup
+source utils/packages.sh
 
-# Install Ansible
-export PATH="$HOME/.local/bin:$PATH"
-pipx install --include-deps ansible
-ansible-galaxy collection install community.general kewlfft.aur
+# Basics
+source jobs/ssh.sh
+source jobs/git.sh
+source jobs/yay.sh
+source jobs/base.sh
+source jobs/dotfiles.sh
+source jobs/terminal.sh
 
-# Run playbook
-ansible-playbook --ask-vault-pass local.yml
+# Dev
+source jobs/containerization.sh
+source jobs/development.sh
+
+# Desktop environment
+source jobs/desktop.sh
+source jobs/themes.sh
+source jobs/fonts.sh
+source jobs/software.sh
+source jobs/gaming.sh
+
+# Cleanup job at the end
+source jobs/cleanup.sh
