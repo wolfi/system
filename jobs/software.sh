@@ -8,8 +8,18 @@ APPS=(
   chromium
   firefox
   calibre
+  vivaldi
   zathura
   zathura-pdf-poppler
 )
 
 install_pacman "${APPS[@]}"
+
+AUR_APPS=(
+  signal-desktop
+  teams-for-linux
+  sesh-bin
+  icaclient
+)
+
+install_aur "${AUR_APPS[@]}"
