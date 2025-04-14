@@ -16,4 +16,5 @@ fi
 
 # Stow
 rm $HOME/.zshrc 2>/dev/null
-bash $HOME/.dotfiles/stow.sh
+cd $HOME/.dotfiles
+bash stow.sh
