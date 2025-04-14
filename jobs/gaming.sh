@@ -1,12 +1,12 @@
 # Install basic utilities
-echo -e "\e[32m[Basics]\e[0m Installing base utilities..."
+echo -e "\e[32m[Gaming]\e[0m Installing gaming apps..."
 
-SYSTEM_UTILS=(
-  base-devel
-  cmake
-  mkcert
-  python
-  python-pipx
+GAMING_APPS=(
+  steam
 )
+install_pacman "${GAMING_APPS[@]}"
 
-install_pacman "${SYSTEM_UTILS[@]}"
+AUR_GAMING_APPS=(
+  heroic-games-launcher-bin
+)
+install_pacman "${GAMING_APPS[@]}"
