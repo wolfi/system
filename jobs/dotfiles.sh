@@ -20,3 +20,7 @@ rm $HOME/.config/user-dirs.dirs 2>/dev/null
 rm $HOME/.config/user-dirs.locale 2>/dev/null
 
 bash $HOME/.dotfiles/stow.sh
+
+# Copy images
+mkdir $HOME/Pictures/wallpaper
+cp -r $HOME/.dotfiles/images/* $HOME/Pictures/wallpaper
