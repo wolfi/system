@@ -9,7 +9,7 @@ DESKTOP=(
   lxappearance
   mpv
   poppler
-  riverwm
+  river
   rofi
   swaylock
   thunar
