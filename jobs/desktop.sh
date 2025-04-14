@@ -22,7 +22,7 @@ DESKTOP=(
   poppler      # PDF rendering library
   python-pywal # Wallpaper and color utilities
   river
-  rofi
+  rofi-wayland
   slurp # Select region utility for Wayland
   swaybg
   swayidle
