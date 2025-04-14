@@ -12,7 +12,7 @@ if ! command -v n &>/dev/null; then
   N_PREFIX=$HOME/.local/n $HOME/.local/n/bin/n lts
 
   # Enable pnpm
-  export PATH=PATH:$HOME/.local/n/bin corepack enable pnpm
+  export PATH=$PATH:$HOME/.local/n/bin corepack enable pnpm
 
   # Clean up
   rm -rf /tmp/n
