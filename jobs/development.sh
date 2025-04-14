@@ -54,8 +54,10 @@ NEOVIM=(
 )
 install_pacman "${NEOVIM[@]}"
 
-# Install neovim npm package
-PATH="$HOME/.local/n/bin:$PATH" npm install -g neovim
+if ! command -v nvim &>/dev/null; then
+  # Install neovim npm package
+  PATH="$HOME/.local/n/bin:$PATH" npm install -g neovim
 
-# Install neovim plugins
-nvim --headless "+Lazy! sync" +qa
+  # Install neovim plugins
+  nvim --headless "+Lazy! sync" +qa
+fi
