@@ -5,5 +5,5 @@ install_pacman() {
 
 install_aur() {
   local packages=("$@")
-  yes | yay --noconfirm -S "${packages[@]}"
+  yes | yay --needed --noconfirm -S "${packages[@]}"
 }
