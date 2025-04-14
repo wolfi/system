@@ -18,3 +18,5 @@ fi
 rm $HOME/.zshrc 2>/dev/null
 cd $HOME/.dotfiles
 ./stow.sh 2>/dev/null
+
+echo -e "\e[32m[dotfiles]\e[0m Done..."
