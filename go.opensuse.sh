@@ -4,9 +4,9 @@
 source utils/packages.sh
 
 # Basics
-source jobs/yay.sh
 source jobs/ssh.sh
 source jobs/git.sh
+source jobs/yay.sh
 source jobs/base.sh
 source jobs/dotfiles.sh
 source jobs/terminal.sh
