@@ -58,3 +58,9 @@ echo -e "\e[32m[Desktop]\e[0m Enable bluetooth service..."
 sudo systemctl enable bluetooth.service --now
 
 # TODO: wlsunset lua lua-posix wlr-randr swaybg swayidle swaylock wlroots wl-clipboard waybar wofi foot mako grim slurp wf-recorder light yad thunar geany mpd mpc viewnior imagemagick xfce-polkit xorg-xwayland xdg-playerctl pastel python-pywal rofi pulsemixer
+
+# TODO rofi:
+# * bluetooth
+# * launcher
+# * music (mpc)
+# * power
