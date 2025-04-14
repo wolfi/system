@@ -40,8 +40,6 @@ else
   echo -e "\e[32m[ZSH]\e[0m Already set up, skipping"
 fi
 
-source $HOME/.zshrc
-
 # tmux
 echo -e "\e[32m[tmux]\e[0m Install plugin manager TPM..."
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
