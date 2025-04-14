@@ -9,4 +9,4 @@ install_pacman "${GAMING_APPS[@]}"
 AUR_GAMING_APPS=(
   heroic-games-launcher-bin
 )
-install_pacman "${GAMING_APPS[@]}"
+install_aur "${AUR_GAMING_APPS[@]}"
