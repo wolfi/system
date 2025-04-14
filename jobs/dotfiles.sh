@@ -16,4 +16,7 @@ fi
 
 # Stow
 rm $HOME/.zshrc 2>/dev/null
-bash $HOME/.dotfiles/stow.sh 2>/dev/null
+rm $HOME/.config/user-dirs.dirs 2>/dev/null
+rm $HOME/.config/user-dirs.locale 2>/dev/null
+
+bash $HOME/.dotfiles/stow.sh
