@@ -37,7 +37,6 @@ DESKTOP=(
   xdg-desktop-portal-gtk
   xdg-desktop-portal-wlr
   playerctl
-  xfce-polkit
   xorg-xwayland
   yad
 )
