@@ -25,12 +25,15 @@ PYTHON=(
 install_pacman "${PYTHON[@]}"
 
 echo -e "\e[32m[Development]\e[0m Installing golang..."
-GOLANG=(
+PACMAN_GOLANG=(
   go
   gopls
+)
+install_pacman "${PACMAN_GOLANG[@]}"
+AUR_GOLANG=(
   templ
 )
-install_pacman "${GOLANG[@]}"
+install_aur "${AUR_GOLANG[@]}"
 
 echo -e "\e[32m[Development]\e[0m Installing rust..."
 if ! command -v cargo &>/dev/null; then
