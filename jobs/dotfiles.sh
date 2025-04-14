@@ -13,3 +13,6 @@ if [ ! -d "$DOTFILES_DIR" ]; then
 else
   echo -e "\e[32m[dotfiles]\e[0m Already exists, skipping"
 fi
+
+# Stow
+bash $HOME/.dotfiles/stow.sh

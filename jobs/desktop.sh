@@ -6,6 +6,7 @@ DESKTOP=(
   bluez-utils
   ffmpeg
   foot
+  lxappearance
   mpv
   poppler
   riverwm

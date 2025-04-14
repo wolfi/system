@@ -1,7 +1,13 @@
-echo -e "\e[32m[Development]\e[0m Installing dev utilities..."
+echo -e "\e[32m[Development]\e[0m Installing python..."
+PYTHON=(
+  pyenv
+)
+install_pacman "${PYTHON[@]}"
 
-DEV_UTILS=(
+echo -e "\e[32m[Development]\e[0m Installing golang..."
+GOLANG=(
+  go
+  gopls
   templ
 )
-
-install_pacman "${DEV_UTILS[@]}"
+install_pacman "${GOLANG[@]}"
