@@ -1,6 +1,6 @@
 echo -e "\e[32m[Fonts]\e[0m Installing all the fonts..."
 
-FONTS=(
+PACMAN_FONTS=(
   otf-droid-nerd
   otf-firamono-nerd
   ttf-3270-nerd
@@ -19,5 +19,10 @@ FONTS=(
   ttf-roboto
   ttf-roboto-mono-nerd
 )
+install_pacman "${PACMAN_FONTS[@]}"
 
-install_pacman "${FONTS[@]}"
+AUR_FONTS=(
+  ttf-joypixels
+)
+
+install_aur "${AUR_FONTS[@]}"
