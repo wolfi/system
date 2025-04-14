@@ -1,6 +1,6 @@
 echo "[Yay] Start"
 
-if [ ! -d "/tmp/yay" ]; then
+if ! command -v yay &>/dev/null; then
   git clone https://aur.archlinux.org/yay.git /tmp/yay
   cd /tmp/yay
   makepkg -si --noconfirm
