@@ -16,6 +16,7 @@ DESKTOP=(
   mpd
   mpv
   pastel
+  playerctl
   poppler
   python-pywal
   river
@@ -34,9 +35,9 @@ DESKTOP=(
   wl-clipboard
   wlr-randr
   wlroots
+  wlsunset
   xdg-desktop-portal-gtk
   xdg-desktop-portal-wlr
-  playerctl
   xorg-xwayland
   yad
 )
@@ -56,4 +57,4 @@ xdg-user-dirs-update --force
 echo -e "\e[32m[Desktop]\e[0m Enable bluetooth service..."
 sudo systemctl enable bluetooth.service --now
 
-# TODO: lua lua-posix wlr-randr swaybg swayidle swaylock wlroots wl-clipboard waybar wofi foot mako grim slurp wf-recorder light yad thunar geany mpd mpc viewnior imagemagick xfce-polkit xorg-xwayland xdg-playerctl pastel python-pywal rofi pulsemixer
+# TODO: wlsunset lua lua-posix wlr-randr swaybg swayidle swaylock wlroots wl-clipboard waybar wofi foot mako grim slurp wf-recorder light yad thunar geany mpd mpc viewnior imagemagick xfce-polkit xorg-xwayland xdg-playerctl pastel python-pywal rofi pulsemixer
