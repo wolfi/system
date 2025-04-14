@@ -7,6 +7,7 @@ DESKTOP=(
   ffmpeg
   foot
   lxappearance
+  ly
   mpv
   poppler
   river
