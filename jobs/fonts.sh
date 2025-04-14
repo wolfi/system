@@ -11,7 +11,6 @@ PACMAN_FONTS=(
   ttf-hack-nerd
   ttf-iosevkaterm-nerd
   ttf-jetbrains-mono-nerd
-  ttf-joypixels
   ttf-nerd-fonts-symbols
   ttf-nerd-fonts-symbols-common
   ttf-nerd-fonts-symbols-mono
