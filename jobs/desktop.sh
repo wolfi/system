@@ -4,6 +4,7 @@ echo -e "\e[32m[Desktop]\e[0m Installing packages..."
 DESKTOP=(
   bluez
   bluez-utils
+  brightnessctl
   ffmpeg
   foot
   grim # Screenshot utility for Wayland
@@ -12,9 +13,10 @@ DESKTOP=(
   lua-posix
   lxappearance
   ly
-  mako   # Notification daemon for Wayland
-  mpd    # Music Player Daemon
-  mpv    # Media player
+  mako # Notification daemon for Wayland
+  mpd  # Music Player Daemon
+  mpv  # Media player
+  pamixer
   pastel # Color picker for Wayland
   playerctl
   poppler      # PDF rendering library
@@ -43,12 +45,6 @@ DESKTOP=(
 )
 
 install_pacman "${DESKTOP[@]}"
-
-AUR_DESKTOP=(
-  light
-)
-
-install_aur "${AUR_DESKTOP[@]}"
 
 # Create user dirs
 xdg-user-dirs-update --force
