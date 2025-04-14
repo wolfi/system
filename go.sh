@@ -10,7 +10,7 @@ source jobs/yay.sh
 source jobs/base.sh
 source jobs/dotfiles.sh
 source jobs/terminal.sh
-source jobs/mail.sh
+# source jobs/mail.sh
 
 # Dev
 source jobs/containerization.sh

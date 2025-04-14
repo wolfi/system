@@ -8,7 +8,6 @@ DESKTOP=(
   foot
   grim
   imagemagick
-  light
   lua
   lua-posix
   lxappearance
@@ -37,13 +36,19 @@ DESKTOP=(
   wlroots
   xdg-desktop-portal-gtk
   xdg-desktop-portal-wlr
-  xdg-playerctl
+  playerctl
   xfce-polkit
   xorg-xwayland
   yad
 )
 
 install_pacman "${DESKTOP[@]}"
+
+AUR_DESKTOP=(
+  light
+)
+
+install_aur "${AUR_DESKTOP[@]}"
 
 # Create user dirs
 xdg-user-dirs-update --force
