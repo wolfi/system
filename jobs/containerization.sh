@@ -20,4 +20,5 @@ if [ ! -f "/etc/subgid" ]; then
   echo "$USER:231072:65536" >/etc/subgid
 fi
 
-# sudo systemctl --user enable docker.socket.service --now
+dockerd-rootless-setuptool.sh install
+

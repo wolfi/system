@@ -7,10 +7,6 @@ PACMAN_MAIL=(
   gnupg
   aerc
 )
-install_pacman "${PACMAN_MAIL[@]}"
+install_zypper "${PACMAN_MAIL[@]}"
 
-AUR_MAIL=(
-  mailctl-bin
-)
-
-install_aur "${AUR_MAIL[@]}"
+# TOOD: mailctl-bin

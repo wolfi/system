@@ -4,9 +4,9 @@ echo -e "\e[32m[Gaming]\e[0m Installing gaming apps..."
 GAMING_APPS=(
   steam
 )
-install_pacman "${GAMING_APPS[@]}"
+install_zypper "${GAMING_APPS[@]}"
 
-AUR_GAMING_APPS=(
-  heroic-games-launcher-bin
+FLATPAK_GAMING_APPS=(
+  com.heroicgameslauncher.hgl
 )
-install_aur "${AUR_GAMING_APPS[@]}"
+install_flatpak "${FLATPAK_GAMING_APPS[@]}"

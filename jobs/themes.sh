@@ -1,18 +1,15 @@
 echo -e "\e[32m[Themes]\e[0m Installing GTK, icon and cursor themes..."
 
-PACMAN_THEMES=(
-  adapta-gtk-theme
+ZYPPER_THEMES=(
   papirus-icon-theme
 )
 
-install_pacman "${PACMAN_THEMES[@]}"
+install_zypper "${ZYPPER_THEMES[@]}"
 
-AUR_THEMES=(
-  matcha-gtk-theme
-  qogir-gtk-theme
-  qogir-icon-theme
-  qogir-cursor-theme
-  tela-circle-icon-theme-all
+FLATPAK_THEMES=(
+  org.gtk.Gtk3theme.Zukitwo  
+  org.gtk.Gtk3theme.Adapta
+  org.gtk.Gtk3theme.Qogir
 )
 
-install_aur "${AUR_THEMES[@]}"
+install_flatpak "${FLATPAK_THEMES[@]}"

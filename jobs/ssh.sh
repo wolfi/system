@@ -6,9 +6,9 @@ PUBLIC_KEY="$SSH_DIR/id_ed25519.pub"
 ENCRYPTED_PRIVATE_KEY="keys/encrypted.gpg"
 ENCRYPTED_PUBLIC_KEY="keys/pencrypted.gpg"
 
-if [ ! -f "$PRIVATE_KEY" ] || [ ! -f "$PUBLIC_KEY" ]; then
-  mkdir -p $SSH_DIR
+ mkdir -p $SSH_DIR
 
+if [ ! -f "$PRIVATE_KEY" ] || [ ! -f "$PUBLIC_KEY" ]; then
   read -s -p "[SSH] Enter passphrase: " pw
   echo
 

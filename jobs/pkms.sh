@@ -1,10 +1,10 @@
 echo -e "\e[32m[PKMS]\e[0m Installing Logseq..."
 
-AUR_LOGSEQ=(
-  logseq-desktop-bin
+FLATPAK_LOGSEQ=(
+  com.logseq.Logseq
 )
 
-install_aur "${AUR_LOGSEQ[@]}"
+install_flatpak "${FLATPAK_LOGSEQ[@]}"
 
 if [ ! -d "$HOME/personal/pkms-logseq" ]; then
   echo -e "\e[32m[PKMS]\e[0m Cloning PKMS repo..."

@@ -15,5 +15,5 @@ install_zypper() {
 
 install_flatpak() {
   local packages=("$@")
-  sudo flatpack install -y "${packages[@]}"
+  sudo flatpak install -y --noninteractive "${packages[@]}"
 }

@@ -11,10 +11,11 @@ CLI_TOOLS=(
   fzf
   gum
   htop
-  imagemagick
+  ImageMagick
   nano
   newsboat
-  pulsemixer
+  opi
+  python312-pulsemixer
   ripgrep
   tealdeer
   tmux
@@ -28,7 +29,7 @@ CLI_TOOLS=(
   zsh
 )
 
-install_pacman "${CLI_TOOLS[@]}"
+install_zypper "${CLI_TOOLS[@]}"
 
 # ZSH
 echo -e "\e[32m[ZSH]\e[0m Setting up ZSH..."

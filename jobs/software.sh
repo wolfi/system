@@ -6,24 +6,26 @@ APPS=(
   inkscape
   krita
   chromium
-  firefox
+  MozillaFirefox
   calibre
-  vivaldi
   zathura
-  zathura-pdf-poppler
+  zathura-plugin-pdf-poppler
 )
 
-install_pacman "${APPS[@]}"
+install_zypper "${APPS[@]}"
 
-AUR_APPS=(
-  signal-desktop
-  teams-for-linux
-  sesh-bin
-  icaclient
+FLATPAK_APPS=(
+  org.signal.Signal
+  com.github.IsmaelMartinez.teams_for_linux
+  com.vivaldi.Vivaldi
 )
 
-install_aur "${AUR_APPS[@]}"
+install_flatpak "${FLATPAK_APPS[@]}"
 
+# sesh
+go install github.com/joshmedeski/sesh/v2@latest
+
+# TODO: icaclient
 # ICAClient setup
-mkdir -p $HOME/.ICAClient/cache
-cp /opt/Citrix/ICAClient/config/{All_Regions,Trusted_Region,Unknown_Region,canonicalization,regions}.ini $HOME/.ICAClient/
+# mkdir -p $HOME/.ICAClient/cache
+ # cp /opt/Citrix/ICAClient/config/{All_Regions,Trusted_Region,Unknown_Region,canonicalization,regions}.ini $HOME/.ICAClient/

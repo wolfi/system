@@ -16,24 +16,25 @@ if ! command -v n &>/dev/null; then
 
   # Clean up
   rm -rf /tmp/n
+
+  cd $SCRIPT_DIR
 fi
 
 echo -e "\e[32m[Development]\e[0m Installing python..."
 PYTHON=(
   pyenv
 )
-install_pacman "${PYTHON[@]}"
+install_zypper "${PYTHON[@]}"
 
 echo -e "\e[32m[Development]\e[0m Installing golang..."
 PACMAN_GOLANG=(
   go
   gopls
 )
-install_pacman "${PACMAN_GOLANG[@]}"
-AUR_GOLANG=(
-  templ
-)
-install_aur "${AUR_GOLANG[@]}"
+install_zypper "${PACMAN_GOLANG[@]}"
+
+# Go libs
+go install github.com/a-h/templ/cmd/templ@latest
 
 echo -e "\e[32m[Development]\e[0m Installing rust..."
 if ! command -v cargo &>/dev/null; then
@@ -44,15 +45,11 @@ fi
 
 echo -e "\e[32m[Development]\e[0m Installing neovim..."
 NEOVIM=(
-  luarocks
   neovim
-  python-pip
-  python-pynvim
   tree-sitter
-  tree-sitter-cli
   wl-clipboard
 )
-install_pacman "${NEOVIM[@]}"
+install_zypper "${NEOVIM[@]}"
 
 if ! command -v nvim &>/dev/null; then
   # Install neovim npm package
