@@ -4,15 +4,11 @@ echo -e "\e[32m[Containerization]\e[0m Installing..."
 CONTAINERIZATION_UTILS=(
   docker
   docker-compose
-)
-install_pacman "${CONTAINERIZATION_UTILS[@]}"
-
-sudo systemctl enable docker.service --now
-
-AUR_CONTAINERIZATION_UTILS=(
   docker-rootless-extras
 )
-install_aur "${AUR_CONTAINERIZATION_UTILS[@]}"
+install_zypper "${CONTAINERIZATION_UTILS[@]}"
+
+sudo systemctl enable docker.service --now
 
 # Create subuid
 if [ ! -f "/etc/subuid" ]; then
