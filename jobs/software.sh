@@ -18,6 +18,7 @@ FLATPAK_APPS=(
   org.signal.Signal
   com.github.IsmaelMartinez.teams_for_linux
   com.vivaldi.Vivaldi
+  com.spotify.Client
 )
 
 install_flatpak "${FLATPAK_APPS[@]}"
@@ -28,4 +29,4 @@ go install github.com/joshmedeski/sesh/v2@latest
 # TODO: icaclient
 # ICAClient setup
 # mkdir -p $HOME/.ICAClient/cache
- # cp /opt/Citrix/ICAClient/config/{All_Regions,Trusted_Region,Unknown_Region,canonicalization,regions}.ini $HOME/.ICAClient/
+# cp /opt/Citrix/ICAClient/config/{All_Regions,Trusted_Region,Unknown_Region,canonicalization,regions}.ini $HOME/.ICAClient/
