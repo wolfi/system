@@ -24,6 +24,7 @@ FLATPAK_APPS=(
   com.github.IsmaelMartinez.teams_for_linux
   com.vivaldi.Vivaldi
   com.spotify.Client
+  com.github.tchx84.Flatseal
 )
 
 install_flatpak "${FLATPAK_APPS[@]}"
