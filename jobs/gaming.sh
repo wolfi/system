@@ -3,6 +3,7 @@ echo -e "\e[32m[Gaming]\e[0m Installing gaming apps..."
 
 GAMING_APPS=(
   steam
+  lutris
 )
 install_zypper "${GAMING_APPS[@]}"
 
