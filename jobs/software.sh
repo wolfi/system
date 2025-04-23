@@ -26,6 +26,9 @@ install_flatpak "${FLATPAK_APPS[@]}"
 # sesh
 go install github.com/joshmedeski/sesh/v2@latest
 
+# 1Password
+flatpak install https://downloads.1password.com/linux/flatpak/1Password.flatpakref
+
 # TODO: icaclient
 # ICAClient setup
 # mkdir -p $HOME/.ICAClient/cache
