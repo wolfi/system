@@ -1,6 +1,11 @@
 echo -e "\e[32m[Software]\e[0m Installing apps..."
 
+# 1Password repo
+sudo rpm --import https://downloads.1password.com/linux/keys/1password.asc
+sudo zypper addrepo https://downloads.1password.com/linux/rpm/stable/x86_64 1password
+
 APPS=(
+  1password
   blender
   gimp
   inkscape
@@ -25,9 +30,6 @@ install_flatpak "${FLATPAK_APPS[@]}"
 
 # sesh
 go install github.com/joshmedeski/sesh/v2@latest
-
-# 1Password
-flatpak install -y --noninteractive https://downloads.1password.com/linux/flatpak/1Password.flatpakref
 
 # TODO: icaclient
 # ICAClient setup
