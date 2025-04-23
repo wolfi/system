@@ -10,13 +10,14 @@ DESKTOP=(
   grim # Screenshot utility for Wayland
   lua54-luaposix
   lxappearance
+  maim # Screenshotting utility
   mako # Notification daemon for Wayland
   mpd  # Music Player Daemon
   mpv  # Media player
   pamixer
   pastel # Color picker for Wayland
   playerctl
-  poppler-tools      # PDF rendering library
+  poppler-tools # PDF rendering library
   river
   rofi-wayland
   slurp # Select region utility for Wayland
@@ -32,7 +33,7 @@ DESKTOP=(
   wf-recorder # Screen recorder for Wayland
   wl-clipboard
   wlr-randr # Output configuration utility for Wayland
-  wlsunset # Day/night gamma adjuster for Wayland
+  wlsunset  # Day/night gamma adjuster for Wayland
   xdg-desktop-portal-gtk
   xdg-desktop-portal-wlr
   xwayland
@@ -53,7 +54,6 @@ sudo systemctl enable bluetooth.service --now
 #  libxcb-devel
 #)
 #install_zypper "${LY_DEPS[@]}"
-
 
 # TODO: wlsunset lua lua-posix wlr-randr swaybg swayidle swaylock wlroots wl-clipboard waybar wofi foot mako grim slurp wf-recorder light yad thunar geany mpd mpc viewnior imagemagick xfce-polkit xorg-xwayland xdg-playerctl pastel python-pywal rofi pulsemixer
 
