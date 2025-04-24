@@ -13,6 +13,7 @@ fi
 
 NERD_FONTS_VERSION=v3.3.0
 NERD_FONTS=(
+  0xProto
   DroidSansMono
   FiraMono
   3270
