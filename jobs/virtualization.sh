@@ -7,8 +7,11 @@ if [ ! -f "/etc/modules-load.d/virtio-net.conf" ]; then
 fi
 
 VIRTUALIZATION_UTILS=(
+  libvirt
   qemu
   virsh
   virt-manager
 )
 install_zypper "${VIRTUALIZATION_UTILS[@]}"
+
+sudo systemctl enable --now libvirtd.service
