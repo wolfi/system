@@ -8,6 +8,7 @@ fi
 
 VIRTUALIZATION_UTILS=(
   qemu
+  virsh
   virt-manager
 )
 install_zypper "${VIRTUALIZATION_UTILS[@]}"
