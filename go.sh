@@ -25,6 +25,7 @@ source jobs/themes.sh
 source jobs/fonts.sh
 source jobs/software.sh
 source jobs/gaming.sh
+source jobs/virtualization.sh
 
 # Cleanup job at the end
 source jobs/cleanup.sh
