@@ -16,4 +16,5 @@ install_zypper "${VIRTUALIZATION_UTILS[@]}"
 
 sudo systemctl enable --now libvirtd.service
 
+# Add user to libvirt group
 sudo usermod -a -G libvirt $USER
