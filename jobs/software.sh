@@ -22,7 +22,6 @@ install_zypper "${APPS[@]}"
 FLATPAK_APPS=(
   org.signal.Signal
   com.github.IsmaelMartinez.teams_for_linux
-  com.vivaldi.Vivaldi
   com.spotify.Client
   com.github.tchx84.Flatseal
 )
