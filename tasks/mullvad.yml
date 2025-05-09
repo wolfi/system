@@ -1,7 +1,0 @@
-- name: (AUR) Install mullvad VPN
-  kewlfft.aur.aur:
-    use: yay
-    state: present
-    name:
-      - mullvad-vpn
-      - mullvad-browser-bin
