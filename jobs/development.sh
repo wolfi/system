@@ -22,6 +22,12 @@ if ! command -v n &>/dev/null; then
   cd $SCRIPT_DIR
 fi
 
+echo -e "\e[32m[Development]\e[0m Installing git lfs..."
+GITLFS=(
+  git-lfs
+)
+install_zypper "${GITLFS[@]}"
+
 echo -e "\e[32m[Development]\e[0m Installing python..."
 PYTHON=(
   pyenv
