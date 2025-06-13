@@ -13,6 +13,9 @@ VIRTUALIZATION_UTILS=(
 )
 install_zypper "${VIRTUALIZATION_UTILS[@]}"
 
+# use iptables to enable internet access in vms
+sudo sed -i 's/#firewall_backend = "nftables"/firewall_backend = "iptables"/' /etc/libvirt/network.conf
+
 sudo systemctl enable --now libvirtd.service
 
 # Add user to libvirt group
