@@ -1,18 +1,18 @@
 echo "[Git] Start"
 
-KNOWN_HOSTS="$HOME/.ssh/known_hosts" 
+KNOWN_HOSTS="$HOME/.ssh/known_hosts"
 
 # Add github.com to known hosts
-if [ ! -f "$KNOWN_HOSTS" ]  ; then
+if [ ! -f "$KNOWN_HOSTS" ]; then
   touch $KNOWN_HOSTS
 fi
 
 if ! grep -q "github.com" "$KNOWN_HOSTS"; then
-  ssh-keyscan github.com > "$KNOWN_HOSTS"
+  ssh-keyscan github.com >"$KNOWN_HOSTS"
 fi
 
 git config --global user.name "Steven Wolf"
-git config --global user.email "steven.wolf@pm.me"
+git config --global user.email "684171+wolfi@users.noreply.github.com"
 
 git config --global init.defaultBranch "main"
 
