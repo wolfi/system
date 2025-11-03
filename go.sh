@@ -19,6 +19,8 @@ source jobs/containerization.sh
 source jobs/development.sh
 
 # Desktop environment
+source jobs/packman.sh
+source jobs/codecs.sh
 source jobs/desktop.sh
 source jobs/gpu.sh
 source jobs/pkms.sh

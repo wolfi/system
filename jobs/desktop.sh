@@ -13,9 +13,9 @@ DESKTOP=(
   mako # Notification daemon for Wayland
   mpd  # Music Player Daemon
   mpv  # Media player
-  # obs-studio
-  # obs-vkcapture
-  # obs-backgroundremoval
+  obs-studio
+  obs-vkcapture
+  obs-backgroundremoval
   pamixer
   pastel # Color picker for Wayland
   playerctl
