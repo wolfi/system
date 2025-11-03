@@ -20,6 +20,7 @@ source jobs/development.sh
 
 # Desktop environment
 source jobs/desktop.sh
+source jobs/gpu.sh
 source jobs/pkms.sh
 source jobs/themes.sh
 source jobs/fonts.sh
