@@ -30,8 +30,8 @@ DESKTOP=(
   wl-clipboard
   wlr-randr # Output configuration utility for Wayland
   wlsunset  # Day/night gamma adjuster for Wayland
-  xdg-desktop-portal-gtk
-  xdg-desktop-portal-wlr
+  # xdg-desktop-portal-gtk
+  # xdg-desktop-portal-wlr
   xwayland
 )
 
