@@ -51,6 +51,17 @@ if ! command -v cargo &>/dev/null; then
   /tmp/rustup.sh -y
 fi
 
+# echo -e "\e[32m[Development]\e[0m Installing dotnet..."
+# if ! command -v dotnet &>/dev/null; then
+#   sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+#   sudo zypper addrepo --refresh https://packages.microsoft.com/config/opensuse/15/prod.repo
+#
+#   DOTNET=(
+#     dotnet-sdk-9.0
+#   )
+#   install_zypper "${DOTNET[@]}"
+# fi
+
 echo -e "\e[32m[Development]\e[0m Installing neovim..."
 NEOVIM=(
   neovim

@@ -1,21 +1,15 @@
 # Install desktop environment
-echo -e "\e[32m[Desktop]\e[0m Installing packages..."
+echo -e "\e[32m[Desktop]\e[0m Installing River packages..."
 
 DESKTOP=(
   bluez
   bluez-utils
   brightnessctl
-  foot
   grim # Screenshot utility for Wayland
   lua54-luaposix
   lxappearance
   maim # Screenshotting utility
   mako # Notification daemon for Wayland
-  mpd  # Music Player Daemon
-  mpv  # Media player
-  obs-studio
-  obs-vkcapture
-  obs-backgroundremoval
   pamixer
   pastel # Color picker for Wayland
   playerctl

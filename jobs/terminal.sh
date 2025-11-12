@@ -1,6 +1,7 @@
 # Packages required and other CLI tools
 echo -e "\e[32m[Terminal]\e[0m Installing required packages and tools..."
 CLI_TOOLS=(
+  ImageMagick
   bat
   bc
   bind
@@ -11,7 +12,6 @@ CLI_TOOLS=(
   fzf
   gum
   htop
-  ImageMagick
   nano
   newsboat
   opi

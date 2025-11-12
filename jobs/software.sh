@@ -10,7 +10,6 @@ APPS=(
   gimp
   inkscape
   krita
-  chromium
   MozillaFirefox
   calibre
   zathura
@@ -25,6 +24,10 @@ FLATPAK_APPS=(
   com.vivaldi.Vivaldi
   com.spotify.Client
   com.github.tchx84.Flatseal
+  io.missioncenter.MissionCenter
+  org.develz.Crawl
+  org.cataclysmdda.CataclysmDDA
+  com.unity.UnityHub
 )
 
 install_flatpak "${FLATPAK_APPS[@]}"
