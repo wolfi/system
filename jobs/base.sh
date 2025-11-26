@@ -17,3 +17,5 @@ PY_VERSION=3.12
 pyenv install -s $PY_VERSION
 pyenv global $PY_VERSION
 
+# Install poetry
+curl -sSL https://install.python-poetry.org | python3 -
