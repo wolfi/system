@@ -5,6 +5,6 @@ FLATPAK_UNITY_APPS=(
   com.unity.UnityHuh
   org.freedesktop.Sdk.Extension.mono6
   org.freedesktop.Sdk.Extension.dotnet6
-  com.vscodium.codium
+  # com.vscodium.codium
 )
 install_flatpak "${FLATPAK_UNITY_APPS[@]}"
