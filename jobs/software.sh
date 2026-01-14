@@ -19,16 +19,15 @@ APPS=(
 install_zypper "${APPS[@]}"
 
 FLATPAK_APPS=(
-  com.github.IsmaelMartinez.teams_for_linux
   com.github.iwalton3.jellyfin-media-player
   com.github.tchx84.Flatseal
   com.spotify.Client
-  com.unity.UnityHub
   com.vivaldi.Vivaldi
   io.missioncenter.MissionCenter
   org.cataclysmdda.CataclysmDDA
   org.develz.Crawl
   org.signal.Signal
+  org.torproject.torbrowser-launcher
 )
 
 install_flatpak "${FLATPAK_APPS[@]}"

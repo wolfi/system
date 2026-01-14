@@ -3,7 +3,7 @@ echo -e "\e[32m[Containerization]\e[0m Installing..."
 
 # Load virtio at boot
 if [ ! -f "/etc/modules-load.d/virtio-net.conf" ]; then
-  sudo echo "virtio_net" >/etc/modules-load.d/virtio-net.conf
+  echo "virtio_net" | sudo tee /etc/modules-load.d/virtio-net.conf >/dev/null
 fi
 
 VIRTUALIZATION_UTILS=(

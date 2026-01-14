@@ -31,5 +31,8 @@ source jobs/software.sh
 source jobs/gaming.sh
 source jobs/virtualization.sh
 
+# Required at work
+source jobs/mstrash.sh
+
 # Cleanup job at the end
 source jobs/cleanup.sh

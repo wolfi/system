@@ -7,7 +7,7 @@ ZYPPER_THEMES=(
 install_zypper "${ZYPPER_THEMES[@]}"
 
 FLATPAK_THEMES=(
-  org.gtk.Gtk3theme.Zukitwo  
+  org.gtk.Gtk3theme.Zukitwo
   org.gtk.Gtk3theme.Adapta
   org.gtk.Gtk3theme.Qogir
 )
