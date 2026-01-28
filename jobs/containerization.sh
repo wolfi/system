@@ -2,14 +2,14 @@
 echo -e "\e[32m[Containerization]\e[0m Installing..."
 
 CONTAINERIZATION_UTILS=(
-  # docker
-  # docker-compose
-  # docker-rootless-extras
+  docker
+  docker-compose
+  docker-rootless-extras
   podman
 )
 install_zypper "${CONTAINERIZATION_UTILS[@]}"
 
-# sudo systemctl enable docker.service --now
+sudo systemctl enable docker.service --now
 
 # Create subuid
 if [ ! -f "/etc/subuid" ]; then
