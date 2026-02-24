@@ -8,6 +8,8 @@ DESKTOP=(
   obs-studio
   obs-vkcapture
   obs-backgroundremoval
+  flatpak
+  flatpak-zsh-completion
 )
 
 install_zypper "${DESKTOP[@]}"
