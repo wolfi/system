@@ -18,6 +18,7 @@ source jobs/terminal.sh
 source jobs/development.sh
 
 # Desktop environment
+source jobs/packman.sh
 # source jobs/codecs.sh
 source jobs/desktop.base.sh
 source jobs/desktop.river.sh
