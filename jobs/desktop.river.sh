@@ -15,6 +15,7 @@ DESKTOP=(
   playerctl
   poppler-tools # PDF rendering library
   river
+  firefox
   rofi-wayland
   slurp # Select region utility for Wayland
   swaybg
