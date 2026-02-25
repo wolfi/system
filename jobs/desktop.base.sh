@@ -10,6 +10,7 @@ DESKTOP=(
   obs-backgroundremoval
   flatpak
   flatpak-zsh-completion
+  xdg-user-dirs
 )
 
 install_zypper "${DESKTOP[@]}"
