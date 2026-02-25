@@ -15,7 +15,7 @@ source jobs/terminal.sh
 
 # Dev
 # source jobs/containerization.sh
-# source jobs/development.sh
+source jobs/development.sh
 
 # Desktop environment
 # source jobs/codecs.sh
