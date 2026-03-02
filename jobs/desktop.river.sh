@@ -5,6 +5,7 @@ DESKTOP=(
   bluez
   bluez-utils
   brightnessctl
+  firefox
   grim # Screenshot utility for Wayland
   lua54-luaposix
   lxappearance
@@ -15,8 +16,8 @@ DESKTOP=(
   playerctl
   poppler-tools # PDF rendering library
   river
-  firefox
   rofi-wayland
+  sddm
   slurp # Select region utility for Wayland
   swaybg
   swayidle
@@ -31,8 +32,8 @@ DESKTOP=(
   wl-clipboard
   wlr-randr # Output configuration utility for Wayland
   wlsunset  # Day/night gamma adjuster for Wayland
-  # xdg-desktop-portal-gtk
-  # xdg-desktop-portal-wlr
+  xdg-desktop-portal-gtk
+  xdg-desktop-portal-wlr
   xwayland
 )
 
@@ -44,6 +45,11 @@ xdg-user-dirs-update --force
 # Enable bluetooth
 echo -e "\e[32m[Desktop]\e[0m Enable bluetooth service..."
 sudo systemctl enable bluetooth.service --now
+
+# Enable SDDM
+echo -e "\e[32m[Desktop]\e[0m Enable SDDM..."
+sudo systemctl disable display-manager
+sudo systemctl enable sddm --now
 
 # Install ly
 # LY_DEPS=(
