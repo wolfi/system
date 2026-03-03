@@ -18,4 +18,4 @@ gsettings set org.gnome.desktop.interface gtk-theme Breeze-Dark
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface icon-theme Yaru-viridian-dark
 gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors
-gsettings set org.gnome.desktop.interface font-name "Roboto 11"
+gsettings set org.gnome.desktop.interface font-name "Noto Sans 10"
