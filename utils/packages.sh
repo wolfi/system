@@ -10,7 +10,7 @@ install_aur() {
 
 install_zypper() {
   local packages=("$@")
-  sudo zypper in -y "${packages[@]}"
+  sudo zypper in -y --recommends "${packages[@]}"
 }
 
 install_flatpak() {
