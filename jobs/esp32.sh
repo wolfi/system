@@ -24,9 +24,9 @@ DEPS=(
   libffi-devel
   libgcrypt20
   libopenssl-devel
-  libslirp
+  libslirp0
   libusb-1_0-0
-  pixman-1
+  libpixman-1-0
 )
 install_zypper "${DEPS[@]}"
 
