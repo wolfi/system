@@ -17,6 +17,7 @@ source utils/config.sh
 # Dev
 # source jobs/containerization.sh
 # source jobs/development.sh
+# source jobs/esp32.sh
 
 # Desktop environment
 # source jobs/packman.sh
