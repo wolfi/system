@@ -51,6 +51,7 @@ rm -rf /tmp/wlroots
 cd $SCRIPT_DIR
 
 TOOLS=(
+  pipewire
   waybar
   xdg-desktop-portal
   xdg-desktop-portal-wlr
