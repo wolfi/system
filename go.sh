@@ -4,7 +4,6 @@ SCRIPT_DIR=$(pwd)
 
 # Source utility functions required for the setup
 source utils/packages.sh
-source utils/config.sh
 
 # Basics
 source jobs/ssh.sh
