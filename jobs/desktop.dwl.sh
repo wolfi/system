@@ -48,6 +48,8 @@ if ! command -v yay &>/dev/null; then
   meson build -Dprefix=/usr
   sudo ninja -C build install
   rm -rf /tmp/wlroots
+
+  cd $SCRIPT_DIR
 else
   echo -e "\e[32m[Yay]\e[0m Already set up, skipping"
 fi
