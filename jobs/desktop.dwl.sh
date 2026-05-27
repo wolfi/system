@@ -42,14 +42,18 @@ install_zypper "${WLROOTS_DEPS[@]}"
 sudo zypper in -y -t pattern devel_vulkan
 
 # Build wlroots
-if ! command -v yay &>/dev/null; then
-  git clone -b $WLROOTS_VERSION https://gitlab.freedesktop.org/wlroots/wlroots.git /tmp/wlroots
-  cd /tmp/wlroots
-  meson build -Dprefix=/usr
-  sudo ninja -C build install
-  rm -rf /tmp/wlroots
+git clone -b $WLROOTS_VERSION https://gitlab.freedesktop.org/wlroots/wlroots.git /tmp/wlroots
+cd /tmp/wlroots
+meson build -Dprefix=/usr
+sudo ninja -C build install
+rm -rf /tmp/wlroots
 
-  cd $SCRIPT_DIR
-else
-  echo -e "\e[32m[Yay]\e[0m Already set up, skipping"
-fi
+cd $SCRIPT_DIR
+
+TOOLS=(
+  waybar
+  xdg-desktop-portal
+  xdg-desktop-portal-wlr
+)
+
+install_zypper "${TOOLS[@]}"
