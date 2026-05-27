@@ -2,7 +2,7 @@
 echo -e "\e[32m[Desktop]\e[0m Installing DWL..."
 
 DWL_VERSION=v0.8
-WLROOTS_VERSION=0.19.2
+WLROOTS_VERSION=0.19.3
 
 WLROOTS_DEPS=(
   Mesa-libEGL-devel
