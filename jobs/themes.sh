@@ -14,7 +14,7 @@ FLATPAK_THEMES=(
 
 install_flatpak "${FLATPAK_THEMES[@]}"
 
-gsettings set org.gnome.desktop.interface gtk-theme Breeze-Dark
+gsettings set org.gnome.desktop.interface gtk-theme Breeze
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface icon-theme Yaru-viridian-dark
 gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors
