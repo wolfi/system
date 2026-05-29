@@ -37,7 +37,7 @@ go install github.com/joshmedeski/sesh/v2@latest
 
 # OpenSCAD development builds
 flatpak remote-add --user --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-sudo flatpak install -y --noninteractive --user flathub-beta org.openscad.OpenSCAD
+flatpak install -y --noninteractive --user flathub-beta org.openscad.OpenSCAD
 
 # TODO: icaclient
 # ICAClient setup
