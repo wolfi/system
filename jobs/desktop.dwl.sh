@@ -60,7 +60,6 @@ cd $SCRIPT_DIR
 
 TOOLS=(
   bluez
-  bluez-utils
   brightnessctl
   grim # Screenshot utility for Wayland
   lua54-luaposix
@@ -72,7 +71,7 @@ TOOLS=(
   pipewire
   playerctl
   poppler-tools # PDF rendering library
-  rofi-wayland
+  rofi
   slurp # Select region utility for Wayland
   swaybg
   swayidle
