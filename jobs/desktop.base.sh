@@ -5,9 +5,9 @@ DESKTOP=(
   foot
   # mpd # Music Player Daemon
   mpv # Media player
-  # obs-studio
-  # obs-vkcapture
-  # obs-backgroundremoval
+  obs-studio
+  obs-vkcapture
+  obs-backgroundremoval
   flatpak
   flatpak-zsh-completion
   xdg-user-dirs
