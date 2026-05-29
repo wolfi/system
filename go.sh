@@ -15,19 +15,20 @@ source jobs/terminal.sh
 
 # Dev
 # source jobs/containerization.sh
-# source jobs/development.sh
+source jobs/development.sh
 # source jobs/esp32.sh
 
 # Desktop environment
 # source jobs/packman.sh
 source jobs/codecs.sh
 source jobs/desktop.base.sh
+source jobs/desktop.dwl.sh
 # source jobs/desktop.river.sh
 # source jobs/gpu.sh
 # source jobs/pkms.sh
 source jobs/themes.sh
 source jobs/fonts.sh
-# source jobs/software.sh
+source jobs/software.sh
 # source jobs/gaming.sh
 # source jobs/virtualization.sh
 

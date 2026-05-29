@@ -1,7 +1,7 @@
 # Install desktop environment
 echo -e "\e[32m[Desktop]\e[0m Installing DWL..."
 
-WLROOTS_VERSION=0.19.3
+WLROOTS_VERSION=0.20.1
 
 WLROOTS_DEPS=(
   Mesa-libEGL-devel
