@@ -19,6 +19,7 @@ APPS=(
 install_zypper "${APPS[@]}"
 
 FLATPAK_APPS=(
+  ch.protonmail.protonmail-bridge
   com.github.iwalton3.jellyfin-media-player
   com.github.tchx84.Flatseal
   com.spotify.Client
