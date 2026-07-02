@@ -11,6 +11,7 @@ APPS=(
   inkscape
   krita
   MozillaFirefox
+  MozillaThunderbird
   calibre
   zathura
   zathura-plugin-pdf-poppler
