@@ -8,31 +8,31 @@ source utils/packages.sh
 # Basics
 source jobs/ssh.sh
 source jobs/git.sh
-# source jobs/yay.sh
 source jobs/base.sh
 source jobs/dotfiles.sh
 source jobs/terminal.sh
 # source jobs/mail.sh
 
 # Dev
-source jobs/containerization.sh
-source jobs/development.sh
+# source jobs/containerization.sh
+# source jobs/development.sh
+# source jobs/esp32.sh
 
 # Desktop environment
 # source jobs/packman.sh
 source jobs/codecs.sh
 source jobs/desktop.base.sh
 # source jobs/desktop.river.sh
-source jobs/gpu.sh
-source jobs/pkms.sh
+# source jobs/gpu.sh
+# source jobs/pkms.sh
 source jobs/themes.sh
 source jobs/fonts.sh
-source jobs/software.sh
-source jobs/gaming.sh
-source jobs/virtualization.sh
+# source jobs/software.sh
+# source jobs/gaming.sh
+# source jobs/virtualization.sh
 
 # Required at work
-source jobs/mstrash.sh
+# source jobs/mstrash.sh
 
 # Cleanup job at the end
 source jobs/cleanup.sh
