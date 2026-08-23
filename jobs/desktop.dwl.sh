@@ -1,7 +1,7 @@
 # Install desktop environment
 echo -e "\e[32m[Desktop]\e[0m Installing DWL..."
 
-WLROOTS_VERSION=0.20.1
+WLROOTS_VERSION=0.20.2
 
 WLROOTS_DEPS=(
   Mesa-libEGL-devel
@@ -50,7 +50,7 @@ rm -rf /tmp/wlroots
 cd $SCRIPT_DIR
 
 # Build dwl
-git clone https://codeberg.org/schwibbles/dwl.git /tmp/dwl
+git clone -b wlroots-next https://codeberg.org/schwibbles/dwl.git /tmp/dwl
 cd /tmp/dwl
 make
 sudo make install
