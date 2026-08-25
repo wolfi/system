@@ -22,6 +22,7 @@ source utils/packages.sh
 # source jobs/packman.sh
 # source jobs/codecs.sh
 # source jobs/desktop.base.sh
+source jobs/emacs.sh
 source jobs/desktop.dwl.sh
 # source jobs/desktop.river.sh
 # source jobs/gpu.sh
