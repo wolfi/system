@@ -1,7 +1,5 @@
 VERSION=31.1
 
-echo -e "\e[32m[Emacs]\e[0m Building Emacs $VERSION..."
-
 BUILDDIR=/tmp/emacs-$VERSION
 INSTALLDIR=$HOME/.local/emacs
 
@@ -16,6 +14,8 @@ BUILD_DEPS=(
 install_zypper "${BUILD_DEPS[@]}"
 
 if [[ ! $(emacs --version | grep "$VERSION") ]]; then
+  echo -e "\e[32m[Emacs]\e[0m Building Emacs $VERSION..."
+
   if [ ! -d "$BUILDDIR/emacs-$VERSION" ]; then
     mkdir -p $BUILDDIR
     cd $BUILDDIR
@@ -32,6 +32,8 @@ if [[ ! $(emacs --version | grep "$VERSION") ]]; then
   make install
 
   ln -s $INSTALLDIR/bin/emacs ~/.local/bin/emacs
+
+  echo -e "\e[32m[Emacs]\e[0m Done"
 else
   echo -e "\e[32m[Emacs]\e[0m Already installed, skipping"
 fi
