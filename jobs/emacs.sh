@@ -9,6 +9,8 @@ BUILD_DEPS=(
   giflib-devel
   libXpm-devel
   libgnutls-devel
+  gtk3-devel
+  tree-sitter-devel
 )
 
 install_zypper "${BUILD_DEPS[@]}"
@@ -26,7 +28,10 @@ if [[ ! $(emacs --version | grep "$VERSION") ]]; then
   fi
 
   cd $BUILDDIR/emacs-$VERSION
-  ./configure --prefix=$INSTALLDIR
+  ./configure \
+    --prefix=$INSTALLDIR \
+    --with-pgtk \
+    --with-tree-sitter
 
   make -j$(nproc --ignore=2)
   make install
