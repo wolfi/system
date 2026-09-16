@@ -16,9 +16,58 @@ BUILD_DEPS=(
   aspell
   aspell-en
   aspell-de
+  sdcv # Offline dictionary
 )
 
 install_zypper "${BUILD_DEPS[@]}"
+
+echo -e "\e[32m[Emacs]\e[0m Installing dictionaries for sdcv..."
+TARGET_DIR="/usr/share/stardict/dic/"
+BASE_URL="http://download.huzheng.org"
+DICTIONARIES=(
+    freedict.de/stardict-freedict-deu-eng-2.4.2.tar.bz2
+    freedict.de/stardict-freedict-eng-deu-2.4.2.tar.bz2
+    dict.org/stardict-dictd_www.dict.org_foldoc-2.4.2.tar.bz2
+    dict.org/stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
+    dict.org/stardict-dictd-jargon-2.4.2.tar.bz2
+    dict.org/stardict-dictd-bouvier-2.4.2.tar.bz2
+    dict.org/stardict-dictd_www.dict.org_devils-2.4.2.tar.bz2
+    dict.org/stardict-longman-2.4.2.tar.bz2
+    dict.org/stardict-oald-2.4.2.tar.bz2
+    dict.org/stardict-thesaurus-ee-2.4.2.tar.bz2
+    de/stardict-ldaf-2.4.2.tar.bz2
+    de/stardict-duden-2.4.2.tar.bz2
+    bigdict/stardict-Merriam-Webster_s_Advanced_Learner_s_Dictionary-2.4.2.tar.bz2
+    bigdict/stardict-Merriam-Webster_s_Collegiate_11th_Ed-2.4.2.tar.bz2
+    bigdict/stardict-Merriam-Webster_s_Collegiate_Thesaurus-2.4.2.tar.bz2
+    bigdict/stardict-Roget_s_II_The_New_Thesaurus_3th_Ed-2.4.2.tar.bz2
+)
+
+sudo mkdir -p "$TARGET_DIR"
+
+# Download and extract each archive
+for dict in "${DICTIONARIES[@]}"; do
+    ARCHIVE_URL="$BASE_URL/$dict"
+    ARCHIVE_NAME=$(basename "$dict")
+    EXTRACTED_DIR="$TARGET_DIR$(basename "$dict" .tar.bz2)"
+
+    # Skip if the extracted directory already exists
+    if [ -d "$EXTRACTED_DIR" ]; then
+        echo "Skipping $ARCHIVE_NAME: Already extracted in $EXTRACTED_DIR"
+        continue
+    fi
+
+    echo "Downloading $ARCHIVE_URL..."
+    wget -q "$ARCHIVE_URL" -O "/tmp/$ARCHIVE_NAME"
+
+    if [ $? -eq 0 ]; then
+        echo "Extracting $ARCHIVE_NAME to $TARGET_DIR..."
+        sudo tar -xjf "/tmp/$ARCHIVE_NAME" -C "$TARGET_DIR"
+        rm "/tmp/$ARCHIVE_NAME"
+    else
+        echo "Failed to download $ARCHIVE_URL"
+    fi
+done
 
 # if [[ ! $(emacs --version | grep "$VERSION") ]]; then
 echo -e "\e[32m[Emacs]\e[0m Building Emacs $VERSION..."
