@@ -11,6 +11,8 @@ BUILD_DEPS=(
   libgccjit-devel
   libgnutls-devel
   tree-sitter-devel
+  librsvg-2-2
+  librsvg-devel
 
   # Not build deps, but tools related to emacs
   aspell
@@ -98,6 +100,7 @@ export LDFLAGS="-Wl,-O2 -Wl,-z,now -Wl,-z,relro -Wl,--sort-common -Wl,--as-neede
   --with-modules \
   --with-threads \
   --with-libgmp \
+  --with-rsvg \
   --with-xml2 \
   --with-tree-sitter \
   --with-zlib \
