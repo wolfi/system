@@ -27,20 +27,14 @@ BASE_URL="http://download.huzheng.org"
 DICTIONARIES=(
     freedict.de/stardict-freedict-deu-eng-2.4.2.tar.bz2
     freedict.de/stardict-freedict-eng-deu-2.4.2.tar.bz2
-    dict.org/stardict-dictd_www.dict.org_foldoc-2.4.2.tar.bz2
-    dict.org/stardict-dictd_www.dict.org_gcide-2.4.2.tar.bz2
-    dict.org/stardict-dictd-jargon-2.4.2.tar.bz2
-    dict.org/stardict-dictd-bouvier-2.4.2.tar.bz2
-    dict.org/stardict-dictd_www.dict.org_devils-2.4.2.tar.bz2
-    dict.org/stardict-longman-2.4.2.tar.bz2
-    dict.org/stardict-oald-2.4.2.tar.bz2
-    dict.org/stardict-thesaurus-ee-2.4.2.tar.bz2
     de/stardict-ldaf-2.4.2.tar.bz2
     de/stardict-duden-2.4.2.tar.bz2
     bigdict/stardict-Merriam-Webster_s_Advanced_Learner_s_Dictionary-2.4.2.tar.bz2
     bigdict/stardict-Merriam-Webster_s_Collegiate_11th_Ed-2.4.2.tar.bz2
     bigdict/stardict-Merriam-Webster_s_Collegiate_Thesaurus-2.4.2.tar.bz2
     bigdict/stardict-Roget_s_II_The_New_Thesaurus_3th_Ed-2.4.2.tar.bz2
+    bigdict/stardict-Urban_Dictionary_P1-2.4.2.tar.bz2
+    bigdict/stardict-Urban_Dictionary_P2-2.4.2.tar.bz2
 )
 
 sudo mkdir -p "$TARGET_DIR"
