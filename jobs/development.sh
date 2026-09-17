@@ -34,6 +34,10 @@ PYTHON=(
 )
 install_zypper "${PYTHON[@]}"
 
+pyenv install 3
+# Install pylsp
+pip install "python-lsp-server[all]"
+
 echo -e "\e[32m[Development]\e[0m Installing golang..."
 PACMAN_GOLANG=(
   go
@@ -82,7 +86,7 @@ echo -e "\e[32m[Development]\e[0m Installing odin..."
 if [ ! -d "$HOME/personal/Odin" ]; then
     git clone https://github.com/odin-lang/Odin $HOME/personal/Odin
     cd $HOME/personal/Odin
-    make release-native 
+    make release-native
     ln -s  $HOME/personal/Odin/odin $HOME/.local/bin/odin
 fi
 
