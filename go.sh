@@ -23,9 +23,10 @@ source utils/packages.sh
 # source jobs/codecs.sh
 # source jobs/desktop.base.sh
 # source jobs/evi.sh
-source jobs/emacs.sh
+# source jobs/emacs.sh
 # source jobs/desktop.dwl.sh
 # source jobs/desktop.river.sh
+source jobs/desktop.umbriel.sh
 # source jobs/gpu.sh
 # source jobs/pkms.sh
 # source jobs/themes.sh

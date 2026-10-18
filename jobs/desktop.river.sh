@@ -26,9 +26,9 @@ DESKTOP=(
   thunar
   thunar-archive-plugin
   thunar-volman
+  foot
   viewnior # Fast image viewer
   waybar
-  wezterm
   wf-recorder # Screen recorder for Wayland
   wl-clipboard
   wlr-randr # Output configuration utility for Wayland
