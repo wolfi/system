@@ -2,7 +2,7 @@
 echo -e "\e[32m[Desktop]\e[0m Installing DWL..."
 
 # Install wlroots
-source desktop.wlroots.sh
+source jobs/desktop.wlroots.sh
 
 cd $SCRIPT_DIR
 
