@@ -38,7 +38,8 @@ source jobs/desktop.wlroots.sh
 
 # Install a C++23 compiler, Meson, Ninja, Just, pkg-config, wayland-scanner, and development packages for wlroots 0.20 (0.20.1 or newer, built with Xwayland support), Wayland, wayland-protocols, xkbcommon, libinput, pixman, libdrm, libdisplay-info, EGL, GLES2, GBM, Pango, tomlplusplus, nlohmann-json, xcb, xcb-icccm, and xcb-ewmh. Native [drm] GPU exclusions also require libudev. lcms2 is optional.
 
-DESKTOP=(
+UMBRIEL=(
+  # Desktop
   hyprwayland-scanner
   just
   liblcms2-devel
@@ -51,18 +52,36 @@ DESKTOP=(
   nlohmann_json-devel
   pango-devel
   tomlplusplus-devel
+
+  # XDG Portal
+  gtk4-devel
+  libwayland-client0
+  pipewire
+  pipewire-devel
+  sdbus-cpp-devel
 )
 
-install_zypper "${DESKTOP[@]}"
+install_zypper "${UMBRIEL[@]}"
 
 cd $SCRIPT_DIR
 
 # Build umbriel
-git clone -b main https://github.com/noctalia-dev/umbriel.git /tmp/umbriel
-cd /tmp/umbriel
+$BUILDPATH=/tmp/umbriel
+git clone -b main https://github.com/noctalia-dev/umbriel.git $BUILDPATH
+cd $BUILDPATH
 just release
 sudo just install
-rm -rf /tmp/umbriel
+rm -rf $BUILDPATH
+
+# Build xdg-desktop-portal-umbriel
+BUILDPATH=/tmp/xdg-desktop-portal-umbriel
+git clone -b main https://github.com/noctalia-dev/xdg-desktop-portal-umbriel.git $BUILDPATH
+cd $BUILDPATH
+just configure
+just build
+just release
+sudo just install
+rm -rf $BUILDPATH
 
 # Install noctalia
 NOCTALIA=(
