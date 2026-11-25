@@ -91,6 +91,13 @@ if [ ! -d "$HOME/personal/Odin" ]; then
 fi
 
 echo -e "\e[32m[Development]\e[0m Installing ols..."
+ODIN=(
+  neovim
+  tree-sitter
+  wl-clipboard
+)
+install_zypper "${ODIN[@]}"
+
 if [ ! -d "$HOME/personal/ols" ]; then
     git clone https://github.com/DanielGavin/ols $HOME/personal/ols
     cd $HOME/personal/ols
