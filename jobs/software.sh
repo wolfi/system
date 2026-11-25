@@ -21,13 +21,13 @@ install_zypper "${APPS[@]}"
 
 FLATPAK_APPS=(
   ch.protonmail.protonmail-bridge
-  com.github.iwalton3.jellyfin-media-player
   com.github.tchx84.Flatseal
   com.spotify.Client
   com.vivaldi.Vivaldi
   io.missioncenter.MissionCenter
   org.cataclysmdda.CataclysmDDA
   org.develz.Crawl
+  org.jellyfin.JellyfinDesktop
   org.signal.Signal
   org.torproject.torbrowser-launcher
 )
@@ -39,7 +39,7 @@ go install github.com/joshmedeski/sesh/v2@latest
 
 # OpenSCAD development builds
 flatpak remote-add --user --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
-sudo flatpak install -y --noninteractive --user flathub-beta org.openscad.OpenSCAD
+flatpak install -y --noninteractive --user flathub-beta org.openscad.OpenSCAD
 
 # TODO: icaclient
 # ICAClient setup

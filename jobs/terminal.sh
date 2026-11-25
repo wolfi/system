@@ -15,7 +15,7 @@ CLI_TOOLS=(
   nano
   newsboat
   opi
-  python312-pulsemixer
+  python314-pulsemixer
   ripgrep
   tealdeer
   tmux

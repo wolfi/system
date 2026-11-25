@@ -13,7 +13,7 @@ install_zypper "${SYSTEM_UTILS[@]}"
 sudo zypper in -y -t pattern devel_basis devel_C_C++ devel_kernel
 
 # Install python
-PY_VERSION=3.12
+PY_VERSION=3.14
 pyenv install -s $PY_VERSION
 pyenv global $PY_VERSION
 

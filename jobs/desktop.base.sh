@@ -6,8 +6,8 @@ DESKTOP=(
   mpd # Music Player Daemon
   mpv # Media player
   obs-studio
-  obs-vkcapture
-  obs-backgroundremoval
+  # obs-vkcapture
+  # obs-backgroundremoval
   flatpak
   flatpak-zsh-completion
 )

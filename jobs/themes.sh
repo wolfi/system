@@ -9,7 +9,7 @@ install_zypper "${ZYPPER_THEMES[@]}"
 FLATPAK_THEMES=(
   org.gtk.Gtk3theme.Zukitwo
   org.gtk.Gtk3theme.Adapta
-  org.gtk.Gtk3theme.Qogir
+  # org.gtk.Gtk3theme.Qogir
 )
 
 install_flatpak "${FLATPAK_THEMES[@]}"
