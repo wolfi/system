@@ -5,6 +5,7 @@ DESKTOP=(
   flatpak
   flatpak-zsh-completion
   foot
+  fuzzel
   keyd
   # mpd # Music Player Daemon
   mpv # Media player
