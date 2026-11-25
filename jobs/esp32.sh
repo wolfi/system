@@ -5,7 +5,7 @@ usermod -a -G dialout $USER
 
 echo -e "\e[32m[ESP32]\e[0m Installing EIM CLI..."
 if ! command -v eim &>/dev/null; then
-  EIM_VERSION=v0.12.0
+  EIM_VERSION=v0.22.0
   DL_TARGET=/tmp/eim-cli-linux-x64.zip
 
   curl --proto '=https' --tlsv1.2 -sSf https://dl.espressif.com/github_assets/espressif/idf-im-ui/releases/download/$EIM_VERSION/eim-cli-linux-x64.zip -o $DL_TARGET
